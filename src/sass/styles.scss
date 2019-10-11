@@ -10,6 +10,7 @@
 html, body { height: 100%;}
 body { margin: 0; font-family: font(primary), "Helvetica Neue", sans-serif; }
 
-nav {
-	font-family: font(menu)
+.navbar-bg {
+	font-family: font(primary);
+	background-color: transparent !important;
 }
