@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import sampleData from '../../assets/data.json';
+export default sampleData;
 
 @Component({
   selector: 'app-products',
@@ -17,4 +18,3 @@ export class ProductsComponent implements OnInit {
   }
 
 }
- 
