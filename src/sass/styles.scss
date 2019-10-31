@@ -14,15 +14,21 @@ html {
 	height: 100%;
 	overflow: hidden;
 }
+
 body { 
 	margin: 0; 
 	font-family: font(primary), "Helvetica Neue", sans-serif; 
-	background-color: colors(bg);
+	background-color: color(bg);
 	perspective: 1px;
     transform-style: preserve-3d;
     height: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
+}
+
+a, a:hover, a:focus {
+	color: inherit !important;
+	text-decoration: none;
 }
 
 // header {
