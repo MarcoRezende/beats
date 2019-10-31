@@ -5,20 +5,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { AngularFullpageModule } from '@fullpage/angular-fullpage';
 import { HomeComponent } from './home/home.component';
+import { FormsModule } from '@angular/forms';
+import { ProductsComponent } from './products/products.component';
+import { ShopComponent } from './shop/shop.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    ProductsComponent,
+    ShopComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     NgbModule,
-    AngularFullpageModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

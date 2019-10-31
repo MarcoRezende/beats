@@ -1,6 +1,6 @@
 <header>
   <nav class="navbar navbar-expand-md navbar-bg navbar-light bg-light">
-    <span></span>
+    <span><a routerLink="">BEATZ</a></span>
     <button class="navbar-toggler" type="button" aria-controls="navbarContent" [attr.aria-expanded]="!collapsed" aria-label="Toggle navigation" (click)="collapsed = !collapsed">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -18,10 +18,10 @@
             PRODUCTS
           </a>
           <div ngbDropdownMenu aria-labelledby="navbarDropdown2" class="dropdown-menu dropdown-menu-right">
-            <a class="dropdown-item" href="#" (click)="$event.preventDefault()">VST Expansion</a>
-            <a class="dropdown-item" href="#" (click)="$event.preventDefault()">Drum Kits</a>
-            <a class="dropdown-item" href="#" (click)="$event.preventDefault()">MIDI Kits</a>
-            <a class="dropdown-item" href="#" (click)="$event.preventDefault()">Loop/Sample Packs</a>
+            <a class="dropdown-item" href="#" (click)="$event.preventDefault()" routerLink="products/vst-expansion">VST Expansion</a>
+            <a class="dropdown-item" href="#" (click)="$event.preventDefault()" routerLink="products/drum-kits">Drum Kits</a>
+            <a class="dropdown-item" href="#" (click)="$event.preventDefault()" routerLink="products/midi-kits">MIDI Kits</a>
+            <a class="dropdown-item" href="#" (click)="$event.preventDefault()" routerLink="products/loops">Loop/Sample Packs</a>
           </div>
         </li>
 
@@ -41,4 +41,6 @@
   </nav>
 </header>
 
-<router-outlet></router-outlet>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
