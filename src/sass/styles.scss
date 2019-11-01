@@ -56,14 +56,18 @@ header {
 
 header .my-nav {
     position: absolute !important;
-    top: 0;
-    height: 80px;
+    margin-top: 10px;
     width: 100%;
 }
 
 .navbar-toggler {
     padding: 0 !important;
     border: inherit !important;
+}
+
+.navbar-light .navbar-toggler-icon {
+	background-image: url("http://vcmediapartners.com/media/images/hamburger-white.svg") !important;
+
 }
 
 .nav-item {
@@ -80,6 +84,11 @@ header .my-nav {
 	background-color: transparent !important;
 }
 
+.logo {
+    font-family: "Apex Mk3";
+    font-size: 18pt;
+}
+
 .hero-image {
 	display: flex;
 	justify-content: space-between;
@@ -91,6 +100,7 @@ header .my-nav {
     width: 100vw;
     overflow: hidden;
     position: relative;
+    text-transform: uppercase;
 }
 
 
