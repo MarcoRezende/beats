@@ -240,3 +240,135 @@ header .my-nav {
 	margin: 0 auto;
 	font-weight: bolder;
 }
+
+/* products page */
+
+.products-container {
+	color: #fff;
+	z-index: 1;
+	overflow-x: hidden;
+	margin: 0 auto;
+	width: 100%;
+	padding: 0 30px
+}
+
+.products-container h2 {
+	text-align: center;
+	color: #000;
+	margin: 10px auto;
+}
+
+.breadcrumbs {
+	width: 100%;
+	padding: 5px;
+	color: #000;
+	font-size: 10pt;
+	line-height: 15px;
+	margin: 30px auto;
+	text-align: center;
+	border-bottom: 1px solid #d3ced2;
+	padding-bottom: 10px;
+}
+
+.sorty-by {
+	width: 100%;
+	border: none;
+}
+
+.orderby {
+   display: block;
+    width: 100%;
+    border: none;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px;
+    font-size: 10pt;
+}
+
+.products-store-list {
+	padding: 0;
+	margin: 15px auto;
+	list-style-type: none;
+	text-align: center;
+}
+
+.buy {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+
+.product-store-item {
+    width: 100%;
+    margin: 0 auto 30px;
+    /*max-width: 500px;*/
+    display: block;
+    text-align: center;
+    clear: both;
+}
+
+.product-item-wrapper { 
+	width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* height: 420px; */
+    max-height: 100%;
+    text-align: center;
+    box-shadow: 0 15px 45px -15px rgba(0,0,0,.3);
+    clear: both;
+}
+
+.product-store-image-container {
+	position: relative;
+    width: 100%;
+    /*height: 320px !important;*/
+    /*min-height: 320px;*/
+    overflow: hidden;
+}
+
+.this-product-store-image {
+	width: 100%;
+	height: 100%;
+	flex-shrink: 0;
+	object-fit: cover;
+	min-width: 100%;
+	min-height: 100%;
+	transition: transform .5s ease;
+	transform: scale(1.0);
+}
+
+.this-product-store-image:hover {
+	transition: transform .5s ease; 	
+	transform: scale(1.1);
+}
+
+.product-store-infos-container {
+	width: 100%;
+	height: 30%;
+	padding: 10px;
+	color: #000;
+	clear: both;
+}
+
+
+.product-store-infos-container span, h4 {
+	font-size: 12pt;
+	font-weight: bolder;
+	vertical-align: super;
+}
+
+.btn-buy {
+	width: 100%;
+    font-size: 10pt; 
+    background-color: rgb(224, 28, 73);
+    color: #fff;
+    border-radius: 0 !important;
+    transition: background-color .5s ease;
+}
+
+.btn-buy:hover {
+    background-color: rgb(199, 26, 66);
+    color: #fff;
+    transition: background-color .5s ease;
+}
