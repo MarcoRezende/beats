@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class ShopComponent implements OnInit {
 
   home: boolean = false;
-  data: any = sampleData;
 
   constructor() { }
 
