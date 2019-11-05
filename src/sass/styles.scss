@@ -42,7 +42,7 @@ a, a:hover, a:focus {
 //     position: relative;
 // }
 
-header {
+.header-home {
 	display: flex;
     justify-content: space-between;
     color: #fff;
@@ -54,10 +54,30 @@ header {
     z-index: 99999;
 }
 
-header .my-nav {
+.header-not-home {
+	display: flex;
+    justify-content: space-between;
+    color: #fff;
+    transform-style: inherit;
+    width: 100%;
+    overflow: hidden;
+    z-index: 99999;
+}
+
+nav {
+	font-family: font(primary);
+}
+
+header .home-nav {
     position: absolute !important;
     margin-top: 10px;
     width: 100%;
+	background-color: transparent !important;
+}
+
+header .not-home-nav {
+    width: 100%;
+	background-color: rgb(19, 2, 6) !important;
 }
 
 .navbar-toggler {
@@ -77,11 +97,6 @@ header .my-nav {
 .nav-item:hover {
 	color: #e01c49;
 	transition: all .2s ease;
-}
-
-.navbar-bg {
-	font-family: font(primary);
-	background-color: transparent !important;
 }
 
 .logo {
