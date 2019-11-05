@@ -1,1 +1,57 @@
-<p>shop works!</p>
+<div class="shop-container">
+	<h2>SHOP</h2>
+	<div class="breadcrumbs">
+		<span class="breadcrumb-item">Home</span>
+		<span class="breadcrumb-item">Drum Kit</span>
+		<span class="breadcrumb-item active">Metro Boomin - Want Some More N*gga (Drum Kit)</span>
+	</div>
+	<div class="shop-item">
+		<div class="shop-item-image">
+			<img id="product-image" onmousemove="zoomIn(event)" onmouseout="zoomOut()" src="https://wavsupply.net/wp-content/uploads/2019/09/heartbreak-hotel-art-600x401.jpg" alt="" class="item-image">
+
+		</div>
+		<div class="shop-item-infos">
+			<h2>Metro Boomin - Want Some More N*gga (Drum Kit)</h2>
+			<span class="price">$25,00</span>
+
+			<div class="extra-info">
+				<span id="category">Category: <span id="category-highlight">Drum Kit</span></span>
+			</div>
+
+			<button class="btn btn-buy btn-slim"><a href="#">ADD TO CART</a></button>
+		</div>
+	</div>
+</div>
+<div class="item-about">
+	<ngb-tabset type="pills">
+		<ngb-tab title="Description">
+			<ng-template ngbTabContent>
+				This <b>Item</b> contain:
+				<ul *ngIf="data.products.vst.drum" class="product-content">
+					<li *ngFor="let content of data.products.vst.drum[0].content" class="product-content-item"> {{content}} </li>
+				</ul>
+			</ng-template>
+		</ngb-tab>
+		<ngb-tab title="Reviews">
+			<ng-template ngbTabContent>
+				<ul *ngIf="data.products.vst.drum" class="reviews-container">
+					<li *ngFor="let review of data.products.vst.drum[0].reviews" class="review">
+						<div class="user-profile-pic">
+							<img src="" alt="" class="profile-pic">
+						</div>
+						<div class="user-review">
+							<div class="review-data">
+								<span class="username"> {{review.username}} </span>
+								<span class="review-rating"> {{review.rating}} </span>
+								<span class="review-date"> {{review.date}} </span>
+							</div>
+							<div class="review-message">
+								<p> {{review.message}} </p>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</ng-template>
+		</ngb-tab>
+	</ngb-tabset>
+</div>

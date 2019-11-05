@@ -10,7 +10,7 @@
 				{
 					"id": "ronnyj-ortodox",
 					"category": "Drum Kit",
-					"release_data": "2019-11-05T13:15:30Z",
+					"release_date": "2019-11-05T13:15:30Z",
 					"name": "RonnyJ - Ortodox (Drum Kit)",
 					"images": {
 						"default": {
@@ -39,20 +39,24 @@
 					"reviews": [
 						{
 							"username": "Louis",
+							"profile_pic": "",
 							"message": "Awesome",
-							"rate": 5
+							"date": "2019-11-05T13:15:30Z",
+							"rating": 5
 						},
 						{
 							"username": "Arnold",
+							"profile_pic": "",
 							"message": "Lit man! I'm a fan of Ronny J",
-							"rate": 5
+							"date": "2019-11-05T13:15:30Z",
+							"rating": 5
 						}
 					]
 				},
 				{
 					"id": "ronnyj-ortodox",
 					"category": "Drum Kit",
-					"release_data": "2019-11-05T13:15:30Z",
+					"release_date": "2019-11-05T13:15:30Z",
 					"name": "RonnyJ - Ortodox (Drum Kit)",
 					"images": {
 						"default": {
@@ -81,20 +85,24 @@
 					"reviews": [
 						{
 							"username": "Louis",
+							"profile_pic": "",
 							"message": "Awesome",
-							"rate": 5
+							"date": "2019-11-05T13:15:30Z",
+							"rating": 5
 						},
 						{
 							"username": "Arnold",
+							"profile_pic": "",
 							"message": "Lit man! I'm a fan of Ronny J",
-							"rate": 5
+							"date": "2019-11-05T13:15:30Z",
+							"rating": 5
 						}
 					]
 				},
 				{
 					"id": "ronnyj-ortodox",
 					"category": "Drum Kit",
-					"release_data": "2019-11-05T13:15:30Z",
+					"release_date": "2019-11-05T13:15:30Z",
 					"name": "RonnyJ - Ortodox (Drum Kit)",
 					"images": {
 						"default": {
@@ -123,20 +131,24 @@
 					"reviews": [
 						{
 							"username": "Louis",
+							"profile_pic": "",
 							"message": "Awesome",
-							"rate": 5
+							"date": "2019-11-05T13:15:30Z",
+							"rating": 5
 						},
 						{
 							"username": "Arnold",
+							"profile_pic": "",
 							"message": "Lit man! I'm a fan of Ronny J",
-							"rate": 5
+							"date": "2019-11-05T13:15:30Z",
+							"rating": 5
 						}
 					]
 				},
 				{
 					"id": "ronnyj-ortodox",
 					"category": "Drum Kit",
-					"release_data": "2019-11-05T13:15:30Z",
+					"release_date": "2019-11-05T13:15:30Z",
 					"name": "RonnyJ - Ortodox (Drum Kit)",
 					"images": {
 						"default": {
@@ -165,20 +177,24 @@
 					"reviews": [
 						{
 							"username": "Louis",
+							"profile_pic": "",
 							"message": "Awesome",
-							"rate": 5
+							"date": "2019-11-05T13:15:30Z",
+							"rating": 5
 						},
 						{
 							"username": "Arnold",
+							"profile_pic": "",
 							"message": "Lit man! I'm a fan of Ronny J",
-							"rate": 5
+							"date": "2019-11-05T13:15:30Z",
+							"rating": 5
 						}
 					]
 				},
 				{
 					"id": "ronnyj-ortodox",
 					"category": "Drum Kit",
-					"release_data": "2019-11-05T13:15:30Z",
+					"release_date": "2019-11-05T13:15:30Z",
 					"name": "RonnyJ - Ortodox (Drum Kit)",
 					"images": {
 						"default": {
@@ -207,20 +223,24 @@
 					"reviews": [
 						{
 							"username": "Louis",
+							"profile_pic": "",
 							"message": "Awesome",
-							"rate": 5
+							"date": "2019-11-05T13:15:30Z",
+							"rating": 5
 						},
 						{
 							"username": "Arnold",
+							"profile_pic": "",
 							"message": "Lit man! I'm a fan of Ronny J",
-							"rate": 5
+							"date": "2019-11-05T13:15:30Z",
+							"rating": 5
 						}
 					]
 				},
 				{
 					"id": "ronnyj-ortodox",
 					"category": "Drum Kit",
-					"release_data": "2019-11-05T13:15:30Z",
+					"release_date": "2019-11-05T13:15:30Z",
 					"name": "RonnyJ - Ortodox (Drum Kit)",
 					"images": {
 						"default": {
@@ -249,20 +269,24 @@
 					"reviews": [
 						{
 							"username": "Louis",
+							"profile_pic": "",
 							"message": "Awesome",
-							"rate": 5
+							"date": "2019-11-05T13:15:30Z",
+							"rating": 5
 						},
 						{
 							"username": "Arnold",
+							"profile_pic": "",
 							"message": "Lit man! I'm a fan of Ronny J",
-							"rate": 5
+							"date": "2019-11-05T13:15:30Z",
+							"rating": 5
 						}
 					]
 				},
 				{
 					"id": "ronnyj-ortodox",
 					"category": "Drum Kit",
-					"release_data": "2019-11-05T13:15:30Z",
+					"release_date": "2019-11-05T13:15:30Z",
 					"name": "RonnyJ - Ortodox (Drum Kit)",
 					"images": {
 						"default": {
@@ -291,20 +315,24 @@
 					"reviews": [
 						{
 							"username": "Louis",
+							"profile_pic": "",
 							"message": "Awesome",
-							"rate": 5
+							"date": "2019-11-05T13:15:30Z",
+							"rating": 5
 						},
 						{
 							"username": "Arnold",
+							"profile_pic": "",
 							"message": "Lit man! I'm a fan of Ronny J",
-							"rate": 5
+							"date": "2019-11-05T13:15:30Z",
+							"rating": 5
 						}
 					]
 				},
 				{
 					"id": "ronnyj-ortodox",
 					"category": "Drum Kit",
-					"release_data": "2019-11-05T13:15:30Z",
+					"release_date": "2019-11-05T13:15:30Z",
 					"name": "RonnyJ - Ortodox (Drum Kit)",
 					"images": {
 						"default": {
@@ -333,20 +361,24 @@
 					"reviews": [
 						{
 							"username": "Louis",
+							"profile_pic": "",
 							"message": "Awesome",
-							"rate": 5
+							"date": "2019-11-05T13:15:30Z",
+							"rating": 5
 						},
 						{
 							"username": "Arnold",
+							"profile_pic": "",
 							"message": "Lit man! I'm a fan of Ronny J",
-							"rate": 5
+							"date": "2019-11-05T13:15:30Z",
+							"rating": 5
 						}
 					]
 				},
 				{
 					"id": "ronnyj-ortodox",
 					"category": "Drum Kit",
-					"release_data": "2019-11-05T13:15:30Z",
+					"release_date": "2019-11-05T13:15:30Z",
 					"name": "RonnyJ - Ortodox (Drum Kit)",
 					"images": {
 						"default": {
@@ -375,20 +407,24 @@
 					"reviews": [
 						{
 							"username": "Louis",
+							"profile_pic": "",
 							"message": "Awesome",
-							"rate": 5
+							"date": "2019-11-05T13:15:30Z",
+							"rating": 5
 						},
 						{
 							"username": "Arnold",
+							"profile_pic": "",
 							"message": "Lit man! I'm a fan of Ronny J",
-							"rate": 5
+							"date": "2019-11-05T13:15:30Z",
+							"rating": 5
 						}
 					]
 				},
 				{
 					"id": "ronnyj-ortodox",
 					"category": "Drum Kit",
-					"release_data": "2019-11-05T13:15:30Z",
+					"release_date": "2019-11-05T13:15:30Z",
 					"name": "RonnyJ - Ortodox (Drum Kit)",
 					"images": {
 						"default": {
@@ -417,20 +453,24 @@
 					"reviews": [
 						{
 							"username": "Louis",
+							"profile_pic": "",
 							"message": "Awesome",
-							"rate": 5
+							"date": "2019-11-05T13:15:30Z",
+							"rating": 5
 						},
 						{
 							"username": "Arnold",
+							"profile_pic": "",
 							"message": "Lit man! I'm a fan of Ronny J",
-							"rate": 5
+							"date": "2019-11-05T13:15:30Z",
+							"rating": 5
 						}
 					]
 				},
 				{
 					"id": "ronnyj-ortodox",
 					"category": "Drum Kit",
-					"release_data": "2019-11-05T13:15:30Z",
+					"release_date": "2019-11-05T13:15:30Z",
 					"name": "RonnyJ - Ortodox (Drum Kit)",
 					"images": {
 						"default": {
@@ -459,20 +499,24 @@
 					"reviews": [
 						{
 							"username": "Louis",
+							"profile_pic": "",
 							"message": "Awesome",
-							"rate": 5
+							"date": "2019-11-05T13:15:30Z",
+							"rating": 5
 						},
 						{
 							"username": "Arnold",
+							"profile_pic": "",
 							"message": "Lit man! I'm a fan of Ronny J",
-							"rate": 5
+							"date": "2019-11-05T13:15:30Z",
+							"rating": 5
 						}
 					]
 				},
 				{
 					"id": "ronnyj-ortodox",
 					"category": "Drum Kit",
-					"release_data": "2019-11-05T13:15:30Z",
+					"release_date": "2019-11-05T13:15:30Z",
 					"name": "RonnyJ - Ortodox (Drum Kit)",
 					"images": {
 						"default": {
@@ -501,20 +545,24 @@
 					"reviews": [
 						{
 							"username": "Louis",
+							"profile_pic": "",
 							"message": "Awesome",
-							"rate": 5
+							"date": "2019-11-05T13:15:30Z",
+							"rating": 5
 						},
 						{
 							"username": "Arnold",
+							"profile_pic": "",
 							"message": "Lit man! I'm a fan of Ronny J",
-							"rate": 5
+							"date": "2019-11-05T13:15:30Z",
+							"rating": 5
 						}
 					]
 				},
 				{
 					"id": "ronnyj-ortodox",
 					"category": "Drum Kit",
-					"release_data": "2019-11-05T13:15:30Z",
+					"release_date": "2019-11-05T13:15:30Z",
 					"name": "RonnyJ - Ortodox (Drum Kit)",
 					"images": {
 						"default": {
@@ -543,20 +591,24 @@
 					"reviews": [
 						{
 							"username": "Louis",
+							"profile_pic": "",
 							"message": "Awesome",
-							"rate": 5
+							"date": "2019-11-05T13:15:30Z",
+							"rating": 5
 						},
 						{
 							"username": "Arnold",
+							"profile_pic": "",
 							"message": "Lit man! I'm a fan of Ronny J",
-							"rate": 5
+							"date": "2019-11-05T13:15:30Z",
+							"rating": 5
 						}
 					]
 				},
 				{
 					"id": "ronnyj-ortodox",
 					"category": "Drum Kit",
-					"release_data": "2019-11-05T13:15:30Z",
+					"release_date": "2019-11-05T13:15:30Z",
 					"name": "RonnyJ - Ortodox (Drum Kit)",
 					"images": {
 						"default": {
@@ -585,20 +637,24 @@
 					"reviews": [
 						{
 							"username": "Louis",
+							"profile_pic": "",
 							"message": "Awesome",
-							"rate": 5
+							"date": "2019-11-05T13:15:30Z",
+							"rating": 5
 						},
 						{
 							"username": "Arnold",
+							"profile_pic": "",
 							"message": "Lit man! I'm a fan of Ronny J",
-							"rate": 5
+							"date": "2019-11-05T13:15:30Z",
+							"rating": 5
 						}
 					]
 				},
 				{
 					"id": "ronnyj-ortodox",
 					"category": "Drum Kit",
-					"release_data": "2019-11-05T13:15:30Z",
+					"release_date": "2019-11-05T13:15:30Z",
 					"name": "RonnyJ - Ortodox (Drum Kit)",
 					"images": {
 						"default": {
@@ -627,20 +683,24 @@
 					"reviews": [
 						{
 							"username": "Louis",
+							"profile_pic": "",
 							"message": "Awesome",
-							"rate": 5
+							"date": "2019-11-05T13:15:30Z",
+							"rating": 5
 						},
 						{
 							"username": "Arnold",
+							"profile_pic": "",
 							"message": "Lit man! I'm a fan of Ronny J",
-							"rate": 5
+							"date": "2019-11-05T13:15:30Z",
+							"rating": 5
 						}
 					]
 				},
 				{
 					"id": "ronnyj-ortodox",
 					"category": "Drum Kit",
-					"release_data": "2019-11-05T13:15:30Z",
+					"release_date": "2019-11-05T13:15:30Z",
 					"name": "RonnyJ - Ortodox (Drum Kit)",
 					"images": {
 						"default": {
@@ -669,13 +729,17 @@
 					"reviews": [
 						{
 							"username": "Louis",
+							"profile_pic": "",
 							"message": "Awesome",
-							"rate": 5
+							"date": "2019-11-05T13:15:30Z",
+							"rating": 5
 						},
 						{
 							"username": "Arnold",
+							"profile_pic": "",
 							"message": "Lit man! I'm a fan of Ronny J",
-							"rate": 5
+							"date": "2019-11-05T13:15:30Z",
+							"rating": 5
 						}
 					]
 				}
