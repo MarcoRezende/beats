@@ -15,10 +15,10 @@
 		<input type="hidden" name="paged" value="1">
 		<input type="hidden" name="product_cat" value="vstexpansions">
 	</form>
-	<ul *ngIf="data.products.vst.drum" class="products-store-list">
-		<li *ngFor="let item of data.products.vst.drum" class="product-store-item">
+	<ul *ngIf="product" class="products-store-list">
+		<li *ngFor="let item of product" class="product-store-item">
 			<div class="product-item-wrapper">
-				<a href="products/shop">
+				<a [routerLink]="['/shop', item.id]">
 					<div class="product-store-image-container">
 						<!-- <div class="buy"><i class="fab fa-spotify"></i></div> -->
 						<img src={{item.images.default.medium}} alt="" class="this-product-store-image">
