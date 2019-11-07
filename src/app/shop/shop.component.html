@@ -7,15 +7,15 @@
 	</div>
 	<div class="shop-item">
 		<div class="shop-item-image">
-			<img id="product-image" onmousemove="zoomIn(event)" onmouseout="zoomOut()" src="https://wavsupply.net/wp-content/uploads/2019/09/heartbreak-hotel-art-600x401.jpg" alt="" class="item-image">
+			<img id="product-image" onmousemove="zoomIn(event)" onmouseout="zoomOut()" src={{product[0].images.shop.medium}} alt="" class="item-image">
 
 		</div>
 		<div class="shop-item-infos">
-			<h2>Metro Boomin - Want Some More N*gga (Drum Kit)</h2>
-			<span class="price">$25,00</span>
+			<h2> {{product[0].name}} </h2>
+			<span class="price">${{product[0].price}}</span>
 
 			<div class="extra-info">
-				<span id="category">Category: <span id="category-highlight">Drum Kit</span></span>
+				<span id="category">Category: <span id="category-highlight"> {{product[0].category}} </span></span>
 			</div>
 
 			<button class="btn btn-buy btn-slim"><a href="#">ADD TO CART</a></button>
@@ -27,17 +27,17 @@
 		<ngb-tab title="Description">
 			<ng-template ngbTabContent>
 				This <b>Item</b> contain:
-				<ul *ngIf="data.products.vst.drum" class="product-content">
-					<li *ngFor="let content of data.products.vst.drum[0].content" class="product-content-item"> {{content}} </li>
+				<ul *ngIf="product" class="product-content">
+					<li *ngFor="let content of product[0].content" class="product-content-item"> {{content}} </li>
 				</ul>
 			</ng-template>
 		</ngb-tab>
 		<ngb-tab title="Reviews">
 			<ng-template ngbTabContent>
-				<ul *ngIf="data.products.vst.drum" class="reviews-container">
-					<li *ngFor="let review of data.products.vst.drum[0].reviews" class="review">
+				<ul *ngIf="product[0].reviews" class="reviews-container">
+					<li *ngFor="let review of product[0].reviews" class="review">
 						<div class="user-profile-pic">
-							<img src="" alt="" class="profile-pic">
+							<img src={{review.profile_pic}} alt="" class="profile-pic">
 						</div>
 						<div class="user-review">
 							<div class="review-data">
