@@ -22,7 +22,7 @@ export class ProductsComponent implements OnInit {
   product: any;
 
   constructor(private route: ActivatedRoute) {
-    if (this.route.queryParams._value.catalog) { 
+    if (this.route.queryParams) { 
       this.route.queryParams.subscribe(values => {
         this.catalog = values.catalog
       });

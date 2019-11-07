@@ -18,7 +18,7 @@
 	<ul *ngIf="product" class="products-store-list">
 		<li *ngFor="let item of product" class="product-store-item">
 			<div class="product-item-wrapper">
-				<a [routerLink]="['/shop', item.id]">
+				<a [routerLink]="['/shop', item.id]" [queryParams]="{tag:catalog}">
 					<div class="product-store-image-container">
 						<!-- <div class="buy"><i class="fab fa-spotify"></i></div> -->
 						<img src={{item.images.default.medium}} alt="" class="this-product-store-image">
