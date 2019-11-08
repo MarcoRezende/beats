@@ -36,18 +36,20 @@
 			<ng-template ngbTabContent>
 				<ul *ngIf="product[0].reviews" class="reviews-container">
 					<li *ngFor="let review of product[0].reviews" class="review">
-						<div class="user-profile-pic">
-							<img src={{review.profile_pic}} alt="" class="profile-pic">
+						<div class="user-data">
+							<div class="user-profile-pic">
+								<img src={{review.profile_pic}} alt="" class="profile-pic">
+							</div>
+							<div class="user-review">
+								<div class="review-data">
+									<span class="username"> {{review.username}} </span>
+									<span class="review-date"> {{review.date}} </span>
+								</div>
+							</div>
 						</div>
-						<div class="user-review">
-							<div class="review-data">
-								<span class="username"> {{review.username}} </span>
-								<span class="review-rating"> {{review.rating}} </span>
-								<span class="review-date"> {{review.date}} </span>
-							</div>
-							<div class="review-message">
-								<p> {{review.message}} </p>
-							</div>
+						<div class="review-message">
+							<span class="review-rating"> {{review.rating}} </span>
+							<p class="user-message"> {{review.message}} </p>
 						</div>
 					</li>
 				</ul>
