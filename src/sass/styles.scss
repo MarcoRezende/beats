@@ -99,9 +99,8 @@ header .not-home-nav {
 	transition: all .2s ease;
 }
 
-.logo {
-    font-family: "Apex Mk3";
-    font-size: 18pt;
+.dropdown-toggle::after {
+    content: none;
 }
 
 .hero-image {
