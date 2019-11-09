@@ -40,9 +40,17 @@ export class ShopComponent implements OnInit {
       }
     }
   }
+  
+  formatDate(date) {
+    let reviewDate = new Date(date);
+    reviewDate = `${reviewDate.toLocaleString('default', { weekday: "short"})}, ${reviewDate.toLocaleString('default', { month: 'short' })} ${reviewDate.toLocaleString('default', { year: "numeric" })}`;
+    console.log("Dia", reviewDate)
+    return reviewDate
+  }
 
   ngOnInit() {
    	this.home = true;
+
 
    	var myToggle = function(element, class0, class1) {
       if ( !element.classList.contains(class1) ) {

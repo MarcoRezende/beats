@@ -20,6 +20,7 @@ export class ProductsComponent implements OnInit {
     {name:'midi-kit',prod:'midi'}
   ];
   product: any;
+  category: string; 
 
   constructor(private route: ActivatedRoute) {
     if (this.route.queryParams) { 
@@ -34,6 +35,8 @@ export class ProductsComponent implements OnInit {
         }
       }
     }
+  this.category = this.product[0].category;
+  console.log(this.category)
   }
 
 
