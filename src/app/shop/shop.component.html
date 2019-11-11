@@ -7,7 +7,7 @@
 	</div>
 	<div class="shop-item">
 		<div class="shop-item-image">
-			<img id="product-image" onmousemove="zoomIn(event)" onmouseout="zoomOut()" src={{product[0].images.shop.medium}} alt="" class="item-image">
+			<img id="product-image" (mousemove)="zoomIn($event)" (mouseout)="zoomOut()" src={{product[0].images.shop.medium}} alt="" class="item-image">
 
 		</div>
 		<div class="shop-item-infos">

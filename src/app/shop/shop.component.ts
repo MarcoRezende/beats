@@ -60,11 +60,30 @@ export class ShopComponent implements OnInit {
     }
   }
 
+  zoomIn(event) {
+    let img = document.getElementById("product-image");
+    let posX = event.offsetX ? (event.offsetX) : event.pageX - img.offsetLeft;
+    let posY = event.offsetY ? (event.offsetY) : event.pageY - img.offsetTop;
+
+    console.log(posY, posX)
+      
+    img.style.transformOrigin = `${posX}px ${posY}px`;
+    img.style.transform = `scale(4)`;
+    img.style.transition = "inherit";
+  }
+
+  zoomOut() {
+    let img = document.getElementById("product-image");
+      
+    img.style.transform = `scale(1)`;
+    img.style.transition= "transform .3s ease";
+  }
+
   ngOnInit() {
    	this.home = true;
 
 
-   	var myToggle = function(element, class0, class1) {
+   	let myToggle = function(element, class0, class1) {
       if ( !element.classList.contains(class1) ) {
       	element.classList.remove(class0);
       	element.classList.add(class1);
