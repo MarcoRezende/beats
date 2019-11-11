@@ -32,8 +32,7 @@ export class ShopComponent implements OnInit {
       // this.query = this.data.products.drum.map(item => item.id);
       for (let i = 0; i < this.query.length; i++) {
         if (this.catalog === this.query[i].name) {
-          this.product = this.data.products[this.query[i].prod].filter(product => product.id === this.productID);
-          console.log(this.product)
+          this.product = this.data.products[this.query[i].prod].filter(product => product.id === this.productID);          
         } else {
           // redirecionar para 404
         }
@@ -45,16 +44,14 @@ export class ShopComponent implements OnInit {
     let reviewDate = new Date(date);
     let weekday = reviewDate.toLocaleString('default', { weekday: "short"});
     let month = reviewDate.toLocaleString('default', { month: "short"});
-    let year = reviewDate.toLocaleString('default', { year: "numeric"});
-    console.log("Dia", reviewDate)
+    let year = reviewDate.toLocaleString('default', { year: "numeric"});    
     return `${weekday}, ${month} ${year}` 
   }
 
   createRating(times = 0, element) {
     let elem = document.getElementById(element)
     let icon = document.createElement('i')
-    icon.className = "fas fa-star"
-    console.log("a", elem, element, icon)
+    icon.className = "fas fa-star"    
     for (let i = 0; i <= times; i++) {
       elem.append(icon)
     }
@@ -64,19 +61,18 @@ export class ShopComponent implements OnInit {
     let img = document.getElementById("product-image");
     let posX = event.offsetX ? (event.offsetX) : event.pageX - img.offsetLeft;
     let posY = event.offsetY ? (event.offsetY) : event.pageY - img.offsetTop;
-
-    console.log(posY, posX)
+    
       
     img.style.transformOrigin = `${posX}px ${posY}px`;
-    img.style.transform = `scale(4)`;
+    img.style.transform = "scale(4)";
     img.style.transition = "inherit";
   }
 
   zoomOut() {
     let img = document.getElementById("product-image");
       
-    img.style.transform = `scale(1)`;
-    img.style.transition= "transform .3s ease";
+    img.style.transform = "scale(1)";
+    img.style.transition = "transform .3s ease";
   }
 
   ngOnInit() {
