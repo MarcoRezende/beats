@@ -117,10 +117,10 @@ header .not-home-nav {
     text-transform: uppercase;
 }
 
-
 .hero-image, .hero-image:before{
     background: 50% 50% / cover;
 }
+
 .hero-image::before{
     bottom: 0;
     content: "";
@@ -365,7 +365,6 @@ header .not-home-nav {
 	color: #000;
 	clear: both;
 }
-
 
 .product-store-infos-container span, h4 {
 	font-size: 12pt;

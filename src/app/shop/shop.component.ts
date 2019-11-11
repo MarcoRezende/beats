@@ -43,9 +43,21 @@ export class ShopComponent implements OnInit {
   
   formatDate(date) {
     let reviewDate = new Date(date);
-    reviewDate = `${reviewDate.toLocaleString('default', { weekday: "short"})}, ${reviewDate.toLocaleString('default', { month: 'short' })} ${reviewDate.toLocaleString('default', { year: "numeric" })}`;
+    let weekday = reviewDate.toLocaleString('default', { weekday: "short"});
+    let month = reviewDate.toLocaleString('default', { month: "short"});
+    let year = reviewDate.toLocaleString('default', { year: "numeric"});
     console.log("Dia", reviewDate)
-    return reviewDate
+    return `${weekday}, ${month} ${year}` 
+  }
+
+  createRating(times = 0, element) {
+    let elem = document.getElementById(element)
+    let icon = document.createElement('i')
+    icon.className = "fas fa-star"
+    console.log("a", elem, element, icon)
+    for (let i = 0; i <= times; i++) {
+      elem.append(icon)
+    }
   }
 
   ngOnInit() {

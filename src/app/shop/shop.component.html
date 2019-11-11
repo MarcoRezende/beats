@@ -48,7 +48,7 @@
 							</div>
 						</div>
 						<div class="review-message">
-							<span class="review-rating"> {{review.rating}} </span>
+							<span class="review-rating"  id={{review.id}}> {{createRating(review.rating, review.id)}} </span>
 							<p class="user-message"> {{review.message}} </p>
 						</div>
 					</li>
