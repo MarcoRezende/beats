@@ -25,7 +25,6 @@ export class ProductsComponent implements OnInit {
   isQuery: boolean = false;
 
   constructor(private route: ActivatedRoute, private router: Router) {
-    if (this.route.queryParams._value) { 
       this.route.queryParams.subscribe(values => {
         this.catalog = values.catalog
       });
@@ -38,8 +37,7 @@ export class ProductsComponent implements OnInit {
       if (!this.isQuery) {
         this.router.navigate(['/']);
       }
-    }
-  this.category = this.product[0].category;
+      this.category = this.product[0].category;
   }
 
 

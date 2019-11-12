@@ -27,7 +27,6 @@ export class ShopComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private router: Router) {
   	this.productID = this.route.snapshot.params.id
-    if (this.route.queryParams._value) { 
       this.route.queryParams.subscribe(values => {
         this.catalog = values.tag;
       });
@@ -45,7 +44,6 @@ export class ShopComponent implements OnInit {
       if (!this.isValid) {
         this.router.navigate(['/']);
       }
-    }
   }
   
   formatDate(date) {
