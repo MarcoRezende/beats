@@ -4,4 +4,8 @@
 
 @function color($color-name) {
 	@return map-get($colors, $color-name)
+};
+
+@function rpsn($rpsn-size) {
+	@return map-get($rpsn, $rpsn-size)
 }

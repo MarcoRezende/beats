@@ -573,3 +573,7 @@ li.review::after {
     width: 100%;
     display: block;
 }
+
+@mixin small {
+	@media (min-width: rpsn(small))
+}
