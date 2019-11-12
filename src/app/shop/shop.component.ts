@@ -22,7 +22,8 @@ export class ShopComponent implements OnInit {
   ];
   product: any;
   productID: string;
-  isQuery: boolean = false;
+  isValid: boolean = false;
+  ID: boolean = false;
 
   constructor(private route: ActivatedRoute, private router: Router) {
   	this.productID = this.route.snapshot.params.id
@@ -31,14 +32,17 @@ export class ShopComponent implements OnInit {
         this.catalog = values.tag;
       });
 
-      // this.query = this.data.products.drum.map(item => item.id);
       for (let i = 0; i < this.query.length; i++) {
         if (this.catalog === this.query[i].name) {
-          this.product = this.data.products[this.query[i].prod].filter(product => product.id === this.productID);
-          this.isQuery = true;          
+          for (let c = 0; c < this.data.products[this.query[i].prod].length; c++) {
+            if (this.productID === this.data.products[this.query[i].prod][c].id) {
+              this.product = this.data.products[this.query[i].prod].filter(product => product.id === this.productID);
+              this.isValid = true;          
+            }
+          }
         }
       }
-      if (!this.isQuery) {
+      if (!this.isValid) {
         this.router.navigate(['/']);
       }
     }
