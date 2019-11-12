@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import sampleData from '../../assets/data.json';
 export default sampleData;
 
@@ -21,21 +22,24 @@ export class ShopComponent implements OnInit {
   ];
   product: any;
   productID: string;
+  isQuery: boolean = false;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private router: Router) {
   	this.productID = this.route.snapshot.params.id
-    if (this.route.queryParams) { 
+    if (this.route.queryParams._value) { 
       this.route.queryParams.subscribe(values => {
-        this.catalog = values.tag
+        this.catalog = values.tag;
       });
 
       // this.query = this.data.products.drum.map(item => item.id);
       for (let i = 0; i < this.query.length; i++) {
         if (this.catalog === this.query[i].name) {
-          this.product = this.data.products[this.query[i].prod].filter(product => product.id === this.productID);          
-        } else {
-          // redirecionar para 404
+          this.product = this.data.products[this.query[i].prod].filter(product => product.id === this.productID);
+          this.isQuery = true;          
         }
+      }
+      if (!this.isQuery) {
+        this.router.navigate(['/']);
       }
     }
   }

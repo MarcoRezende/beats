@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import sampleData from '../../assets/data.json';
 export default sampleData;
 
@@ -20,23 +21,25 @@ export class ProductsComponent implements OnInit {
     {name:'midi-kit',prod:'midi'}
   ];
   product: any;
-  category: string; 
+  category: string;
+  isQuery: boolean = false;
 
-  constructor(private route: ActivatedRoute) {
-    if (this.route.queryParams) { 
+  constructor(private route: ActivatedRoute, private router: Router) {
+    if (this.route.queryParams._value) { 
       this.route.queryParams.subscribe(values => {
         this.catalog = values.catalog
       });
       for (let i = 0; i < this.query.length; i++) {
         if (this.catalog === this.query[i].name) {
           this.product = this.data.products[this.query[i].prod];
-        } else {
-          // redirecionar para 404
+          this.isQuery = true;
         }
+      }
+      if (!this.isQuery) {
+        this.router.navigate(['/']);
       }
     }
   this.category = this.product[0].category;
-  console.log(this.category)
   }
 
 
