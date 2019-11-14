@@ -142,6 +142,10 @@ header .not-home-nav {
     z-index: -9999;
     min-height: 100vh;
     overflow: hidden;
+
+    @include small {
+		background-image: url("../assets/imgs//computer-background.png");
+	}
 }
 
 .hero-image * { 
