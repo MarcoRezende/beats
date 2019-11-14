@@ -12,10 +12,10 @@
             PRODUCTS
           </a>
           <div ngbDropdownMenu aria-labelledby="navbarDropdown2" class="dropdown-menu dropdown-menu-right">
-            <a class="dropdown-item" href="#" (click)="$event.preventDefault()" routerLink="products/vst-expansion">VST Expansion</a>
-            <a class="dropdown-item" href="#" (click)="$event.preventDefault()" routerLink="products/drum-kits">Drum Kits</a>
-            <a class="dropdown-item" href="#" (click)="$event.preventDefault()" routerLink="products/midi-kits">MIDI Kits</a>
-            <a class="dropdown-item" href="#" (click)="$event.preventDefault()" routerLink="products/loops">Loop/Sample Packs</a>
+            <a class="dropdown-item" href="#" (click)="$event.preventDefault()" routerLink="/products" [queryParams]="{catalog:'vst-expansion'}">VST Expansion</a>
+            <a class="dropdown-item" href="#" (click)="$event.preventDefault()" routerLink="/products" [queryParams]="{catalog:'drum-kit'}">Drum Kit</a>
+            <a class="dropdown-item" href="#" (click)="$event.preventDefault()" routerLink="/products" [queryParams]="{catalog:'loops'}">MIDI Kit</a>
+            <a class="dropdown-item" href="#" (click)="$event.preventDefault()" routerLink="/products" [queryParams]="{catalog:'midi-kit'}">Loops & Samples</a>
           </div>
         </li>
 
