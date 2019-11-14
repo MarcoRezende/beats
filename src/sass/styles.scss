@@ -6,6 +6,12 @@
   './variables',
   './mixins';
 
+@mixin small {
+	@media (min-width: #{rpsn(small)}) {
+		@content;
+	}
+}
+
 *, *before, *:after {
 	box-sizing: border-box;
 }
@@ -174,7 +180,8 @@ header .not-home-nav {
 .home-container h2 {
 	text-align: center;
 	color: #000;
-	margin: 10px auto;
+	margin: 1.5em auto;
+	font-weight: bolder;
 }
 
 .merchandise-list {
@@ -184,6 +191,14 @@ header .not-home-nav {
 	list-style-type: none;
 	padding: 0;
 	text-align: center;
+
+	@include small {
+		display: grid;
+		grid-template-columns: repeat(2, auto);
+		grid-template-rows: repeat(2, auto);
+		grid-gap: 10px;
+		margin: 0 auto 3em;
+	}
 }
 
 .merchandise-item {
@@ -197,10 +212,18 @@ header .not-home-nav {
 	border-radius: 10em;
 	padding: 5px;
 	transition: box-shadow .4s ease !important;
-}
 
-.merchandise-item:last-child {
-	margin: 20px 0;
+	@include small {
+		padding: 0;
+		border-radius: inherit;
+		margin: 0;
+
+		&:hover .merchandise-image {
+			transition: transform .5s ease;
+			transform: scale(1.1);
+			filter: blur(1px);
+		}
+	}
 }
 
 .merchandise-item:hover {
@@ -215,6 +238,42 @@ header .not-home-nav {
 	width: 110px;
 	height: 110px;
 	border-radius: 50%;
+
+	@include small {
+		display: block;
+		width: 100%;
+		height: 100%;
+		border-radius: inherit;
+	}
+}
+
+.merchandise-image-overlay {
+	width: 100%;
+	height: 100%;
+}
+
+.merchandise-image-overlay:before {
+    position: absolute;
+    top: 20px;
+    right: 60px;
+    bottom: 20px;
+    left: 60px;
+    border-width: 1px;
+    border-style: solid;
+    content: '';
+    transform: scale(1.1);
+    opacity: 0;
+    z-index: 3;
+    transition: all .5s ease;
+}
+
+.merchandise-image-overlay:hover:before {
+	opacity: 1;
+    transition: all .5s ease;
+    -webkit-transform: scale(1.0);
+    -ms-transform: scale(1.0);
+    transform: scale(1.0);
+    z-index: 3;
 }
 
 .merchandise-image-container img {
@@ -239,6 +298,12 @@ header .not-home-nav {
 	width: calc(98% - 110px);
 	height: 100%;
 	/*vertical-align: middle;*/
+
+	@include small {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
 }
 
 .merchandise-type p {
@@ -247,13 +312,18 @@ header .not-home-nav {
 	padding: 0 10px;
 	display: block;
 	position: absolute;
-	bottom: 46%;
+	bottom: 50%;
 	right: 55%;
 	transform: translate(50%, 50%);
 	font-size: 14pt;
 	text-align: center;
 	margin: 0 auto;
 	font-weight: bolder;
+
+	@include small {
+		right: 50%;
+		color: #fff;
+	}
 }
 
 /* products page */
@@ -572,8 +642,4 @@ li.review::after {
 	text-align: left;
     width: 100%;
     display: block;
-}
-
-@mixin small {
-	@media (min-width: rpsn(small))
 }
