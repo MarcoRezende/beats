@@ -12,6 +12,12 @@
 	}
 }
 
+@mixin medium {
+	@media (min-width: #{rpsn(medium)}) {
+		@content;
+	}
+}
+
 *, *before, *:after {
 	box-sizing: border-box;
 }
@@ -191,17 +197,22 @@ header .not-home-nav {
 .merchandise-list {
 	width: 100%;
 	display: block;
-	margin:  0 auto;
+	margin:  0 auto 3em;
 	list-style-type: none;
-	padding: 0;
+	padding: 0 30px;
 	text-align: center;
 
 	@include small {
+		padding: 0;
 		display: grid;
 		grid-template-columns: repeat(2, auto);
 		grid-template-rows: repeat(2, auto);
 		grid-gap: 10px;
-		margin: 0 auto 3em;
+	}
+
+	@include medium {
+		grid-template-columns: repeat(4, auto);
+		grid-template-rows: repeat(4, auto);
 	}
 }
 
@@ -213,13 +224,9 @@ header .not-home-nav {
 	box-shadow: 0 5px 15px 0 rgba(0,0,0,.4);
 	margin: 20px 0 0;
 	overflow: hidden;
-	border-radius: 10em;
-	padding: 5px;
 	transition: box-shadow .4s ease !important;
 
 	@include small {
-		padding: 0;
-		border-radius: inherit;
 		margin: 0;
 
 		&:hover .merchandise-image {
@@ -236,19 +243,12 @@ header .not-home-nav {
 }
 
 .merchandise-image-container {
-	display: inline-block;
+	display: block;
+	width: 100%;
+	height: 100%;
+	border-radius: inherit;
 	float: left;
 	overflow: hidden;
-	width: 110px;
-	height: 110px;
-	border-radius: 50%;
-
-	@include small {
-		display: block;
-		width: 100%;
-		height: 100%;
-		border-radius: inherit;
-	}
 }
 
 .merchandise-image-overlay {
@@ -259,16 +259,20 @@ header .not-home-nav {
 .merchandise-image-overlay:before {
     position: absolute;
     top: 20px;
-    right: 60px;
+    right: 30px;
     bottom: 20px;
-    left: 60px;
-    border-width: 1px;
-    border-style: solid;
+    left: 30px;
+    border: 1px solid rgba(255,255,255,.5);
     content: '';
-    transform: scale(1.1);
+    transform: scale(1.05);
     opacity: 0;
     z-index: 3;
     transition: all .5s ease;
+
+    @include medium {
+    	right: 20px;
+    	left: 20px;
+    }
 }
 
 .merchandise-image-overlay:hover:before {
@@ -297,37 +301,26 @@ header .not-home-nav {
 }
 
 .merchandise-type {
-	display: inline-block;
-	position: relative;
-	width: calc(98% - 110px);
+	display: block;
+	width: 100%;
 	height: 100%;
+	position: relative;
 	/*vertical-align: middle;*/
-
-	@include small {
-		display: block;
-		width: 100%;
-		height: 100%;
-	}
 }
 
 .merchandise-type p {
-	color: #000;
+	color: #fff;
 	width: 100%;
-	padding: 0 10px;
+	padding: 0 30px;
 	display: block;
 	position: absolute;
 	bottom: 50%;
-	right: 55%;
+	right: 50%;
 	transform: translate(50%, 50%);
 	font-size: 14pt;
 	text-align: center;
 	margin: 0 auto;
 	font-weight: bolder;
-
-	@include small {
-		right: 50%;
-		color: #fff;
-	}
 }
 
 /* products page */
