@@ -18,6 +18,12 @@
 	}
 }
 
+@mixin small-medium {
+	@media (min-width: #{rpsn(small-medium)}) {
+		@content;
+	}
+}
+
 *, *before, *:after {
 	box-sizing: border-box;
 }
@@ -374,9 +380,14 @@ header .not-home-nav {
 	text-align: center;
 
 	@include small {
+		margin: 0;
 		display: grid;
 		grid-template-columns: repeat(2, auto);
 		grid-gap: 10px;
+	}
+
+	@include small-medium {
+		grid-template-columns: repeat(4, auto);
 	}
 }
 
