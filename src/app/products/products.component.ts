@@ -25,8 +25,9 @@ export class ProductsComponent implements OnInit {
   isQuery: boolean = false;
 
   constructor(private route: ActivatedRoute, private router: Router) {
+      this.router.routeReuseStrategy.shouldReuseRoute = () => false;
       this.route.queryParams.subscribe(values => {
-        this.catalog = values.catalog
+        this.catalog = values.catalog;
       });
       for (let i = 0; i < this.query.length; i++) {
         if (this.catalog === this.query[i].name) {
