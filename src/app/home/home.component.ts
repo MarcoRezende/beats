@@ -23,7 +23,6 @@ export class HomeComponent implements OnInit {
    	if (this.home) {
 	   	let header = document.getElementsByTagName('header')[0];
 	   	let nav = document.getElementsByTagName('nav')[0];
-	   	console.log(nav)	
 	   	myToggle(header, 'header-home', 'header-not-home');
 	   	myToggle(nav, 'home-nav', 'not-home-nav');
    	}
