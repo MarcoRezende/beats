@@ -492,10 +492,10 @@ header .not-home-nav {
 	}
 }
 
-.shop-container h2 {
+.shop-container > h2 {
 	text-align: center;
 	color: #000;
-	margin: 10px auto;
+	margin: 25px auto;
 }
 
 .shop-item {
@@ -513,7 +513,6 @@ header .not-home-nav {
 	@include small-medium {
 		display: inline-block;
 		width: 50%;
-		padding: 0 10px;
 		vertical-align: top;
 	}
 }
@@ -539,7 +538,7 @@ header .not-home-nav {
 		width: 50%;
 		display: inline-block;
 		vertical-align: top;
-		padding: 0 10px;
+		padding: 0 0 0 25px;
 		text-align: left;
 
 		& .btn-slim {
@@ -550,6 +549,8 @@ header .not-home-nav {
 
 .shop-item-infos .product-name {
 	font-size: 18pt;
+	text-align: center;
+	margin: 10px auto;
 
 	@include small-medium {
 		margin: 0;
@@ -612,7 +613,7 @@ ul.nav.nav-pills.justify-content-start::after {
     width: 100%;
     bottom: 0;
     z-index: -1;
-    border-bottom: 2px solid rgba(211, 206, 210, .5);
+    border-bottom: 1px solid rgba(211, 206, 210, .5);
 }
 
 .nav-pills .nav-item {
@@ -632,7 +633,13 @@ ul.nav.nav-pills.justify-content-start::after {
 }
 
 .tab-content {
-    padding: 10px 0;
+    padding: 10px;
+
+
+    @include small-medium {
+    	padding: 10px 0;
+    	font-size: 10pt;
+    }
 }
 
 .product-content {
@@ -660,7 +667,7 @@ li.review::after {
     content: " ";
     position: absolute;
     left: 0;
-    border-bottom: 2px solid rgba(211, 206, 210, .5);
+    border-bottom: 1px solid rgba(211, 206, 210, .5);
     width: 100%;
 
     @include small-medium {
@@ -725,5 +732,9 @@ li.review::after {
 	text-align: left;
     width: 100%;
     display: block;
-    margin: 1rem;
+    margin: 1rem 0;
+    
+    @include small-medium {
+    	font-size: 10pt;
+    }
 }
