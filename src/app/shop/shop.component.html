@@ -7,11 +7,11 @@
 	</div>
 	<div class="shop-item">
 		<div class="shop-item-image">
-			<img id="product-image" (mousemove)="zoomIn($event)" (mouseout)="zoomOut()" src="{{'../../assets/imgs/products/' + product[0].id + '-600x401.jpg'}}" alt="" class="item-image">
+			<img id="product-image" (mousemove)="zoomIn($event)" (mouseout)="zoomOut()" src="{{'../../assets/imgs/products/' + product[0].id + '-600x400.png'}}" alt="" class="item-image">
 
 		</div>
 		<div class="shop-item-infos">
-			<h2> {{product[0].name}} </h2>
+			<h2 class="product-name"> {{product[0].name}} </h2>
 			<span class="price">${{product[0].price}}</span>
 
 			<div class="extra-info">

@@ -36,10 +36,13 @@ gulp.task("minifyProductImg", function () {
 gulp.task("resizeProductImg", function () {
   gulp.src("./src/assets/imgs/products/*.{jpg,png}")
   	// .pipe(changed("./src/assets/imgs/products"))
-    .pipe(imageResize({ width: 600, height : 401, crop : true }))
-    .pipe(rename(function (path) { path.basename += "-600x401"; }))
+    .pipe(imageResize({ width: 600, height : 600, crop : true }))
+    .pipe(imagemin())
+    .pipe(gulp.dest("./src/assets/imgs/products"))
+    .pipe(imageResize({ width: 600, height : 420, crop : true }))
+    .pipe(rename(function (path) { path.basename += "-600x420"; }))
   	.pipe(imagemin())
-    .pipe(gulp.dest("./src/assets/imgs/products"));
+    .pipe(gulp.dest("./src/assets/imgs/products"))
 });
  
 gulp.task('watch', function () {
