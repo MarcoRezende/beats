@@ -354,7 +354,7 @@ header .not-home-nav {
 	line-height: 15px;
 	margin: 30px auto;
 	text-align: center;
-	border-bottom: 1px solid #d3ced2;
+	border-bottom: 1px solid rgb(65, 58, 64);
 	padding-bottom: 10px;
 	text-transform: uppercase;
 }
@@ -613,7 +613,7 @@ ul.nav.nav-pills.justify-content-start::after {
     width: 100%;
     bottom: 0;
     z-index: -1;
-    border-bottom: 1px solid rgba(211, 206, 210, .5);
+    border-bottom: 1px solid rgb(65, 58, 64);
 }
 
 .nav-pills .nav-item {
@@ -667,7 +667,7 @@ li.review::after {
     content: " ";
     position: absolute;
     left: 0;
-    border-bottom: 1px solid rgba(211, 206, 210, .5);
+    border-bottom: 1px solid rgb(65, 58, 64);
     width: 100%;
 
     @include small-medium {
