@@ -21,13 +21,13 @@
 				<a [routerLink]="['/shop', item.id]" [queryParams]="{tag:catalog}">
 					<div class="product-store-image-container">
 						<!-- <div class="buy"><i class="fab fa-spotify"></i></div> -->
-						<img src="{{'../../assets/imgs/products/' + item.id + '.png'}}" alt="" class="this-product-store-image">
+						<img src="{{'../../assets/imgs/products/' + item.id + '-art-600x600.png'}}" alt="" class="this-product-store-image">
 					</div>
 				</a>
 				<div class="product-store-infos-container">
 					<h4>{{item.name}}</h4>
 					<span>${{item.price}}</span>
-					<button class="btn btn-buy">ADD TO CART</button>
+					<button class="btn" (click)="addToCart(item)" [ngClass]="item.added === undefined || item.added === false ? 'btn-add' : 'btn-added'">ADD TO CART</button>
 				</div>
 			</div>
 		</li>

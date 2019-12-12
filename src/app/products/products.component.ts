@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import sampleData from '../../assets/data.json';
+import { ShareService } from '../share.service';
 export default sampleData;
 
 @Component({
@@ -24,7 +25,7 @@ export class ProductsComponent implements OnInit {
   category: string;
   isQuery: boolean = false;
 
-  constructor(private route: ActivatedRoute, private router: Router) {
+  constructor(private route: ActivatedRoute, private router: Router, private _shareService: ShareService) {
       this.router.routeReuseStrategy.shouldReuseRoute = () => false;
       this.route.queryParams.subscribe(values => {
         this.catalog = values.catalog;
@@ -41,6 +42,10 @@ export class ProductsComponent implements OnInit {
       this.category = this.product[0].category;
   }
 
+  addToCart(product) {
+    this._shareService.getProduct(product)
+    this._shareService.getAllProduct(product)
+  }
 
   ngOnInit() {
     var myToggle = function(element, class0, class1) {

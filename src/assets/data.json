@@ -3,7 +3,40 @@
 		"vst": {
 			"omnisphere": [
 				{
-					"bank_name": "Follow God"
+					"id": "ronnyj-ortodox",
+					"category": "Drum Kit",
+					"release_date": "2019-11-05T13:15:30Z",
+					"name": "RonnyJ - Ortodox (Drum Kit)",
+					"by": "RonnyJ",
+					"price": 25,
+					"content": [
+						"5 808s",
+						"4 Kicks",
+						"5 Snares",
+						"6 Claps",
+						"12 Hi Hats",
+						"9 Percs",
+						"3 Open Hats",
+						"8 Loops"
+					],
+					"reviews": [
+						{
+							"id":"louis_01",
+							"username": "Louis",
+							"profile_pic": "https://loremflickr.com/320/240/dog",
+							"message": "Awesome",
+							"date": "2019-11-05T13:15:30Z",
+							"rating": 5
+						},
+						{
+							"id":"arnold_01",
+							"username": "Arnold",
+							"profile_pic": "https://loremflickr.com/320/240/cat",
+							"message": "Lit man! I'm a fan of RonnyJ",
+							"date": "2019-11-05T13:15:30Z",
+							"rating": 5
+						}
+					]
 				}
 			]
 		},
@@ -13,7 +46,7 @@
 				"category": "Drum Kit",
 				"release_date": "2019-11-05T13:15:30Z",
 				"name": "RonnyJ - Ortodox (Drum Kit)",
-				"by": "Ronny J",
+				"by": "RonnyJ",
 				"price": 25,
 				"content": [
 					"5 808s",
@@ -38,18 +71,18 @@
 						"id":"arnold_01",
 						"username": "Arnold",
 						"profile_pic": "https://loremflickr.com/320/240/cat",
-						"message": "Lit man! I'm a fan of Ronny J",
+						"message": "Lit man! I'm a fan of RonnyJ",
 						"date": "2019-11-05T13:15:30Z",
 						"rating": 5
 					}
 				]
 			},
 			{
-				"id": "ronnyj-ortodox",
+				"id": "bitt-pepe",
 				"category": "Drum Kit",
 				"release_date": "2019-11-05T13:15:30Z",
-				"name": "RonnyJ - Ortodox (Drum Kit)",
-				"by": "Ronny J",
+				"name": "Bitt - Pepe (Drum Kit)",
+				"by": "Bitt",
 				"price": 25,
 				"content": [
 					"5 808s",
@@ -74,18 +107,18 @@
 						"id":"arnold_01",
 						"username": "Arnold",
 						"profile_pic": "https://loremflickr.com/320/240/cat",
-						"message": "Lit man! I'm a fan of Ronny J",
+						"message": "Lit man! I'm a fan of RonnyJ",
 						"date": "2019-11-05T13:15:30Z",
 						"rating": 5
 					}
 				]
 			},
 			{
-				"id": "ronnyj-ortodox",
+				"id": "guts-two-times",
 				"category": "Drum Kit",
 				"release_date": "2019-11-05T13:15:30Z",
-				"name": "RonnyJ - Ortodox (Drum Kit)",
-				"by": "Ronny J",
+				"name": "Guts - Two Times (Drum Kit)",
+				"by": "Guts",
 				"price": 25,
 				"content": [
 					"5 808s",
@@ -110,18 +143,18 @@
 						"id":"arnold_01",
 						"username": "Arnold",
 						"profile_pic": "https://loremflickr.com/320/240/cat",
-						"message": "Lit man! I'm a fan of Ronny J",
+						"message": "Lit man! I'm a fan of Guts",
 						"date": "2019-11-05T13:15:30Z",
 						"rating": 5
 					}
 				]
 			},
 			{
-				"id": "ronnyj-ortodox",
+				"id": "harykun-sweet-home",
 				"category": "Drum Kit",
 				"release_date": "2019-11-05T13:15:30Z",
-				"name": "RonnyJ - Ortodox (Drum Kit)",
-				"by": "Ronny J",
+				"name": "HaryKun - Sweet Home (Drum Kit)",
+				"by": "HaryKun",
 				"price": 25,
 				"content": [
 					"5 808s",
@@ -146,18 +179,18 @@
 						"id":"arnold_01",
 						"username": "Arnold",
 						"profile_pic": "https://loremflickr.com/320/240/cat",
-						"message": "Lit man! I'm a fan of Ronny J",
+						"message": "Lit man! I'm a fan of HaryKun",
 						"date": "2019-11-05T13:15:30Z",
 						"rating": 5
 					}
 				]
 			},
 			{
-				"id": "ronnyj-ortodox",
+				"id": "malli-cursed",
 				"category": "Drum Kit",
 				"release_date": "2019-11-05T13:15:30Z",
-				"name": "RonnyJ - Ortodox (Drum Kit)",
-				"by": "Ronny J",
+				"name": "Malli - Cursed (Drum Kit)",
+				"by": "Malli",
 				"price": 25,
 				"content": [
 					"5 808s",
@@ -182,18 +215,18 @@
 						"id":"arnold_01",
 						"username": "Arnold",
 						"profile_pic": "https://loremflickr.com/320/240/cat",
-						"message": "Lit man! I'm a fan of Ronny J",
+						"message": "Lit man! I'm a fan of Malli",
 						"date": "2019-11-05T13:15:30Z",
 						"rating": 5
 					}
 				]
 			},
 			{
-				"id": "ronnyj-ortodox",
+				"id": "metro-boomin-famous",
 				"category": "Drum Kit",
 				"release_date": "2019-11-05T13:15:30Z",
-				"name": "RonnyJ - Ortodox (Drum Kit)",
-				"by": "Ronny J",
+				"name": "Metro Boomin - Famous (Drum Kit)",
+				"by": "Metro Boomin",
 				"price": 25,
 				"content": [
 					"5 808s",
@@ -218,18 +251,18 @@
 						"id":"arnold_01",
 						"username": "Arnold",
 						"profile_pic": "https://loremflickr.com/320/240/cat",
-						"message": "Lit man! I'm a fan of Ronny J",
+						"message": "Lit man! I'm a fan of Metro Boomin",
 						"date": "2019-11-05T13:15:30Z",
 						"rating": 5
 					}
 				]
 			},
 			{
-				"id": "ronnyj-ortodox",
+				"id": "kio-masterpiece",
 				"category": "Drum Kit",
 				"release_date": "2019-11-05T13:15:30Z",
-				"name": "RonnyJ - Ortodox (Drum Kit)",
-				"by": "Ronny J",
+				"name": "Kio - Masterpiece (Drum Kit)",
+				"by": "Kio",
 				"price": 25,
 				"content": [
 					"5 808s",
@@ -254,18 +287,18 @@
 						"id":"arnold_01",
 						"username": "Arnold",
 						"profile_pic": "https://loremflickr.com/320/240/cat",
-						"message": "Lit man! I'm a fan of Ronny J",
+						"message": "Lit man! I'm a fan of Kio",
 						"date": "2019-11-05T13:15:30Z",
 						"rating": 5
 					}
 				]
 			},
 			{
-				"id": "ronnyj-ortodox",
+				"id": "n3scau-ugly-but-happy",
 				"category": "Drum Kit",
 				"release_date": "2019-11-05T13:15:30Z",
-				"name": "RonnyJ - Ortodox (Drum Kit)",
-				"by": "Ronny J",
+				"name": "N3scau - Ugly But Happy (Drum Kit)",
+				"by": "N3scau",
 				"price": 25,
 				"content": [
 					"5 808s",
@@ -290,18 +323,18 @@
 						"id":"arnold_01",
 						"username": "Arnold",
 						"profile_pic": "https://loremflickr.com/320/240/cat",
-						"message": "Lit man! I'm a fan of Ronny J",
+						"message": "Lit man! I'm a fan of N3scau",
 						"date": "2019-11-05T13:15:30Z",
 						"rating": 5
 					}
 				]
 			},
 			{
-				"id": "ronnyj-ortodox",
+				"id": "nick-mira-gris",
 				"category": "Drum Kit",
 				"release_date": "2019-11-05T13:15:30Z",
-				"name": "RonnyJ - Ortodox (Drum Kit)",
-				"by": "Ronny J",
+				"name": "Nick Mira - Gris (Drum Kit)",
+				"by": "Nick Mira",
 				"price": 25,
 				"content": [
 					"5 808s",
@@ -326,18 +359,18 @@
 						"id":"arnold_01",
 						"username": "Arnold",
 						"profile_pic": "https://loremflickr.com/320/240/cat",
-						"message": "Lit man! I'm a fan of Ronny J",
+						"message": "Lit man! I'm a fan of Nick Mira",
 						"date": "2019-11-05T13:15:30Z",
 						"rating": 5
 					}
 				]
 			},
 			{
-				"id": "ronnyj-ortodox",
+				"id": "rezzo-watercolor",
 				"category": "Drum Kit",
 				"release_date": "2019-11-05T13:15:30Z",
-				"name": "RonnyJ - Ortodox (Drum Kit)",
-				"by": "Ronny J",
+				"name": "ReZzo - Watercolor (Drum Kit)",
+				"by": "ReZzo",
 				"price": 25,
 				"content": [
 					"5 808s",
@@ -362,18 +395,18 @@
 						"id":"arnold_01",
 						"username": "Arnold",
 						"profile_pic": "https://loremflickr.com/320/240/cat",
-						"message": "Lit man! I'm a fan of Ronny J",
+						"message": "Lit man! I'm a fan of ReZzo",
 						"date": "2019-11-05T13:15:30Z",
 						"rating": 5
 					}
 				]
 			},
 			{
-				"id": "ronnyj-ortodox",
+				"id": "pierre-bourne-nslookup",
 				"category": "Drum Kit",
 				"release_date": "2019-11-05T13:15:30Z",
-				"name": "RonnyJ - Ortodox (Drum Kit)",
-				"by": "Ronny J",
+				"name": "Pierre Bourne - nslookup (Drum Kit)",
+				"by": "Pierre Bourne",
 				"price": 25,
 				"content": [
 					"5 808s",
@@ -398,18 +431,18 @@
 						"id":"arnold_01",
 						"username": "Arnold",
 						"profile_pic": "https://loremflickr.com/320/240/cat",
-						"message": "Lit man! I'm a fan of Ronny J",
+						"message": "Lit man! I'm a fan of Pierre Bourne",
 						"date": "2019-11-05T13:15:30Z",
 						"rating": 5
 					}
 				]
 			},
 			{
-				"id": "ronnyj-ortodox",
+				"id": "pmm-cj",
 				"category": "Drum Kit",
 				"release_date": "2019-11-05T13:15:30Z",
-				"name": "RonnyJ - Ortodox (Drum Kit)",
-				"by": "Ronny J",
+				"name": "PMM - CJ (Drum Kit)",
+				"by": "PMM",
 				"price": 25,
 				"content": [
 					"5 808s",
@@ -434,18 +467,18 @@
 						"id":"arnold_01",
 						"username": "Arnold",
 						"profile_pic": "https://loremflickr.com/320/240/cat",
-						"message": "Lit man! I'm a fan of Ronny J",
+						"message": "Lit man! I'm a fan of PMM",
 						"date": "2019-11-05T13:15:30Z",
 						"rating": 5
 					}
 				]
 			},
 			{
-				"id": "ronnyj-ortodox",
+				"id": "tank-rose-up",
 				"category": "Drum Kit",
 				"release_date": "2019-11-05T13:15:30Z",
-				"name": "RonnyJ - Ortodox (Drum Kit)",
-				"by": "Ronny J",
+				"name": "Tank - Rose Up (Drum Kit)",
+				"by": "Tank",
 				"price": 25,
 				"content": [
 					"5 808s",
@@ -470,18 +503,18 @@
 						"id":"arnold_01",
 						"username": "Arnold",
 						"profile_pic": "https://loremflickr.com/320/240/cat",
-						"message": "Lit man! I'm a fan of Ronny J",
+						"message": "Lit man! I'm a fan of Tank",
 						"date": "2019-11-05T13:15:30Z",
 						"rating": 5
 					}
 				]
 			},
 			{
-				"id": "ronnyj-ortodox",
+				"id": "tm88-demon",
 				"category": "Drum Kit",
 				"release_date": "2019-11-05T13:15:30Z",
-				"name": "RonnyJ - Ortodox (Drum Kit)",
-				"by": "Ronny J",
+				"name": "TM88 - Demon (Drum Kit)",
+				"by": "TM88",
 				"price": 25,
 				"content": [
 					"5 808s",
@@ -506,18 +539,18 @@
 						"id":"arnold_01",
 						"username": "Arnold",
 						"profile_pic": "https://loremflickr.com/320/240/cat",
-						"message": "Lit man! I'm a fan of Ronny J",
+						"message": "Lit man! I'm a fan of TM88",
 						"date": "2019-11-05T13:15:30Z",
 						"rating": 5
 					}
 				]
 			},
 			{
-				"id": "ronnyj-ortodox",
+				"id": "vhulto-ocean",
 				"category": "Drum Kit",
 				"release_date": "2019-11-05T13:15:30Z",
-				"name": "RonnyJ - Ortodox (Drum Kit)",
-				"by": "Ronny J",
+				"name": "Vhulto - Ocean (Drum Kit)",
+				"by": "Vhulto",
 				"price": 25,
 				"content": [
 					"5 808s",
@@ -542,18 +575,18 @@
 						"id":"arnold_01",
 						"username": "Arnold",
 						"profile_pic": "https://loremflickr.com/320/240/cat",
-						"message": "Lit man! I'm a fan of Ronny J",
+						"message": "Lit man! I'm a fan of Vhulto",
 						"date": "2019-11-05T13:15:30Z",
 						"rating": 5
 					}
 				]
 			},
 			{
-				"id": "ronnyj-ortodox",
+				"id": "y2k-weebs-in",
 				"category": "Drum Kit",
 				"release_date": "2019-11-05T13:15:30Z",
-				"name": "RonnyJ - Ortodox (Drum Kit)",
-				"by": "Ronny J",
+				"name": "Y2K - Weebs In (Drum Kit)",
+				"by": "Y2K",
 				"price": 25,
 				"content": [
 					"5 808s",
@@ -578,7 +611,7 @@
 						"id":"arnold_01",
 						"username": "Arnold",
 						"profile_pic": "https://loremflickr.com/320/240/cat",
-						"message": "Lit man! I'm a fan of Ronny J",
+						"message": "Lit man! I'm a fan of Y2K",
 						"date": "2019-11-05T13:15:30Z",
 						"rating": 5
 					}
@@ -591,7 +624,7 @@
 				"category": "Loops & Samples",
 				"release_date": "2019-11-05T13:15:30Z",
 				"name": "RonnyJ - Flames (Loop Kit)",
-				"by": "Ronny J",
+				"by": "RonnyJ",
 				"price": 25,
 				"content": [
 					"12 loops"
@@ -609,7 +642,7 @@
 						"id":"arnold_01",
 						"username": "Arnold",
 						"profile_pic": "https://loremflickr.com/320/240/cat",
-						"message": "Lit man! I'm a fan of Ronny J",
+						"message": "Lit man! I'm a fan of RonnyJ",
 						"date": "2019-11-05T13:15:30Z",
 						"rating": 5
 					}

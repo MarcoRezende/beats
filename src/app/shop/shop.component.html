@@ -7,8 +7,7 @@
 	</div>
 	<div class="shop-item">
 		<div class="shop-item-image">
-			<img id="product-image" (mousemove)="zoomIn($event)" (mouseout)="zoomOut()" src="{{'../../assets/imgs/products/' + product[0].id + '-600x400.png'}}" alt="" class="item-image">
-
+			<img id="product-image" (mousemove)="zoomIn($event)" (mouseout)="zoomOut()" src="{{'../../assets/imgs/products/' + product[0].id + '-art-900x800.png'}}" alt="" class="item-image">
 		</div>
 		<div class="shop-item-infos">
 			<h2 class="product-name"> {{product[0].name}} </h2>
@@ -18,7 +17,7 @@
 				<span id="category">Category: <span id="category-highlight"><a routerLink="/products" [queryParams]="{catalog:catalog}"> {{product[0].category}}</a></span></span>
 			</div>
 
-			<button class="btn btn-buy btn-slim"><a href="#">ADD TO CART</a></button>
+			<button class="btn btn-buy btn-slim" (click)="addToCart(product)">ADD TO CART</button>
 		</div>
 	</div>
 </div>
@@ -46,7 +45,7 @@
 									<span class="review-date"> {{formatDate(review.date)}} </span>
 								</div>
 							</div>
-						</div>
+						</div> 
 						<div class="review-message">
 							<span class="review-rating"  id={{review.id}}> {{createRating(review.rating, review.id)}} </span>
 							<p class="user-message"> {{review.message}} </p>

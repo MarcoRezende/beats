@@ -194,7 +194,7 @@ header .not-home-nav {
 
 .home-container h2 {
 	text-align: center;
-	color: #000;
+	color: rgb(218, 215, 210);
 	margin: 1.5em auto;
 	font-weight: bolder;
 }
@@ -225,7 +225,7 @@ header .not-home-nav {
 	display: block;
 	width: 100%;
 	height: 120px;
-	background-color: rgba(255,255,255,.4);
+	background-color: rgba(28, 29, 31, .4);
 	box-shadow: 0 5px 15px 0 rgba(0,0,0,.4);
 	margin: 20px 0 0;
 	overflow: hidden;
@@ -341,7 +341,7 @@ header .not-home-nav {
 
 .products-container h2 {
 	text-align: center;
-	color: #000;
+	color: rgb(218, 215, 210);
 	margin: 10px auto;
 	text-transform: uppercase;
 }
@@ -349,7 +349,7 @@ header .not-home-nav {
 .breadcrumbs {
 	width: 100%;
 	padding: 5px;
-	color: #000;
+	color: rgb(218, 215, 210);
 	font-size: 10pt;
 	line-height: 15px;
 	margin: 30px auto;
@@ -384,7 +384,7 @@ header .not-home-nav {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
     	grid-auto-rows: minmax(min-content, max-content);
-		grid-gap: 10px;
+		grid-gap: 20px;
 	}
 
 	@include small-medium {
@@ -451,7 +451,7 @@ header .not-home-nav {
 	width: 100%;
 	height: 30%;
 	padding: 10px;
-	color: #000;
+	color: rgb(218, 215, 210);
 	clear: both;
 }
 
@@ -461,7 +461,7 @@ header .not-home-nav {
 	vertical-align: super;
 }
 
-.btn-buy {
+.btn-added {
 	width: 100%;
     font-size: 10pt; 
     background-color: color(accent);
@@ -470,7 +470,7 @@ header .not-home-nav {
     transition: background-color .5s ease;
 }
 
-.btn-buy:hover {
+.btn-added:hover {
     background-color: rgb(199, 26, 66);
     color: #fff;
     transition: background-color .5s ease;
@@ -494,14 +494,14 @@ header .not-home-nav {
 
 .shop-container > h2 {
 	text-align: center;
-	color: #000;
+	color: rgb(218, 215, 210);
 	margin: 25px auto;
 }
 
 .shop-item {
 	display: block;
 	width: 100%;
-	color: #000;
+	color: rgb(218, 215, 210);
 	margin: 10px auto;
 }
 
@@ -595,7 +595,7 @@ header .not-home-nav {
 .item-about {
 	display: block;
 	width: 100%;
-	color: #000;
+	color: rgb(218, 215, 210);
 
 	@include small-medium {
 		width: 80%;
@@ -623,7 +623,7 @@ ul.nav.nav-pills.justify-content-start::after {
 
 .nav-pills .nav-item .nav-link {
     background-color: transparent;
-    color: #000;
+    color: rgb(218, 215, 210);
     border-radius: 0;
 }
 

@@ -24,6 +24,7 @@ export class ShopComponent implements OnInit {
   productID: string;
   isValid: boolean = false;
   ID: boolean = false;
+  cart: any = [];
 
   constructor(private route: ActivatedRoute, private router: Router) {
   	this.productID = this.route.snapshot.params.id
@@ -79,6 +80,11 @@ export class ShopComponent implements OnInit {
       
     img.style.transform = "scale(1)";
     img.style.transition = "transform .3s ease";
+  }
+
+  addToCart(item) {
+    this.cart.push(item)
+    console.log("produto adicionado ao carrinho", item)
   }
 
   ngOnInit() {
