@@ -461,7 +461,11 @@ header .not-home-nav {
 	vertical-align: super;
 }
 
-.btn-added {
+.btn:hover {
+	color: #fff;
+}
+
+.btn-add {
 	width: 100%;
     font-size: 10pt; 
     background-color: color(accent);
@@ -470,9 +474,17 @@ header .not-home-nav {
     transition: background-color .5s ease;
 }
 
-.btn-added:hover {
+.btn-add:hover {
     background-color: rgb(199, 26, 66);
+    transition: background-color .5s ease;
+}
+
+.btn-added {
+	width: 100%;
+    font-size: 10pt; 
+    background-color: #88132d;
     color: #fff;
+    border-radius: 0 !important;
     transition: background-color .5s ease;
 }
 
