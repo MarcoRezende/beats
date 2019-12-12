@@ -16,8 +16,7 @@
 			<div class="extra-info">
 				<span id="category">Category: <span id="category-highlight"><a routerLink="/products" [queryParams]="{catalog:catalog}"> {{product[0].category}}</a></span></span>
 			</div>
-
-			<button class="btn btn-buy btn-slim" (click)="addToCart(product)">ADD TO CART</button>
+			<button class="btn btn-slim" (click)="addToCart(item)" [ngClass]="product[0].added === undefined || product[0].added === false ? 'btn-add' : 'btn-added'">{{ product[0].added === undefined || product[0].added === false ? 'ADD TO CART' : 'ADDED' }}</button>
 		</div>
 	</div>
 </div>
