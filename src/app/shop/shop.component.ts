@@ -87,11 +87,6 @@ export class ShopComponent implements OnInit {
     img.style.transition = "transform .3s ease";
   }
 
-  addToCart(item) {
-    this.cart.push(item)
-    console.log("produto adicionado ao carrinho", item)
-  }
-
   ngOnInit() {
    	this.home = true;
 
