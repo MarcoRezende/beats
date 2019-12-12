@@ -43,8 +43,7 @@ export class ProductsComponent implements OnInit {
   }
 
   addToCart(product) {
-    this._shareService.getProduct(product)
-    this._shareService.getAllProduct(product)
+    this._shareService.getProduct(product);
   }
 
   ngOnInit() {

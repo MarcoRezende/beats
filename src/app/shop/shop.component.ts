@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { ShareService } from '../share.service';
 import sampleData from '../../assets/data.json';
 export default sampleData;
 
@@ -26,7 +27,7 @@ export class ShopComponent implements OnInit {
   ID: boolean = false;
   cart: any = [];
 
-  constructor(private route: ActivatedRoute, private router: Router) {
+  constructor(private route: ActivatedRoute, private router: Router, private _shareService: ShareService) {
   	this.productID = this.route.snapshot.params.id
       this.route.queryParams.subscribe(values => {
         this.catalog = values.tag;
@@ -45,6 +46,10 @@ export class ShopComponent implements OnInit {
       if (!this.isValid) {
         this.router.navigate(['/']);
       }
+  }
+
+  addToCart(product) {
+    this._shareService.getProduct(product);
   }
   
   formatDate(date) {
