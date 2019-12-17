@@ -29,6 +29,6 @@ export class AppComponent {
   }
 
   OnInit() {
-  	getCartItems();
+  	this.getCartItems();
   }
 }
