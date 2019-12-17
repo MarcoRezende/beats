@@ -27,4 +27,8 @@ export class AppComponent {
   	  )
   	  console.log(this.myCart)
   }
+
+  OnInit() {
+  	getCartItems();
+  }
 }
