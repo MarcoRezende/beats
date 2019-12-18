@@ -52,7 +52,7 @@
                 </button>
                 <div *ngIf="myCart.length > 0" class="dropdown-content to-left">
                   <div *ngFor="let item of myCart" href="#" class="cart-container">
-                    <button class="remove-btn"><div><span class="remove-icon">X</span></div></button>
+                    <button class="remove-btn"><div><i class="material-icons remove-icon">remove_circle</i></div></button>
                     <div class="cart-wrapper">
                       <div class="cart-image-preview-container">
                         <img src="{{'../assets/imgs/products/' + item.id + '-art-600x600.png'}}" alt="" class="cart-image-preview">

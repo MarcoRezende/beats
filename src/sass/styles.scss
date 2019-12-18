@@ -210,13 +210,26 @@ header .not-home-nav {
     display: table !important;
     color: #fff;
     border: transparent;
+    margin: 0 auto;
+
+		& > div {
+			display: table-cell;
+			height: 100%;
+			vertical-align: middle;
+
+			& > .remove-icon {
+				font-size: 20px;
+				transition: color .3s ease-out;
+				line-height: 1 !important;
+
+				&:hover {
+					color: color(accent);
+					transition: color .3s ease-out;
+				}
+			}
+		}
 }
 
-.remove-btn > div {
-	display: table-cell;
-	height: 100%;
-	vertical-align: middle;
-}
 
 .cart-data {
     padding: 5px;
