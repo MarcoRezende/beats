@@ -28,6 +28,11 @@ export class AppComponent {
   	  console.log(this.myCart)
   }
 
+  removeCartItem(product) {
+    product.added = false;
+    this.myCart = this.myCart.filter(item => item != product);
+  }
+
   OnInit() {
   	this.getCartItems();
   }
