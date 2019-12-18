@@ -50,6 +50,10 @@ a, a:hover, a:focus {
 	text-decoration: none;
 }
 
+.material-icons {
+	line-height: inherit;
+}
+
 // header {
 // 	display: flex;
 // 	justify-content: space-between;
@@ -166,16 +170,22 @@ header .not-home-nav {
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  border-top: 1px solid color(accent);
 }
 
-.dropdown-content span {
-  color: black;
-  padding: 12px 16px;
+.to-left {
+	right: 0;
+	min-width: 300px !important;
+}
+
+.dropdown-content span, .dropdown-item {
+  color: #fff;
+  padding: 14px 16px;
   text-decoration: none;
   display: block;
 }
 
-.dropdown-content span:hover {background-color: #ddd;}
+.dropdown-content .cart-item:hover, .dropdown-item:hover {background-color: color(accent);}
 
 .dropdown:hover .dropdown-content {display: block;}
 

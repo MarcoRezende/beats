@@ -8,21 +8,21 @@
     <div class="navbar-collapse full-height" [class.collapse]="collapsed" id="navbarContent">
       <ul class="navbar-nav ml-auto full-height">
         <li class="nav-item" ngbDropdown display="dynamic">
-            <div class="nav-link-wrapper">
-              <a class="nav-link full-height" routerLink="#" style="cursor: pointer" role="button">
-                <div class="dropdown">
-                  <button class="dropbtn">
-                    PRODUCTS
-                  </button>
-                  <div class="dropdown-content">
-                    <a class="dropdown-item" (click)="$event.preventDefault()" routerLink="/products" [queryParams]="{catalog:'vst-expansion'}">VST Expansion</a>
-                    <a class="dropdown-item" (click)="$event.preventDefault()" routerLink="/products" [queryParams]="{catalog:'drum-kit'}">Drum Kit</a>
-                    <a class="dropdown-item" (click)="$event.preventDefault()" routerLink="/products" [queryParams]="{catalog:'midi-kit'}">MIDI Kit</a>
-                    <a class="dropdown-item" (click)="$event.preventDefault()" routerLink="/products" [queryParams]="{catalog:'loops'}">Loops & Samples</a>
-                  </div>
+          <div class="nav-link-wrapper">
+            <a class="nav-link full-height" routerLink="#" style="cursor: pointer" role="button">
+              <div class="dropdown">
+                <button class="dropbtn">
+                  PRODUCTS
+                </button>
+                <div class="dropdown-content">
+                  <a class="dropdown-item" (click)="$event.preventDefault()" routerLink="/products" [queryParams]="{catalog:'vst-expansion'}">VST Expansion</a>
+                  <a class="dropdown-item" (click)="$event.preventDefault()" routerLink="/products" [queryParams]="{catalog:'drum-kit'}">Drum Kit</a>
+                  <a class="dropdown-item" (click)="$event.preventDefault()" routerLink="/products" [queryParams]="{catalog:'midi-kit'}">MIDI Kit</a>
+                  <a class="dropdown-item" (click)="$event.preventDefault()" routerLink="/products" [queryParams]="{catalog:'loops'}">Loops & Samples</a>
                 </div>
-              </a>
-            </div>
+              </div>
+            </a>
+          </div>
         </li>
 
         <li class="nav-item" ngbDropdown display="dynamic" placement="bottom-right">
@@ -43,18 +43,29 @@
         <li class="nav-item" ngbDropdown display="dynamic" placement="bottom-right">
           {{getCartItems()}}
           <div class="nav-link-wrapper">
-            <a class="nav-link full-height" routerLink="/contacts" style="cursor: pointer" role="button">
+            <a class="nav-link full-height" routerLink="/checkout" style="cursor: pointer" role="button">
               <div class="dropdown">
                 <button class="dropbtn">
                   <i class="material-icons">
                     shopping_cart
                   </i>
                 </button>
-                <div *ngIf="myCart.length > 0" class="dropdown-content">
-                  <span *ngFor="let item of myCart" href="#">{{item.name}}</span>
+                <div *ngIf="myCart.length > 0" class="dropdown-content to-left">
+                  <div *ngFor="let item of myCart" href="#" class="cart-container">
+                    <span class="remove-btn"><i class="material-icons">remove_circle_outline</i></span>
+                    <div class="cart-wrapper">
+                      <div class="cart-image-preview-container">
+                        <img src="{{'../assets/imgs/products/' + item.id + '-art-600x600.png'}}" alt="" class="cart-image-preview">
+                      </div>
+                      <div class="cart-data">
+                        <h4 class="cart-price">{{item.name}}</h4>
+                        <span class="cart-price">{{item.price}}</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div *ngIf="myCart.length === 0" class="dropdown-content">
-                  <span>Your cart is empty</span>
+                <div *ngIf="myCart.length === 0" class="dropdown-content to-left">
+                  <span class="cart-item">Your cart is empty</span>
                 </div>
               </div>
             </a>
