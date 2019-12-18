@@ -52,14 +52,14 @@
                 </button>
                 <div *ngIf="myCart.length > 0" class="dropdown-content to-left">
                   <div *ngFor="let item of myCart" href="#" class="cart-container">
-                    <span class="remove-btn"><i class="material-icons">remove_circle_outline</i></span>
+                    <button class="remove-btn"><div><span class="remove-icon">X</span></div></button>
                     <div class="cart-wrapper">
                       <div class="cart-image-preview-container">
                         <img src="{{'../assets/imgs/products/' + item.id + '-art-600x600.png'}}" alt="" class="cart-image-preview">
                       </div>
                       <div class="cart-data">
-                        <h4 class="cart-price">{{item.name}}</h4>
-                        <span class="cart-price">{{item.price}}</span>
+                        <h4 class="cart-name">{{item.name}}</h4>
+                        <span class="cart-price">${{item.price}}</span>
                       </div>
                     </div>
                   </div>
