@@ -1,7 +1,6 @@
 {
 	"products": {
-		"vst": {
-			"omnisphere": [
+		"vst": [
 				{
 					"id": "ronnyj-ortodox",
 					"category": "Drum Kit",
@@ -38,8 +37,7 @@
 						}
 					]
 				}
-			]
-		},
+			],
 		"drum": [
 			{
 				"id": "ronnyj-ortodox",
@@ -619,6 +617,37 @@
 			}
 		],
 		"loops": [
+			{
+				"id": "ronnyj-flames",
+				"category": "Loops & Samples",
+				"release_date": "2019-11-05T13:15:30Z",
+				"name": "RonnyJ - Flames (Loop Kit)",
+				"by": "RonnyJ",
+				"price": 25,
+				"content": [
+					"12 loops"
+				],
+				"reviews": [
+					{
+						"id":"louis_01",
+						"username": "Louis",
+						"profile_pic": "https://loremflickr.com/320/240/dog",
+						"message": "Awesome",
+						"date": "2019-11-03T13:15:30Z",
+						"rating": 5
+					},
+					{
+						"id":"arnold_01",
+						"username": "Arnold",
+						"profile_pic": "https://loremflickr.com/320/240/cat",
+						"message": "Lit man! I'm a fan of RonnyJ",
+						"date": "2019-11-05T13:15:30Z",
+						"rating": 5
+					}
+				]
+			}
+		],
+		"midi": [
 			{
 				"id": "ronnyj-flames",
 				"category": "Loops & Samples",

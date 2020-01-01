@@ -9,7 +9,7 @@
       <ul class="navbar-nav ml-auto full-height">
         <li class="nav-item" ngbDropdown display="dynamic">
           <div class="nav-link-wrapper">
-            <a class="nav-link full-height" routerLink="#" style="cursor: pointer" role="button">
+            <a class="nav-link full-height" routerLink="#" style="cursor: pointer; padding: 0 1rem !important;" role="button">
               <div class="dropdown">
                 <button class="dropbtn">
                   PRODUCTS
@@ -55,7 +55,7 @@
                 <div *ngIf="myCart.length > 0" class="dropdown-content to-left">
                   <div *ngFor="let item of myCart" href="#" class="cart-container">
                     <button class="remove-btn" (click)="removeCartItem(item)"><div><i class="material-icons remove-icon">remove_circle</i></div></button>
-                    <div class="cart-wrapper">
+                    <a class="cart-wrapper" [routerLink]="['/shop', item.id]" [queryParams]="{tag:catalog}">
                       <div class="cart-image-preview-container">
                         <img src="{{'../assets/imgs/products/' + item.id + '-art-600x600.png'}}" alt="" class="cart-image-preview">
                       </div>
@@ -63,7 +63,7 @@
                         <h4 class="cart-name">{{item.name}}</h4>
                         <span class="cart-price">${{item.price}}</span>
                       </div>
-                    </div>
+                    </a>
                   </div>
                 </div>
                 <div *ngIf="myCart.length === 0" class="dropdown-content to-left">

@@ -34,14 +34,15 @@ export class ShopComponent implements OnInit {
       });
 
       for (let i = 0; i < this.query.length; i++) {
-        if (this.catalog === this.query[i].name) {
+        // if (this.catalog === this.query[i].name) { "filtro" para reduzir pesquisa
           for (let c = 0; c < this.data.products[this.query[i].prod].length; c++) {
             if (this.productID === this.data.products[this.query[i].prod][c].id) {
               this.product = this.data.products[this.query[i].prod].filter(product => product.id === this.productID);
+              this.catalog = this.query[i].name;
               this.isValid = true;          
             }
           }
-        }
+        // }
       }
       if (!this.isValid) {
         this.router.navigate(['/']);

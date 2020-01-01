@@ -141,7 +141,7 @@ header .not-home-nav {
 
 .nav-link {
     display: block;
-    padding: 0 1rem;
+    padding: 10px 1rem;
 }
 
 .dropdown-toggle::after {
@@ -171,12 +171,26 @@ header .not-home-nav {
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   border-top: 1px solid color(accent);
-  animation: slidein .5s forwards;
+  animation: smooth .5s forwards;
+  max-height: 410px;
 }
 
 .to-left {
 	right: 0;
 	min-width: 300px !important;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+	&::-webkit-scrollbar
+	  {
+		width: 0;
+		background-color: transparent;
+	  }
+
+    &::-webkit-scrollbar-thumb
+	  {
+		background-color: transparent;
+	  }
 }
 
 .dropdown-content .cart-item, .dropdown-item {
@@ -195,7 +209,7 @@ header .not-home-nav {
 	margin: 10px 0;
 }
 
-@keyframes slidein {
+@keyframes smooth {
   from {
     opacity: 0;
   }
@@ -210,6 +224,7 @@ header .not-home-nav {
 	grid-template-columns: 30% 70%;
 	grid-gap: 5px;
 	height: 100%;
+	transition: background-color .2s ease;
 }
 
 .remove-btn {
@@ -639,6 +654,7 @@ header .not-home-nav {
     color: #fff;
     border-radius: 0 !important;
     transition: background-color .5s ease;
+    cursor: not-allowed !important;
 }
 
 // shop page

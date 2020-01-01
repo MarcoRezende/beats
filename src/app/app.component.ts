@@ -25,7 +25,6 @@ export class AppComponent {
   	    	}
   	    }
   	  )
-  	  console.log(this.myCart)
   }
 
   removeCartItem(product) {
