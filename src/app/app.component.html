@@ -9,7 +9,7 @@
       <ul class="navbar-nav ml-auto full-height">
         <li class="nav-item" ngbDropdown display="dynamic">
           <div class="nav-link-wrapper">
-            <a class="nav-link full-height" routerLink="#" style="cursor: pointer; padding: 0 1rem !important;" role="button">
+            <a class="nav-link full-height" routerLink="#" style="padding: 0 1rem !important;" role="button">
               <div class="dropdown">
                 <button class="dropbtn">
                   PRODUCTS
@@ -27,7 +27,7 @@
 
         <li class="nav-item" ngbDropdown display="dynamic" placement="bottom-right">
           <div class="nav-link-wrapper">
-            <a class="nav-link full-height" routerLink="/about" style="cursor: pointer" role="button">
+            <a class="nav-link full-height" routerLink="/about" style="padding: 0 1rem !important;" role="button">
               ABOUT
             </a>
           </div>
@@ -35,7 +35,7 @@
 
         <li class="nav-item" ngbDropdown display="dynamic" placement="bottom-right">
           <div class="nav-link-wrapper">
-            <a class="nav-link full-height" routerLink="/contacts" style="cursor: pointer" role="button">
+            <a class="nav-link full-height" routerLink="/contacts" style="padding: 0 1rem !important;" role="button">
               CONTACTS
             </a>
           </div>
@@ -43,9 +43,9 @@
         <li class="nav-item" ngbDropdown display="dynamic" placement="bottom-right">
           {{getCartItems()}}
           <div class="nav-link-wrapper">
-            <div class="nav-link full-height">
+            <div class="nav-link full-height" style="cursor: pointer; padding: 0 1rem !important;">
               <div class="dropdown">
-                <a routerLink="/checkout" style="cursor: pointer" role="button">
+                <a routerLink="/checkout" role="button">
                   <button class="dropbtn">
                     <i class="material-icons">
                       shopping_cart

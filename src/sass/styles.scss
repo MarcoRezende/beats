@@ -686,6 +686,41 @@ header .not-home-nav {
 	margin: 10px auto;
 }
 
+.warning-message-popup {
+	width: 100%;
+	background-color: rgb(27, 28, 30);
+    color: rgb(203, 199, 191);
+    border-top: 3px solid rgb(143, 174, 27);
+    box-shadow: 0 1px 10px 0px rgba(0, 0, 0, 0.34);
+    margin: 0 0 1rem 0;
+
+    &.not-show {
+    	display: none;
+    }
+
+    &.show {
+    	display: block;
+    	animation: smooth .9s forwards;
+    }
+
+    & .warning-message {
+    	text-align: center;
+	    padding: 5px;
+	    font-size: 11pt;
+
+	    &::before {
+		    color: #8fae1b;
+		    content: 'check_circle_outline';
+		    font-family: 'material icons';
+		    font-size: 12pt;
+		    vertical-align: bottom;
+		    margin: 0 4px;
+	    }
+	}
+}
+
+
+
 .shop-item-image {
 	width: 100%;
 	overflow: hidden;
