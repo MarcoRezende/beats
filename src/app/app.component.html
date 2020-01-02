@@ -43,7 +43,7 @@
         <li class="nav-item" ngbDropdown display="dynamic" placement="bottom-right">
           {{getCartItems()}}
           <div class="nav-link-wrapper">
-            <div class="nav-link full-height" style="cursor: pointer; padding: 0 1rem !important;">
+            <div class="nav-link full-height" style="padding: 0 1rem !important;">
               <div class="dropdown">
                 <a routerLink="/checkout" role="button">
                   <button class="dropbtn">
@@ -53,18 +53,27 @@
                   </button>
                 </a>  
                 <div *ngIf="myCart.length > 0" class="dropdown-content to-left">
-                  <div *ngFor="let item of myCart" href="#" class="cart-container">
-                    <button class="remove-btn" (click)="removeCartItem(item)"><div><i class="material-icons remove-icon">remove_circle</i></div></button>
-                    <a class="cart-wrapper" [routerLink]="['/shop', item.id]" [queryParams]="{tag:catalog}">
-                      <div class="cart-image-preview-container">
-                        <img src="{{'../assets/imgs/products/' + item.id + '-art-600x600.png'}}" alt="" class="cart-image-preview">
-                      </div>
-                      <div class="cart-data">
-                        <h4 class="cart-name">{{item.name}}</h4>
-                        <span class="cart-price">${{item.price}}</span>
-                      </div>
-                    </a>
+                  <div class="dropdown-cart-wrapper">
+                    <div *ngFor="let item of myCart" href="#" class="cart-container">
+                      <button class="remove-btn" (click)="removeCartItem(item)"><div><i class="material-icons remove-icon">remove_circle</i></div></button>
+                      <a class="cart-wrapper" [routerLink]="['/shop', item.id]" [queryParams]="{tag:catalog}">
+                        <div class="cart-image-preview-container">
+                          <img src="{{'../assets/imgs/products/' + item.id + '-art-600x600.png'}}" alt="" class="cart-image-preview">
+                        </div>
+                        <div class="cart-data">
+                          <h4 class="cart-name">{{item.name}}</h4>
+                          <span class="cart-price">${{item.price}}</span>
+                        </div>
+                      </a>
+                    </div>
                   </div>
+                  <div class="btns-container">
+                    <div class="nav-btns">
+                      <span class="subtotal">Subtotal: ${{subtotal}}</span>
+                      <button class="btn btn-cart">Cart</button>
+                      <button class="btn btn-checkout">Checkout</button>
+                    </div>
+                  </div>  
                 </div>
                 <div *ngIf="myCart.length === 0" class="dropdown-content to-left">
                   <span class="cart-item">Your cart is empty</span>

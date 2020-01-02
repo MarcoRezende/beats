@@ -10,6 +10,7 @@ import { ShareService } from './share.service';
 export class AppComponent {
   title = 'beats';
   myCart: any = [];
+  subtotal: number = 0;
 
   constructor(private _shareService: ShareService) {
 
@@ -22,6 +23,7 @@ export class AppComponent {
   	    	if (!this.myCart.includes(product)) {
   	    	  product.added = true;
   	    	  this.myCart.push(product)
+            this.subtotal += product.price;
   	    	}
   	    }
   	  )
@@ -30,6 +32,7 @@ export class AppComponent {
   removeCartItem(product) {
     product.added = false;
     this.myCart = this.myCart.filter(item => item != product);
+    this.subtotal -= product.price;
   }
 
   OnInit() {

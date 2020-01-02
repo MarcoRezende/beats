@@ -93,7 +93,7 @@ header {
 nav {
 	font-family: font(primary);
 	height: 100%;
-	padding: 0 1rem !important;
+	padding: 0 .9rem !important;
 }
 
 header .home-nav {
@@ -172,14 +172,25 @@ header .not-home-nav {
   z-index: 1;
   border-top: 1px solid color(accent);
   animation: smooth .5s forwards;
-  max-height: 410px;
+  height: auto;
 }
 
 .to-left {
 	right: 0;
 	min-width: 300px !important;
-    overflow-x: hidden;
+}
+
+.dropdown-content .cart-item, .dropdown-item {
+  color: #fff;
+  padding: 14px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-cart-wrapper {
+	overflow-x: hidden;
     overflow-y: scroll;
+    max-height: 310px;
 
 	&::-webkit-scrollbar
 	  {
@@ -191,13 +202,6 @@ header .not-home-nav {
 	  {
 		background-color: transparent;
 	  }
-}
-
-.dropdown-content .cart-item, .dropdown-item {
-  color: #fff;
-  padding: 14px 16px;
-  text-decoration: none;
-  display: block;
 }
 
 .cart-container {
@@ -240,7 +244,7 @@ header .not-home-nav {
 			vertical-align: middle;
 
 			& > .remove-icon {
-				font-size: 20px;
+				font-size: 14px;
 				transition: color .3s ease-out;
 				line-height: 1 !important;
 
@@ -280,6 +284,58 @@ header .not-home-nav {
 	min-width: 100%;
 	min-height: 100%;
 	transition: transform .5s ease;
+}
+
+.btns-container {
+	display: table;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    left: 0;
+    width: 90%;
+
+	&::before {
+		content: ' ';
+	    position: absolute;
+	    left: 0;
+	    display: block;
+	    width: 100%;
+		border-top: 1px solid rgb(65, 58, 64);
+	}
+
+	& .nav-btns {
+		display: table-cell;
+	    vertical-align: middle;
+	    padding: 10px 0 15px;
+
+		& .subtotal {
+			display: block;
+    		margin: 5px 0 .6rem;
+		}
+
+		& .btn-cart, & .btn-checkout {
+			border-radius: inherit;
+		}
+		
+		& .btn-cart {
+			background-color: transparent;
+		    display: inline-block;
+		    border: 3px solid rgba(223, 28, 73, 0.68);
+		    width: 48%;
+		    margin: 0 2px 0 0;
+		    color: #dad7d2;
+		}
+
+		& .btn-checkout {
+			background-color: #df1c49;
+		    display: inline-block;
+		    width: 48%;
+		    margin: 0 0 0 2px;
+		    color: #dad7d2;
+		    border: 3px solid #df1c49;
+		}
+
+	}
 }
 
 .dropdown-content .cart-wrapper:hover, .remove-btn:hover .cart-item:hover, .dropdown-item:hover {background-color: color(accent);}
