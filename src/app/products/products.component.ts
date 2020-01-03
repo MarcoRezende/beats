@@ -46,7 +46,25 @@ export class ProductsComponent implements OnInit {
     this._shareService.getProduct(product);
   }
 
+  sortItems(sortType = 'date') {
+    this.product.sort(function(a,b){
+      if (sortType === 'date') {
+        return new Date(b.release_date) - new Date(a.release_date);
+      }
+
+      if (sortType === 'price') {
+        return a.price - b.price;
+      }
+
+      if (sortType === 'price-desc' || sortType === 'rating') {
+        let v = sortType === 'price-desc' ? 'price' : 'rating';
+        return b[v] - a[v];
+      }
+    });
+  }
+
   ngOnInit() {
+    this.sortItems();
     var myToggle = function(element, class0, class1) {
       if ( !element.classList.contains(class1) ) {
       	element.classList.remove(class0);

@@ -4,16 +4,13 @@
 		<span class="breadcrumb-item"><a routerLink="/"> Home </a></span>
 		<span class="breadcrumb-item active">{{category}}</span>
 	</div>
-	<form class="sorty-by" method="get"	>
+	<form class="sorty-by" method="get"	(change)="sortItems($event.target.value)">
 		<select name="orderby" class="orderby" aria-label="Shop order">
-			<option value="popularity">Sort by popularity</option>
 			<option value="rating">Sort by average rating</option>
 			<option value="date" selected="selected">Sort by latest</option>
 			<option value="price">Sort by price: low to high</option>
 			<option value="price-desc">Sort by price: high to low</option>
 		</select>
-		<input type="hidden" name="paged" value="1">
-		<input type="hidden" name="product_cat" value="vstexpansions">
 	</form>
 	<ul *ngIf="product" class="products-store-list">
 		<li *ngFor="let item of product" class="product-store-item">
