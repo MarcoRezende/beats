@@ -49,7 +49,7 @@ export class ProductsComponent implements OnInit {
   sortItems(sortType = 'date') {
     this.product.sort(function(a,b){
       if (sortType === 'date') {
-        return new Date(b.release_date) - new Date(a.release_date);
+        return <any>new Date(b.release_date) - <any>new Date(a.release_date);
       }
 
       if (sortType === 'price') {
