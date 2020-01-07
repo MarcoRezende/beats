@@ -3,6 +3,10 @@ import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import sampleData from '../../assets/data.json';
 import { ShareService } from '../share.service';
+import { PagerService } from '../pager.service';
+import { HttpClient , HttpHeaders, HttpResponse  } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 export default sampleData;
 
 @Component({
@@ -24,8 +28,18 @@ export class ProductsComponent implements OnInit {
   product: any;
   category: string;
   isQuery: boolean = false;
+  actualProduct: any;
 
-  constructor(private route: ActivatedRoute, private router: Router, private _shareService: ShareService) {
+  // array of all items to be paged
+  private allItems: any;
+
+  // pager object
+  pager: any = {};
+
+  // paged items
+  pagedItems: any[];
+
+  constructor(private route: ActivatedRoute, private router: Router, private _shareService: ShareService, private http: HttpClient, private pagerService: PagerService) {
       this.router.routeReuseStrategy.shouldReuseRoute = () => false;
       this.route.queryParams.subscribe(values => {
         this.catalog = values.catalog;
@@ -34,6 +48,7 @@ export class ProductsComponent implements OnInit {
         if (this.catalog === this.query[i].name) {
           this.product = this.data.products[this.query[i].prod];
           this.isQuery = true;
+          this.actualProduct = this.query[i].prod;
         }
       }
       if (!this.isQuery) {
@@ -64,6 +79,26 @@ export class ProductsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.allItems = this.product;
+
+    console.log(this.allItems)
+
+    this.setPage(1)
+
+    // get data
+    this.http
+      .get('../../assets/data.json')
+      .pipe(
+        map((response: Response) => response.json()),
+        // subscribe(data => {
+        //     // set items to json response
+        //     this.allItems = data.products[this.actualProduct];
+
+        //     // initialize to page 1
+        //     this.setPage(1);
+        // })
+      )
+
     this.sortItems();
     var myToggle = function(element, class0, class1) {
       if ( !element.classList.contains(class1) ) {
@@ -79,5 +114,13 @@ export class ProductsComponent implements OnInit {
      myToggle(nav, 'home-nav', 'not-home-nav');
    }
  }
+
+  setPage(page: number) {
+    // get pager object from service
+      this.pager = this.pagerService.getPager(this.allItems.length, page);
+
+      // get current page of items
+      this.pagedItems = this.allItems.slice(this.pager.startIndex, this.pager.endIndex + 1);
+  }
 
 }
