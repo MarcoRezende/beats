@@ -9,8 +9,6 @@ export class HomeComponent implements OnInit {
   
   home: boolean = true;
 
-  constructor() { }
-
   ngOnInit() {
 
    	var myToggle = function(element, class0, class1) {

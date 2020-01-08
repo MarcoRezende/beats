@@ -1,5 +1,5 @@
-<header class="header-home">
-  <nav class="home-nav navbar navbar-expand-md navbar-light bg-light">
+<header class="header-home" [ngClass]="home ? 'header-home' : 'header-not-home'">
+  <nav class="home-nav navbar navbar-expand-md navbar-light bg-light" [ngClass]="home ? 'home-nav' : 'not-home-nav'">
     <span class="logo"><a routerLink="">BEATZ</a></span>
     <button class="navbar-toggler" type="button" aria-controls="navbarContent" [attr.aria-expanded]="!collapsed" aria-label="Toggle navigation" (click)="collapsed = !collapsed">
       <span class="navbar-toggler-icon"></span>

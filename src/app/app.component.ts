@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ShareService } from './share.service';
+import { Router, Event, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,9 +12,14 @@ export class AppComponent {
   title = 'beats';
   myCart: any = [];
   subtotal: number = 0;
+  home: boolean;
 
-  constructor(private _shareService: ShareService) {
-
+  constructor(private _shareService: ShareService, private router: Router) {
+    router.events.subscribe((event: Event) => {
+      if (event instanceof NavigationEnd ) {
+        this.home = event.url === '/' ? true : false;
+      }
+    });
   }
 
   getCartItems() {
