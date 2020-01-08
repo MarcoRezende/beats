@@ -31,14 +31,14 @@
 	</ul>
 
 	<ul *ngIf="pager.pages && pager.pages.length" class="pagination">
-		<li [ngClass]="{disabled:pager.currentPage === 1}">
-			<a (click)="goToTop($event.target.classList)" (click)="setPage(pager.currentPage - 1)" [ngClass]="{activeLink:pager.currentPage === 1}">Previous</a>
+		<li [ngClass]="{disabled:pager.currentPage === 1}" class="page-item">
+			<a (click)="goToTop($event.target.classList)" (click)="setPage(pager.currentPage - 1)" [ngClass]="{activeLink:pager.currentPage === 1}"><</a>
 		</li>
-		<li *ngFor="let page of pager.pages" class="page-item" [ngClass]="{activePage:pager.currentPage === page}">
+		<li *ngFor="let page of pager.pages" class="page-item pgs" [ngClass]="{activePage:pager.currentPage === page}">
 			<a (click)="goToTop($event.target.classList)" (click)="setPage(page)" [ngClass]="{activeLink:pager.currentPage === page}">{{page}}</a>
 		</li>
-		<li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-			<a (click)="goToTop($event.target.classList)" (click)="setPage(pager.currentPage + 1)" [ngClass]="{activeLink:pager.currentPage === pager.totalPages}">Next</a>
+		<li [ngClass]="{disabled:pager.currentPage === pager.totalPages}" class="page-item">
+			<a (click)="goToTop($event.target.classList)" (click)="setPage(pager.currentPage + 1)" [ngClass]="{activeLink:pager.currentPage === pager.totalPages}">></a>
 		</li>
 	</ul>
 </div>

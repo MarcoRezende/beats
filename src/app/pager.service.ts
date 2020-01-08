@@ -7,7 +7,7 @@ export class PagerService {
 
 	constructor() { }
 
-	getPager(totalItems: number, currentPage: number = 1, pageSize: number = 8) {
+	getPager(totalItems: number, currentPage: number = 1, pageSize: number = 12) {
         // calculate total pages
         let totalPages = Math.ceil(totalItems / pageSize);
 
