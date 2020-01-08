@@ -28,7 +28,7 @@ export class ProductsComponent implements OnInit {
   product: any;
   category: string;
   isQuery: boolean = false;
-  actualProduct: any;
+  currentProduct: any;
 
   // array of all items to be paged
   private allItems: any;
@@ -48,7 +48,7 @@ export class ProductsComponent implements OnInit {
         if (this.catalog === this.query[i].name) {
           this.product = this.data.products[this.query[i].prod];
           this.isQuery = true;
-          this.actualProduct = this.query[i].prod;
+          this.currentProduct = this.query[i].prod;
         }
       }
       if (!this.isQuery) {
@@ -78,26 +78,16 @@ export class ProductsComponent implements OnInit {
     });
   }
 
+  goToTop(ele) {
+    console.log(ele[0])
+    if (ele[0] !== "activeLink") {
+      // scroll to the top of the page
+      document.getElementById('top').scrollIntoView(true);
+    }
+  }
+
   ngOnInit() {
-    this.allItems = this.product;
-
-    console.log(this.allItems)
-
     this.setPage(1)
-
-    // get data
-    this.http
-      .get('../../assets/data.json')
-      .pipe(
-        map((response: Response) => response.json()),
-        // subscribe(data => {
-        //     // set items to json response
-        //     this.allItems = data.products[this.actualProduct];
-
-        //     // initialize to page 1
-        //     this.setPage(1);
-        // })
-      )
 
     this.sortItems();
     var myToggle = function(element, class0, class1) {
@@ -116,11 +106,12 @@ export class ProductsComponent implements OnInit {
  }
 
   setPage(page: number) {
+    // get data
+    this.allItems = this.product;
     // get pager object from service
-      this.pager = this.pagerService.getPager(this.allItems.length, page);
-
-      // get current page of items
-      this.pagedItems = this.allItems.slice(this.pager.startIndex, this.pager.endIndex + 1);
+    this.pager = this.pagerService.getPager(this.allItems.length, page);
+    // get current page of items
+    this.pagedItems = this.allItems.slice(this.pager.startIndex, this.pager.endIndex + 1);
   }
 
 }

@@ -1,4 +1,4 @@
-<div class="products-container">
+<div class="products-container"  id="top">
 	<h2>{{category}}</h2>
 	<div class="breadcrumbs">
 		<span class="breadcrumb-item"><a routerLink="/"> Home </a></span>
@@ -32,19 +32,13 @@
 
 	<ul *ngIf="pager.pages && pager.pages.length" class="pagination">
 		<li [ngClass]="{disabled:pager.currentPage === 1}">
-			<a (click)="setPage(1)">First</a>
+			<a (click)="goToTop($event.target.classList)" (click)="setPage(pager.currentPage - 1)" [ngClass]="{activeLink:pager.currentPage === 1}">Previous</a>
 		</li>
-		<li [ngClass]="{disabled:pager.currentPage === 1}">
-			<a (click)="setPage(pager.currentPage - 1)">Previous</a>
-		</li>
-		<li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
-			<a (click)="setPage(page)">{{page}}</a>
+		<li *ngFor="let page of pager.pages" class="page-item" [ngClass]="{activePage:pager.currentPage === page}">
+			<a (click)="goToTop($event.target.classList)" (click)="setPage(page)" [ngClass]="{activeLink:pager.currentPage === page}">{{page}}</a>
 		</li>
 		<li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-			<a (click)="setPage(pager.currentPage + 1)">Next</a>
-		</li>
-		<li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-			<a (click)="setPage(pager.totalPages)">Last</a>
+			<a (click)="goToTop($event.target.classList)" (click)="setPage(pager.currentPage + 1)" [ngClass]="{activeLink:pager.currentPage === pager.totalPages}">Next</a>
 		</li>
 	</ul>
 </div>
