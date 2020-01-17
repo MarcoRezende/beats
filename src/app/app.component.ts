@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ShareService } from './share.service';
 import { Router, Event, NavigationEnd } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -12,12 +13,13 @@ export class AppComponent {
   title = 'beats';
   myCart: any = [];
   subtotal: number = 0;
-  home: boolean;
+  home: boolean = true;
 
-  constructor(private _shareService: ShareService, private router: Router) {
+  constructor(private route: ActivatedRoute, private _shareService: ShareService, private router: Router) {
     router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd ) {
         this.home = event.url === '/' ? true : false;
+        console.log(this.home)
       }
     });
   }

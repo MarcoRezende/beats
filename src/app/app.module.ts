@@ -11,13 +11,17 @@ import { ProductsComponent } from './products/products.component';
 import { ShopComponent } from './shop/shop.component';
 import { PagerService } from './pager.service';
 import {HttpClientModule} from '@angular/common/http';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ProductsComponent,
-    ShopComponent
+    ShopComponent,
+    CheckoutComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
