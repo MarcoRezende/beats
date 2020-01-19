@@ -61,7 +61,7 @@ export class ProductsComponent implements OnInit {
   }
 
   sortItems(sortType = 'date') {
-    this.product.sort(function(a,b){
+    this.allItems.sort(function(a,b){
       if (sortType === 'date') {
         return <any>new Date(b.release_date) - <any>new Date(a.release_date);
       }
@@ -75,6 +75,7 @@ export class ProductsComponent implements OnInit {
         return b[v] - a[v];
       }
     });
+    this.setPage(1)
   }
 
   goToTop(ele) {

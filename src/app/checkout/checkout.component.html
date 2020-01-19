@@ -66,26 +66,13 @@
 			</section>
 			<aside class="order-summary">
 				<h2>Order Summary</h2>
-				<ul class="order-summary-list">
-					<li class="order-summary-item">
+				<ul *ngIf="myCart.length" class="order-summary-list">
+					<li *ngFor="let product of myCart" class="order-summary-item">
+					{{getCartItems()}}
 						<div class="order-item-info">
 							<div class="order-info-middle"><span class="summary-item-qtt">1 x </span></div>
-							<div class="order-info-middle"><h4 class="summary-item-name">RonnyJ - Ortodox (Drum Kit)</h4></div>
-							<div class="order-info-middle"><span class="summary-item-price">$25,00</span></div>
-						</div>
-					</li>
-					<li class="order-summary-item">
-						<div class="order-item-info">
-							<div class="order-info-middle"><span class="summary-item-qtt">1 x </span></div>
-							<div class="order-info-middle"><h4 class="summary-item-name">ReZzø - Preface (Drum Kit)</h4></div>
-							<div class="order-info-middle"><span class="summary-item-price">$25,00</span></div>
-						</div>
-					</li>
-					<li class="order-summary-item">
-						<div class="order-item-info">
-							<div class="order-info-middle"><span class="summary-item-qtt">1 x </span></div>
-							<div class="order-info-middle"><h4 class="summary-item-name">Metro Boomin - Want Some More N*gga (Drum Kit)</h4></div>
-							<div class="order-info-middle"><span class="summary-item-price">$25,00</span></div>
+							<div class="order-info-middle"><h4 class="summary-item-name">{{product.name}}</h4></div>
+							<div class="order-info-middle"><span class="summary-item-price">${{product.price}}</span></div>
 						</div>
 					</li>
 				</ul>
