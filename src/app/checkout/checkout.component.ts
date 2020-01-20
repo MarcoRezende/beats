@@ -25,7 +25,6 @@ export class CheckoutComponent implements OnInit {
   	if (method !== this.payMethod) {
   		this.payMethod = method;
   	}
-  	console.log(this.payMethod)
   }
 
   ngOnInit() {

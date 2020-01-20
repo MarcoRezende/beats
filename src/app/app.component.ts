@@ -19,7 +19,6 @@ export class AppComponent {
     router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd ) {
         this.home = event.url === '/' ? true : false;
-        console.log(this.home)
       }
     });
   }
