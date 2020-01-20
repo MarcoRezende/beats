@@ -2,7 +2,7 @@
 		
 		<h2>CHECKOUT</h2>
 
-		<div class="checkout-wrapper">
+		<div *ngIf="myCart.length" class="checkout-wrapper">
 			<section class="form-section">
 				<form class="checkout-form">
 					<h2>Contact Information</h2>
@@ -31,13 +31,13 @@
 					<div class="checkout-payment">
 						<div class="payment-methods-container">
 							<ul class="payment-methods">
-								<li class="payment-method"><img class="payment-method-icon" src="{{'../../assets/imgs/visa.svg'}}"></li>
-								<li class="payment-method"><img class="payment-method-icon" src="{{'../../assets/imgs/paypal.svg'}}"></li>
-								<li class="payment-method"><img class="payment-method-icon" src="{{'../../assets/imgs/bitcoin.svg'}}"></li>
+								<li class="payment-method" (click)="setPaymentMethod('visa')"><img class="payment-method-icon" src="{{'../../assets/imgs/visa.svg'}}"></li>
+								<li class="payment-method" (click)="setPaymentMethod('paypal')"><img class="payment-method-icon" src="{{'../../assets/imgs/paypal.svg'}}"></li>
+								<li class="payment-method" (click)="setPaymentMethod('bitcoin')"><img class="payment-method-icon" src="{{'../../assets/imgs/bitcoin.svg'}}"></li>
 							</ul>
 						</div>
 
-						<div class="inner-form-content payment-details">
+						<div class="inner-form-content payment-details" *ngIf="payMethod === 'visa'">
 							<label class="label" for="card-number">Card Number</label>
 							<div class="input-wrapper">
 								<i class="fas fa-credit-card"></i><input autocomplete="off" class="input" id="card-number" type="tel" name="email" placeholder="1234 1234 1234 1234">
@@ -66,9 +66,8 @@
 			</section>
 			<aside class="order-summary">
 				<h2>Order Summary</h2>
-				<ul *ngIf="myCart.length" class="order-summary-list">
+				<ul class="order-summary-list">
 					<li *ngFor="let product of myCart" class="order-summary-item">
-					{{getCartItems()}}
 						<div class="order-item-info">
 							<div class="order-info-middle"><span class="summary-item-qtt">1 x </span></div>
 							<div class="order-info-middle"><h4 class="summary-item-name">{{product.name}}</h4></div>
@@ -76,7 +75,7 @@
 						</div>
 					</li>
 				</ul>
-				<div class="summary-total"><span>Total $75,00</span></div>
+				<div class="summary-total"><span>Total ${{subtotal}},00</span></div>
 			</aside>
 		</div>
 	</div>

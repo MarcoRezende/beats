@@ -42,7 +42,6 @@ export class AppComponent {
     this.myCart = this.myCart.filter(item => item != product);
     this.subtotal -= product.price;
 
-    this._shareService.handleAllProducts(product);
   }
 
   OnInit() {

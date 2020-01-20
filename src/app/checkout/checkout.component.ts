@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import sampleData from '../../assets/data.json';
 import { ShareService } from '../share.service';
 
 @Component({
@@ -8,25 +9,23 @@ import { ShareService } from '../share.service';
 })
 
 export class CheckoutComponent implements OnInit {
-  myCart: any = [{name: "marco", price: 10}];
+  myCart: any = [];
+  subtotal: number = 0;
+
+  payMethod: string = 'visa';
 
   constructor(private _shareService: ShareService) { }
 
   getCartItems() {
-  	this._shareService.cart
-  	  .subscribe(
-  	    product => {
-  	    	if (!this.myCart.includes(product)) {
-	  	    	if (product.added) {
-		  	    	this.myCart.push(product)
-              		// this.subtotal += product.price;
-		  	    	console.log(this.myCart)
-	  	    	} else {
-	  	    		this.myCart = this.myCart.filter(item => item != product);
-	  	    	}
-  	    	}
-  	    }
-  	  )
+  	// forma temporaria de obter conteudo do carrinho
+    this.myCart = sampleData.products.drum.filter(item => item.added === true);
+  }
+
+  setPaymentMethod(method) {
+  	if (method !== this.payMethod) {
+  		this.payMethod = method;
+  	}
+  	console.log(this.payMethod)
   }
 
   ngOnInit() {

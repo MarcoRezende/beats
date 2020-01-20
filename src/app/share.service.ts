@@ -16,9 +16,4 @@ export class ShareService {
   getProduct(item: any) {
   	this._cart.next(item)
   }
-
-  handleAllProducts(product: any) {
-    product.added = false;
-  	console.log(this._cart, this.cart)
-  }
 }
