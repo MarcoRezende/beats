@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ShareService } from '../share.service';
+import sampleData from '../../assets/data.json';
 
 @Component({
   selector: 'app-cart',
@@ -6,10 +8,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
+  myCart: any = [];
+  subtotal: number = 0;
 
-  constructor() { }
+  constructor(private _shareService: ShareService) { }
+
+  getCartItems() {
+  	// forma temporaria de obter conteudo do carrinho
+    this.myCart = sampleData.products.drum.filter(item => { 
+      if (item.added.length) {
+        if (item.added === true) {
+          return item;
+        }
+      }
+    });
+  }
 
   ngOnInit() {
+  	this.getCartItems();
   }
 
 }

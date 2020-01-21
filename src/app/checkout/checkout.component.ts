@@ -18,7 +18,13 @@ export class CheckoutComponent implements OnInit {
 
   getCartItems() {
   	// forma temporaria de obter conteudo do carrinho
-    this.myCart = sampleData.products.drum.filter(item => item.added === true);
+    this.myCart = sampleData.products.drum.filter(item => { 
+      if (item.added !== undefined) {
+        if (item.added === true) {
+          return item;
+        }
+      }
+    });
   }
 
   setPaymentMethod(method) {
