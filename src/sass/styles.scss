@@ -1059,8 +1059,16 @@ li.review::after {
 // cart page
 
 .my-cart-container {
-	width: 65%;
+	width: 90%;
 	margin: 0 auto;
+
+	@include medium {
+		width: 80%;
+	}
+
+	@include medium-high {
+		width: 70%;
+	}
 }
 
 .my-cart-list {
@@ -1074,12 +1082,18 @@ li.review::after {
 .my-cart-item {
     grid-template-rows: 100%;
     display: grid;
-    grid-template-columns: 5% 15% 80%;
-    min-height: 100%;
+    grid-template-columns: 10% 25% 65%;
+    min-height: 120px;
     overflow: hidden;
     padding: 10px 10px 10px 0;
     margin: 10px 0;
     border: 1px solid #413a40;
+
+    @include small {
+    	grid-template-columns: 5% 15% 80%;
+    	min-height: 100%;
+	}
+
 }
 
 .btn-remove-wrapper {
@@ -1127,20 +1141,32 @@ li.review::after {
 }
 
 .my-cart-item-info {
-    display: grid;
-    grid-template-columns: 60% 20% 20%;
+    display: grid;  
     color: white;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(3, auto);
+
+    @include small {
+    	grid-template-columns: 60% 20% 20%;
+    	grid-template-rows: 100%;
+    	min-height: 100%;
+	}
 }
 
 .align-info {
 	display: table;
 	height: 100%;
+	padding: 2px;
 }
 
 .align-info > h2, .align-info > span {
 	display: table-cell;
-    font-size: 12pt;
+    font-size: 10pt;
     vertical-align: middle;
+
+    @include small-medium {
+    	font-size: 12pt;
+	}
 }
 
 .my-cart-bottom-info {
@@ -1148,6 +1174,10 @@ li.review::after {
 	color: #fff;
 	text-align: right;
 	font-size: 14pt;
+
+	@include small {
+    	font-size: 12pt;
+	}
 }
 
 .my-cart-total {
@@ -1157,11 +1187,10 @@ li.review::after {
 .my-cart-checkout-btn {
 	color: #fff;
 	background-color: transparent;
-	border: 1px solid;
+	border: 2px solid #df1c49;
 	margin: 0 10px;
 	padding: 0;
-	background-color: #df1c49;
-	border: inherit;
+	border-radius: 2px;
 	transition: background-color .5s ease;
 }
 
