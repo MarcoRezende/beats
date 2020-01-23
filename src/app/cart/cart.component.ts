@@ -15,7 +15,7 @@ export class CartComponent implements OnInit {
 
   getCartItems() {
   	// forma temporaria de obter conteudo do carrinho
-    this.myCart = sampleData.products.drum.filter(item => item.added.length && item.added === true);
+    this.myCart = sampleData.products.drum.filter(item => item.added === true);
   }
 
   ngOnInit() {
