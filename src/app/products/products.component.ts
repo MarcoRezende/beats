@@ -28,6 +28,8 @@ export class ProductsComponent implements OnInit {
   category: string;
   isQuery: boolean = false;
   currentProduct: any;
+  allImgs: any = [];
+  imgsLoaded: boolean = false;
 
   // array of all items to be paged
   private allItems: any;
@@ -79,10 +81,19 @@ export class ProductsComponent implements OnInit {
   }
 
   goToTop(ele) {
-    console.log(ele[0])
     if (ele[0] !== "activeLink") {
+      this.allImgs = [];
+      this.imgsLoaded = false;
       // scroll to the top of the page
       document.getElementById('top').scrollIntoView(true);
+    }
+  }
+
+  updateImgState(item) {
+    this.allImgs.push(item)
+
+    if (this.allImgs.length === this.pagedItems.length) {
+      this.imgsLoaded = true;
     }
   }
 

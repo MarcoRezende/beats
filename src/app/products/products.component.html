@@ -1,4 +1,6 @@
-<div class="products-container"  id="top">
+<div *ngIf="!imgsLoaded" class="load-spinner-container"><div class="spinner-wrapper"><div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div></div></div>
+
+<div class="products-container" id="top" [ngClass]="imgsLoaded ? 'page-loaded' : 'page-loading'">
 	<h2 class="main-header">{{category}}</h2>
 	<div class="breadcrumbs">
 		<span class="breadcrumb-item"><a routerLink="/"> Home </a></span>
@@ -18,7 +20,7 @@
 				<a [routerLink]="['/shop', item.id]" [queryParams]="{tag:catalog}">
 					<div class="product-store-image-container">
 						<!-- <div class="buy"><i class="fab fa-spotify"></i></div> -->
-						<img src="{{'../../assets/imgs/products/' + item.id + '-art-600x600.png'}}" alt="" class="this-product-store-image">
+						<img src="{{'../../assets/imgs/products/' + item.id + '-art-600x600.png'}}" alt="" class="this-product-store-image" (load)="updateImgState(item)">
 					</div>
 				</a>
 				<div class="product-store-infos-container">
