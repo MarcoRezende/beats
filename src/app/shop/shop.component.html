@@ -33,7 +33,7 @@
 				</ul>
 			</ng-template>
 		</ngb-tab>
-		<ngb-tab title="Reviews">
+		<ngb-tab title="Reviews {{product[0].reviews.length}}) ">
 			<ng-template ngbTabContent>
 				<ul *ngIf="product[0].reviews" class="reviews-container">
 					<li *ngFor="let review of product[0].reviews" class="review">
