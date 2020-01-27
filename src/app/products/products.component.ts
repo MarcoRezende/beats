@@ -82,7 +82,7 @@ export class ProductsComponent implements OnInit {
 
   goToTop(ele) {
     if (ele[0] !== "activeLink") {
-      this.allImgs = [];
+      this.allImgs = []; 
       this.imgsLoaded = false;
       // scroll to the top of the page
       document.getElementById('top').scrollIntoView(true);

@@ -10,9 +10,10 @@ import { FormsModule } from '@angular/forms';
 import { ProductsComponent } from './products/products.component';
 import { ShopComponent } from './shop/shop.component';
 import { PagerService } from './pager.service';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { CartComponent } from './cart/cart.component';
+import { OnCreateDirective } from './on-create.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CartComponent } from './cart/cart.component';
     ProductsComponent,
     ShopComponent,
     CheckoutComponent,
-    CartComponent
+    CartComponent,
+    OnCreateDirective
   ],
   imports: [
     BrowserModule,

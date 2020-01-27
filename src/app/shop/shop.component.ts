@@ -62,9 +62,9 @@ export class ShopComponent implements OnInit {
 
   createRating(times = 0, element) {
     let elem = document.getElementById(element)
-    let icon = document.createElement('i')
-    icon.className = "fas fa-star"    
     for (let i = 0; i <= times; i++) {
+      let icon = document.createElement('i')
+      icon.className = "fas fa-star"    
       elem.append(icon)
     }
   }
