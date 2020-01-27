@@ -1038,10 +1038,13 @@ ul.nav.nav-pills.justify-content-start::after {
 .tab-content {
 	padding: 10px;
 
-
 	@include small-medium {
 		padding: 10px 0;
 		font-size: 10pt;
+	}
+
+	& > .active {
+	    animation: smooth .9s forwards;
 	}
 }
 
