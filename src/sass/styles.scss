@@ -51,6 +51,10 @@ body {
 	overflow-x: hidden;
 }
 
+.my-container {
+	position: relative;
+}
+
 a, a:hover, a:focus {
 	color: inherit !important;
 	text-decoration: none;
@@ -172,8 +176,8 @@ header .not-home-nav {
 
 .dropdown:hover .dropdown-content {
 	height: auto;
-    opacity: 1;
-    visibility: visible;
+	opacity: 1;
+	visibility: visible;
 }
 
 .to-left {
@@ -354,19 +358,19 @@ header .not-home-nav {
 
 .pagination::before {
 	content: ' ';
-    width: 100%;
-    margin: 20px 0;
-    display: block;
-    border-bottom: 1px solid rgba(65, 58, 64, 0.35);
+	width: 100%;
+	margin: 20px 0;
+	display: block;
+	border-bottom: 1px solid rgba(65, 58, 64, 0.35);
 }    
 
 .page-item {
 	display: inline-block;
-    margin: 10px 0;
-    cursor: pointer;
-    border: 1px solid #413a40;
-    border-right: 0;
-    transition: background-color .3s ease;
+	margin: 10px 0;
+	cursor: pointer;
+	border: 1px solid #413a40;
+	border-right: 0;
+	transition: background-color .3s ease;
 }
 
 .page-item:hover {
@@ -375,7 +379,7 @@ header .not-home-nav {
 }
 
 .page-item:last-child {
-    border-right: 1px solid #413a40;
+	border-right: 1px solid #413a40;
 }
 
 .page-item > a {
@@ -646,67 +650,67 @@ header .not-home-nav {
 }
 
 .lds-ellipsis {
-  display: inline-block;
-  position: relative;
-  width: 80px;
-  height: 80px;
+	display: inline-block;
+	position: relative;
+	width: 80px;
+	height: 80px;
 }
 
 .lds-ellipsis div {
-  position: absolute;
-  top: 33px;
-  width: 13px;
-  height: 13px;
-  border-radius: 50%;
-  background: #fff;
-  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+	position: absolute;
+	top: 33px;
+	width: 13px;
+	height: 13px;
+	border-radius: 50%;
+	background: #fff;
+	animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 
 .lds-ellipsis div:nth-child(1) {
-  left: 8px;
-  animation: lds-ellipsis1 0.6s infinite;
+	left: 8px;
+	animation: lds-ellipsis1 0.6s infinite;
 }
 
 .lds-ellipsis div:nth-child(2) {
-  left: 8px;
-  animation: lds-ellipsis2 0.6s infinite;
+	left: 8px;
+	animation: lds-ellipsis2 0.6s infinite;
 }
 
 .lds-ellipsis div:nth-child(3) {
-  left: 32px;
-  animation: lds-ellipsis2 0.6s infinite;
+	left: 32px;
+	animation: lds-ellipsis2 0.6s infinite;
 }
 
 .lds-ellipsis div:nth-child(4) {
-  left: 56px;
-  animation: lds-ellipsis3 0.6s infinite;
+	left: 56px;
+	animation: lds-ellipsis3 0.6s infinite;
 }
 
 @keyframes lds-ellipsis1 {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
+	0% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(1);
+	}
 }
 
 @keyframes lds-ellipsis3 {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(0);
-  }
+	0% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(0);
+	}
 }
 
 @keyframes lds-ellipsis2 {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(24px, 0);
-  }
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(24px, 0);
+	}
 }
 
 .breadcrumbs {
@@ -1044,7 +1048,7 @@ ul.nav.nav-pills.justify-content-start::after {
 	}
 
 	& > .active {
-	    animation: smooth .9s forwards;
+		animation: smooth .9s forwards;
 	}
 }
 
@@ -1133,7 +1137,7 @@ li.review::after {
 	width: 100%;
 	display: block;
 	font-size: 10pt;
-    color: #d4d43d;
+	color: #d4d43d;
 }
 
 .user-message {
@@ -1163,41 +1167,41 @@ li.review::after {
 }
 
 .my-cart-list {
-    display: block;
-    padding: 10px;
-    margin: 0 auto;
-    text-align: center;
-    width: 100%;
+	display: block;
+	padding: 10px;
+	margin: 0 auto;
+	text-align: center;
+	width: 100%;
 }
 
 .my-cart-item {
-    grid-template-rows: 100%;
-    display: grid;
-    grid-template-columns: 10% 25% 65%;
-    min-height: 120px;
-    overflow: hidden;
-    padding: 10px 10px 10px 0;
-    margin: 10px 0;
-    border: 1px solid #413a40;
+	grid-template-rows: 100%;
+	display: grid;
+	grid-template-columns: 10% 25% 65%;
+	min-height: 120px;
+	overflow: hidden;
+	padding: 10px 10px 10px 0;
+	margin: 10px 0;
+	border: 1px solid #413a40;
 
-    @include small {
-    	grid-template-columns: 5% 15% 80%;
-    	min-height: 100%;
+	@include small {
+		grid-template-columns: 5% 15% 80%;
+		min-height: 100%;
 	}
 
 }
 
 .btn-remove-wrapper {
-    display: table;
-    height: 100%;
+	display: table;
+	height: 100%;
 }
 
 .btn-remove-wrapper > button {
-    color: white;
-    vertical-align: middle;
-    height: 100%;
-    width: 100%;
-    padding: 0;
+	color: white;
+	vertical-align: middle;
+	height: 100%;
+	width: 100%;
+	padding: 0;
 }
 
 .btn-remove-wrapper > button:focus {
@@ -1205,42 +1209,42 @@ li.review::after {
 }
 
 .my-cart-item-image {
-    display: block;
-    height: 100%;
-    width: 100%;
+	display: block;
+	height: 100%;
+	width: 100%;
 }
 
 .my-cart-item-image .my-cart-product-image {
-    width: 100%;
-    height: 100%;
-    flex-shrink: 0;
-    object-fit: cover;
-    min-width: 100%;
-    min-height: 100%;
+	width: 100%;
+	height: 100%;
+	flex-shrink: 0;
+	object-fit: cover;
+	min-width: 100%;
+	min-height: 100%;
 }
 
 .my-cart-wrapper {
-    display: table;
-    height: 100%;
+	display: table;
+	height: 100%;
 }
 
 .middle-content {
-    display: table-cell;
-    height: 100%;
-    vertical-align: middle;
-    padding: 5px;
+	display: table-cell;
+	height: 100%;
+	vertical-align: middle;
+	padding: 5px;
 }
 
 .my-cart-item-info {
-    display: grid;  
-    color: white;
-    grid-template-columns: 100%;
-    grid-template-rows: repeat(3, auto);
+	display: grid;  
+	color: white;
+	grid-template-columns: 100%;
+	grid-template-rows: repeat(3, auto);
 
-    @include small {
-    	grid-template-columns: 60% 20% 20%;
-    	grid-template-rows: 100%;
-    	min-height: 100%;
+	@include small {
+		grid-template-columns: 60% 20% 20%;
+		grid-template-rows: 100%;
+		min-height: 100%;
 	}
 }
 
@@ -1252,11 +1256,11 @@ li.review::after {
 
 .align-info > h2, .align-info > span {
 	display: table-cell;
-    font-size: 10pt;
-    vertical-align: middle;
+	font-size: 10pt;
+	vertical-align: middle;
 
-    @include small-medium {
-    	font-size: 12pt;
+	@include small-medium {
+		font-size: 12pt;
 	}
 }
 
@@ -1267,7 +1271,7 @@ li.review::after {
 	font-size: 14pt;
 
 	@include small {
-    	font-size: 12pt;
+		font-size: 12pt;
 	}
 }
 
@@ -1370,16 +1374,16 @@ li.review::after {
 }
 
 .inner-form-content {
-    border-radius: 10px;
-    margin: 50px 0 0;
+	border-radius: 10px;
+	margin: 50px 0 0;
 }
 
 .checkout-form:last-child::before {
 	content: ' ';
-    display: block;
-    width: 100%;
-    margin: 50px 0;
-    border: .5px solid rgba(121, 115, 120, 0.22);
+	display: block;
+	width: 100%;
+	margin: 50px 0;
+	border: .5px solid rgba(121, 115, 120, 0.22);
 }
 
 .input-wrapper {
@@ -1431,50 +1435,50 @@ li.review::after {
 
 .checkout-payment {
 	display: grid;
-    margin: 50px 0 10px;
-    grid-gap: 50px 20px;
-    grid-template-columns: 100%;
-    grid-template-rows: repeat(2, auto);
+	margin: 50px 0 10px;
+	grid-gap: 50px 20px;
+	grid-template-columns: 100%;
+	grid-template-rows: repeat(2, auto);
 
-    @include medium {
-    	grid-template-rows: 100%;
-    	grid-template-columns: 20% auto;
-    	grid-gap: 0 20px;
+	@include medium {
+		grid-template-rows: 100%;
+		grid-template-columns: 20% auto;
+		grid-gap: 0 20px;
 
 	}
 }
 
 .payment-methods {
 	list-style-type: none;
-    padding: 0;
-    display: grid;
-    grid-gap: 10px;
-    margin: 0;
-    height: 100%;
-    grid-template-columns: repeat(3, auto);
+	padding: 0;
+	display: grid;
+	grid-gap: 10px;
+	margin: 0;
+	height: 100%;
+	grid-template-columns: repeat(3, auto);
 	grid-template-rows: 100%;
-    
 
-    @include medium {
-    	grid-template-columns: 100%;
-    	grid-template-rows: repeat(3, auto);
+
+	@include medium {
+		grid-template-columns: 100%;
+		grid-template-rows: repeat(3, auto);
 	}
 }
 
 .payment-method {
-    text-align: center;
-    display: table;
-    height: 100%;
-    cursor: pointer;
-    font-size: 18pt;
-    transition: all .5s ease;
-    box-shadow: 0px 8px 30px -2px rgba(0,0,0,.2);
-    border: 2px solid transparent;
-    border-radius: 3px;
-    padding: 20px 0;
+	text-align: center;
+	display: table;
+	height: 100%;
+	cursor: pointer;
+	font-size: 18pt;
+	transition: all .5s ease;
+	box-shadow: 0px 8px 30px -2px rgba(0,0,0,.2);
+	border: 2px solid transparent;
+	border-radius: 3px;
+	padding: 20px 0;
 
-    @include medium {
-    	padding: 0;
+	@include medium {
+		padding: 0;
 	}
 }
 
@@ -1484,10 +1488,10 @@ li.review::after {
 
 .payment-method > .payment-method-icon {
 	display: table-cell;
-    vertical-align: middle;
-    width: 30px;
-    height: 100%;
-    margin: 0 auto;
+	vertical-align: middle;
+	width: 30px;
+	height: 100%;
+	margin: 0 auto;
 }
 
 .payment-details {
@@ -1506,12 +1510,12 @@ li.review::after {
 }
 
 .btn-confirm {
-    display: block;
-    margin: 0 auto;
-    transition: background-color .5s ease;
-    padding: 10px 15px;
-    color: #fff;
-    border: 2px solid #361cad;
+	display: block;
+	margin: 0 auto;
+	transition: background-color .5s ease;
+	padding: 10px 15px;
+	color: #fff;
+	border: 2px solid #361cad;
 }
 
 .btn-confirm:hover {
@@ -1541,8 +1545,8 @@ li.review::after {
 
 .order-summary-item {
 	padding: 20px 50px;
-    border-left: 0;
-    border-right: 0;
+	border-left: 0;
+	border-right: 0;
 }
 
 .order-summary-item:last-child {
@@ -1559,11 +1563,11 @@ li.review::after {
 
 .order-item-container-img > .order-item-img {
 	width: 100%;
-	 height: 100%;
-	 flex-shrink: 0;
-	 object-fit: cover;
-	 min-width: 100%;
-	 min-height: 100%;
+	height: 100%;
+	flex-shrink: 0;
+	object-fit: cover;
+	min-width: 100%;
+	min-height: 100%;
 }
 
 .order-item-info {
@@ -1605,14 +1609,49 @@ li.review::after {
 
 .summary-total {
 	display: block;
-    width: 100%;
-    padding: 15px;
-    background-color: #361cad;
+	width: 100%;
+	padding: 15px;
+	background-color: #361cad;
 }
 
 .summary-total > span {
 	display: block;
-    height: 100%;
-    width: 100%;
-    text-align: center;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+}
+
+// footer
+
+footer {
+	font-size: 10pt;
+	position: absolute;
+	bottom: 0;
+	margin: 50px 0 0;
+	top: 100%;
+	display: none;
+	height: 100px;
+	width: 100%;
+	color: white;
+	background-color: #3d4043;
+}
+
+.hidden-footer {
+	display: block;
+}
+
+.footer-content {
+	display: table;
+	padding: 10px 20px;
+	height: 100%;
+}
+
+.dmca-badge {
+	display: table-cell;
+	height: 100%;
+	vertical-align: middle;
+}
+
+.dmca-badge > img {
+	height: 50px;
 }

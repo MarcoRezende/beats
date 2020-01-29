@@ -66,7 +66,7 @@ export class ShopComponent implements OnInit {
       let icon = document.createElement('i')
       icon.className = "fas fa-star"    
       elem.append(icon)
-    }
+    } 
   }
 
   zoomIn(event) {

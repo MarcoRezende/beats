@@ -83,6 +83,11 @@ export class ProductsComponent implements OnInit {
   goToTop(ele) {
     if (ele[0] !== "activeLink") {
       this.allImgs = []; 
+
+      // removendo classe 'hidden-footer'
+      let footer = document.querySelector('footer')
+      footer.classList.remove('hidden-footer');
+      
       this.imgsLoaded = false;
       // scroll to the top of the page
       document.getElementById('top').scrollIntoView(true);
@@ -91,8 +96,10 @@ export class ProductsComponent implements OnInit {
 
   updateImgState(item) {
     this.allImgs.push(item)
+    let footer = document.querySelector('footer')
 
     if (this.allImgs.length === this.pagedItems.length) {
+      footer.classList.add('hidden-footer');
       this.imgsLoaded = true;
     }
   }
