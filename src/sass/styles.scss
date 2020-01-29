@@ -1620,38 +1620,3 @@ li.review::after {
 	width: 100%;
 	text-align: center;
 }
-
-// footer
-
-footer {
-	font-size: 10pt;
-	position: absolute;
-	bottom: 0;
-	margin: 50px 0 0;
-	top: 100%;
-	display: none;
-	height: 100px;
-	width: 100%;
-	color: white;
-	background-color: #3d4043;
-}
-
-.hidden-footer {
-	display: block;
-}
-
-.footer-content {
-	display: table;
-	padding: 10px 20px;
-	height: 100%;
-}
-
-.dmca-badge {
-	display: table-cell;
-	height: 100%;
-	vertical-align: middle;
-}
-
-.dmca-badge > img {
-	height: 50px;
-}
