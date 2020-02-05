@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ShareService } from '../share.service';
 import sampleData from '../../assets/data.json';
 export default sampleData;
@@ -49,7 +48,9 @@ export class ShopComponent implements OnInit {
   }
 
   addToCart(product) {
-    this._shareService.getProduct(product);
+    let obj = {task: "add", item: {}};
+    obj.item = product; 
+    this._shareService.getProduct(obj);
   }
   
   formatDate(date) {

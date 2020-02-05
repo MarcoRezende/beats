@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ShareService } from './share.service';
-import { Router, Event, NavigationEnd } from '@angular/router';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, Event, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss']  
 })
 
 export class AppComponent {
@@ -26,21 +25,27 @@ export class AppComponent {
   getCartItems() {
   	this._shareService.cart
   	  .subscribe(
-  	    product => {
-  	    	if (!this.myCart.includes(product)) {
-  	    	  product.added = true;
-  	    	  this.myCart.push(product)
-            this.subtotal += product.price;
-  	    	}
-  	    }
+  	    (obj) => {
+          if (obj.task === "add") {
+            if (!this.myCart.includes(obj.item)) {
+              obj.item.added = true;
+              this.myCart.push(obj.item)
+              this.subtotal += obj.item.price;
+            }
+          } else if (obj.task === "remove") {
+  	    	  if (this.myCart.includes(obj.item)) {
+              obj.item.added = false;
+              this.myCart = this.myCart.filter(item => item != obj.item);
+              this.subtotal -= obj.item.price;
+            }
+  	      }
+        }
   	  )
   }
 
-  removeCartItem(product) {
-    product.added = false;
-    this.myCart = this.myCart.filter(item => item != product);
-    this.subtotal -= product.price;
-
+  handleCartItem(product, task) {
+    let obj = {task: task, item: product};
+    this._shareService.getProduct(obj);
   }
 
   OnInit() {

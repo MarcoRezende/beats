@@ -58,8 +58,9 @@ export class ProductsComponent implements OnInit {
       this.category = this.product[0].category;
   }
 
-  addToCart(product) {
-    this._shareService.getProduct(product);
+  handleCartItem(product, task) {
+    let obj = {task: task, item: product};
+    this._shareService.getProduct(obj);
   }
 
   sortItems(sortType = 'date') {

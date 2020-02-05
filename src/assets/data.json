@@ -2,22 +2,19 @@
 	"products": {
 		"vst": [
 				{
-					"id": "ronnyj-ortodox",
+					"id": "ronnyj-robbery",
 					"category": "Drum Kit",
-					"release_date": "2019-11-05T13:15:30Z",
+					"plugin": "nexus",
+					"release_date": "2019-09-05T13:15:30Z",
 					"rating": 5,
-					"name": "RonnyJ - Ortodox (Drum Kit)",
+					"name": "RonnyJ - Robbery (Nexus Bank)",
 					"by": "RonnyJ",
 					"price": 25,
 					"content": [
-						"5 808s",
-						"4 Kicks",
-						"5 Snares",
-						"6 Claps",
-						"12 Hi Hats",
-						"9 Percs",
-						"3 Open Hats",
-						"8 Loops"
+						"2 pads",
+						"2 Flutes",
+						"5 Bells",
+						"4 Plucks"
 					],
 					"reviews": [
 						{
@@ -25,7 +22,7 @@
 							"username": "Louis",
 							"profile_pic": "https://loremflickr.com/320/240/dog",
 							"message": "Awesome",
-							"date": "2019-11-05T13:15:30Z",
+							"date": "2020-11-05T13:15:30Z",
 							"rating": 5
 						},
 						{
@@ -33,7 +30,7 @@
 							"username": "Arnold",
 							"profile_pic": "https://loremflickr.com/320/240/cat",
 							"message": "Lit man! I'm a fan of RonnyJ",
-							"date": "2019-11-05T13:15:30Z",
+							"date": "2019-12-05T13:15:30Z",
 							"rating": 5
 						}
 					]
@@ -667,15 +664,15 @@
 		],
 		"midi": [
 			{
-				"id": "ronnyj-flames",
-				"category": "Loops & Samples",
+				"id": "metro-boomin-swag",
+				"category": "Midi",
 				"release_date": "2019-11-05T13:15:30Z",
 				"rating": 5,
-				"name": "RonnyJ - Flames (Loop Kit)",
-				"by": "RonnyJ",
+				"name": "RonnyJ - Swag (Midi Pack)",
+				"by": "Metro Boomin",
 				"price": 25,
 				"content": [
-					"12 loops"
+					"22 midis"
 				],
 				"reviews": [
 					{

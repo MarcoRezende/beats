@@ -13,7 +13,7 @@ export class ShareService {
 
   constructor() { }
 
-  getProduct(item: any) {
-  	this._cart.next(item)
+  getProduct(obj: Object) {
+  	this._cart.next(obj)
   }
 }
