@@ -53,7 +53,7 @@ export class CartComponent implements OnInit {
           }
         )     
     }
-
+    console.log(this.myCart)
   }
 
   removeItemFromCart(product) {

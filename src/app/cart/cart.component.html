@@ -1,34 +1,38 @@
 <div class="my-cart-container">
 	<h2 class="main-header">CART</h2>
 
-	<ul class="my-cart-list">
-		<li class="my-cart-item" *ngFor="let product of myCart">
-			<div class="btn-remove-wrapper">
-				<button (click)="removeItemFromCart(product)" class="btn">x</button>
-			</div>
-			<div class="my-cart-item-image">
-				<img class="my-cart-product-image" src="{{'../../assets/imgs/products/' + product.id + '-art-600x600.png'}}" alt="">
-			</div>
-			<div class="my-cart-wrapper">
-				<div class="middle-content">
-					<div class="my-cart-item-info">
-						<div class="align-info">
-							<h2> {{product.name}} </h2>
-						</div>
-						<div class="align-info">
-							<span class="price">${{product.price}},00</span>
-						</div>
-						<div class="align-info">
-							<span class="price">By {{product.by}} </span>
+	<app-empty-cart *ngIf="!myCart.length"></app-empty-cart>
+
+
+	<section *ngIf="myCart.length">
+		<ul class="my-cart-list">
+			<li class="my-cart-item" *ngFor="let product of myCart">
+				<div class="btn-remove-wrapper">
+					<button (click)="removeItemFromCart(product)" class="btn">x</button>
+				</div>
+				<div class="my-cart-item-image">
+					<img class="my-cart-product-image" src="{{'../../assets/imgs/products/' + product.id + '-art-600x600.png'}}" alt="">
+				</div>
+				<div class="my-cart-wrapper">
+					<div class="middle-content">
+						<div class="my-cart-item-info">
+							<div class="align-info">
+								<h2> {{product.name}} </h2>
+							</div>
+							<div class="align-info">
+								<span class="price">${{product.price}},00</span>
+							</div>
+							<div class="align-info">
+								<span class="price">By {{product.by}} </span>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</li>
-	</ul>
-
-	<div class="my-cart-bottom-info">
-		<button class="my-cart-checkout-btn"><a routerLink="/checkout">CHECKOUT</a></button>
-		<span class="my-cart-total">TOTAL: ${{subtotal}},00</span>
-	</div>
+			</li>
+		</ul>
+		<div class="my-cart-bottom-info">
+			<button class="my-cart-checkout-btn"><a routerLink="/checkout">CHECKOUT</a></button>
+			<span class="my-cart-total">TOTAL: ${{subtotal}},00</span>
+		</div>
+	</section>
 </div>

@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { CartComponent } from './cart/cart.component';
 import { OnCreateDirective } from './on-create.directive';
+import { EmptyCartComponent } from './empty-cart/empty-cart.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { OnCreateDirective } from './on-create.directive';
     ShopComponent,
     CheckoutComponent,
     CartComponent,
-    OnCreateDirective
+    OnCreateDirective,
+    EmptyCartComponent
   ],
   imports: [
     BrowserModule,

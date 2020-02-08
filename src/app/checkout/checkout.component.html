@@ -2,6 +2,8 @@
 		
 		<h2 class="main-header">CHECKOUT</h2>
 
+		<app-empty-cart *ngIf="!myCart.length"></app-empty-cart>
+
 		<div *ngIf="myCart.length" class="checkout-wrapper">
 			<section class="form-section">
 				<form class="checkout-form">

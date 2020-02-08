@@ -420,6 +420,13 @@ header .not-home-nav {
 
 		& .btn-cart, & .btn-checkout {
 			border-radius: inherit;
+			padding: 0;
+		}
+
+		& .btn-cart > a, & .btn-checkout a {
+			display: block;
+			border-radius: inherit;
+			padding: .375rem .75rem;
 		}
 		
 		& .btn-cart {
@@ -1413,7 +1420,7 @@ li.review::after {
 	// media queries
 	@include small {
 		width: 80%;
-		padding: 20px;
+		padding: 0 20px;
 	}
 }
 
@@ -1721,4 +1728,30 @@ li.review::after {
 	height: 100%;
 	width: 100%;
 	text-align: center;
+}
+
+// empty cart template
+
+.empty-cart-container {
+	display: table;
+	margin: 0 auto;
+	width: 90%;
+	padding: 20px 50px;
+	animation: smooth .9s forwards;
+}
+
+.empty-cart-wrapper {
+	width: 100%;
+	display: table-cell;
+	vertical-align: middle;
+	height: calc(100vh - 180px);
+	margin: 0 auto;
+}
+
+.empty-cart-wrapper > img {
+	height: 100%;
+	display: block;
+	max-width: 620px;
+	width: 100%;
+	margin: 0 auto;
 }
