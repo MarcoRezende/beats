@@ -48,8 +48,7 @@ export class ShopComponent implements OnInit {
   }
 
   addToCart(product) {
-    let obj = {task: "add", item: {}};
-    obj.item = product; 
+    let obj = {task: "add", item: product};
     this._shareService.getProduct(obj);
   }
   

@@ -19,10 +19,10 @@ export class ProductsComponent implements OnInit {
   data: any = sampleData;
   catalog: string = "";
   query: any = [
-    {name:'vst-expansion',prod:'vst'}, 
-    {name:'drum-kit',prod:'drum'}, 
-    {name:'loops',prod:'loops'}, 
-    {name:'midi-kit',prod:'midi'}
+  {name:'vst-expansion',prod:'vst'}, 
+  {name:'drum-kit',prod:'drum'}, 
+  {name:'loops',prod:'loops'}, 
+  {name:'midi-kit',prod:'midi'}
   ];
   product: any;
   category: string;
@@ -41,21 +41,21 @@ export class ProductsComponent implements OnInit {
   pagedItems: any[];
 
   constructor(private route: ActivatedRoute, private router: Router, private _shareService: ShareService, private http: HttpClient, private pagerService: PagerService) {
-      this.router.routeReuseStrategy.shouldReuseRoute = () => false;
-      this.route.queryParams.subscribe(values => {
-        this.catalog = values.catalog;
-      });
-      for (let i = 0; i < this.query.length; i++) {
-        if (this.catalog === this.query[i].name) {
-          this.product = this.data.products[this.query[i].prod];
-          this.isQuery = true;
-          this.currentProduct = this.query[i].prod;
-        }
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.route.queryParams.subscribe(values => {
+      this.catalog = values.catalog;
+    });
+    for (let i = 0; i < this.query.length; i++) {
+      if (this.catalog === this.query[i].name) {
+        this.product = this.data.products[this.query[i].prod];
+        this.isQuery = true;
+        this.currentProduct = this.query[i].prod;
       }
-      if (!this.isQuery) {
-        this.router.navigate(['/']);
-      }
-      this.category = this.product[0].category;
+    }
+    if (!this.isQuery) {
+      this.router.navigate(['/']);
+    }
+    this.category = this.product[0].category;
   }
 
   handleCartItem(product, task) {
@@ -103,7 +103,7 @@ export class ProductsComponent implements OnInit {
     this.setPage(1)
 
     this.sortItems();
- }
+  }
 
   setPage(page: number) {
     // get data

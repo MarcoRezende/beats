@@ -42,7 +42,7 @@
 						<div class="inner-form-content payment-details" *ngIf="payMethod === 'visa'">
 							<label class="label" for="card-number">Card Number</label>
 							<div class="input-wrapper">
-								<i class="fas fa-credit-card"></i><input autocomplete="off" class="input" id="card-number" type="tel" name="email" placeholder="1234 1234 1234 1234">
+								<i class="fas fa-credit-card"></i><input autocomplete="off" class="input" id="card-number" type="tel" name="card number" placeholder="1234 1234 1234 1234" (change)="validateCard($event.target.value)" [ngClass]="isValidCC ? 'valid' : (isValidCC === false ? 'invalid' : 'initial')">
 							</div>
 
 
@@ -50,15 +50,43 @@
 								<div class="payment-info">
 									<label class="label" for="exp-date">Expiration Date</label>
 									<div class="input-wrapper">
-										<i class="far fa-credit-card"></i><input autocomplete="off" class="input" id="exp-date" type="tel" name="email" placeholder="MM / YY">
+										<i class="far fa-credit-card"></i><input autocomplete="off" class="input" id="exp-date" type="tel" name="expiration date" placeholder="MM / YY">
 									</div>
 								</div>
 
 								<div class="payment-info">
 									<label class="label" for="cvv-code">CVV Code</label>
 									<div class="input-wrapper">
-										<i class="fas fa-unlock-alt"></i><input autocomplete="off" class="input" id="cvv-code" type="tel" name="email" placeholder="CVV">
+										<i class="fas fa-unlock-alt"></i><input autocomplete="off" class="input" id="cvv-code" type="tel" name="cvv" placeholder="CVV" >
 									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="inner-form-content payment-details" *ngIf="payMethod === 'paypal'">
+							<div class="paypal-container">
+								<div class="paypal-wrapper">
+									<i class="fas fa-shopping-basket"></i>
+									<span>$75,00</span>
+									<p>Continue your purchase with paypal.</p>
+									<button type="button" class="btn"><a href="http://www.paypal.com" target="_blank"> <img src="https://cdn.pixabay.com/photo/2015/05/26/09/37/paypal-784404_960_720.png" alt=""> </a></button>
+								</div>
+							</div>
+						</div>
+
+						<div class="inner-form-content payment-details" *ngIf="payMethod === 'bitcoin'">
+							<div class="bitcoin-container">
+								<div class="bitcoin-wrapper">
+									<!-- <span>$75,00</span> -->
+									<!-- <p> Process your payment with <img src="imgs/bitpay.svg" alt="" class=""> </p> --> 
+									<div class="purchase-bitcoin-value">
+										<img src="imgs/bitpay.svg" alt="" class="">
+										<i class="fab fa-bitcoin"></i>
+										<p>0,0072 BTC</p>
+										<i class="fas fa-sync-alt"></i>
+										<i class="fas fa-info-circle"></i>
+									</div>
+									<img src="imgs/qr_1.png" alt="" class="">
 								</div>
 							</div>
 						</div>

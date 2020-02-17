@@ -9,6 +9,7 @@ import { Router, ActivatedRoute, Event, NavigationEnd } from '@angular/router';
 })
 
 export class AppComponent {
+
   title = 'beats';
   myCart: any = [];
   subtotal: number = 0;
@@ -18,6 +19,7 @@ export class AppComponent {
     router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd ) {
         this.home = event.url === '/' ? true : false;
+      setTimeout(() => this.getCartItems(), 100);
       }
     });
   }
@@ -49,6 +51,6 @@ export class AppComponent {
   }
 
   OnInit() {
-  	this.getCartItems();
+    this.getCartItems();
   }
 }

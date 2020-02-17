@@ -57,8 +57,7 @@ export class CartComponent implements OnInit {
   }
 
   removeItemFromCart(product) {
-    let obj = {task: "remove", item: {}};
-    obj.item = product; 
+    let obj = {task: "remove", item: product};
 
     this._shareService.getProduct(obj);
     this.getCartItems();

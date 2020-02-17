@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Subject, BehaviorSubject } from 'rxjs';
 import sampleData from '../../assets/data.json';
 import { ShareService } from '../share.service';
 
@@ -9,14 +10,20 @@ import { ShareService } from '../share.service';
 })
 
 export class CheckoutComponent implements OnInit {
+  @Input() notifier: Subject<boolean> = new Subject<boolean>();
+
+  value: boolean;
+
   myCart: any = [];
   subtotal: number = 0;
 
   payMethod: string = 'visa';
 
+  isValidCC: any = null;
+
   constructor(private _shareService: ShareService) { }
 
-  getCartItems(t) {
+  getCartItems(t = null) {
     if (t === "init") {
       // esvaziando carrinho
       this.myCart = [];
@@ -35,7 +42,7 @@ export class CheckoutComponent implements OnInit {
                   }
               }
           })
-      }
+      } 
     } else {
       this._shareService.cart
         .subscribe(
@@ -62,6 +69,17 @@ export class CheckoutComponent implements OnInit {
   	if (method !== this.payMethod) {
   		this.payMethod = method;
   	}
+  }
+
+  validateCard(cardNumber) {
+    console.log(cardNumber)
+    var cardno = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
+
+    if (cardNumber.length) {
+      this.isValidCC = cardNumber.match(cardno) ? true : false;
+    } else {
+      this.isValidCC = null;
+    }
   }
 
   ngOnInit() {
