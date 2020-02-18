@@ -61,14 +61,14 @@
                         </div>
                         <div class="cart-data">
                           <h4 class="cart-name">{{item.name}}</h4>
-                          <span class="cart-price">${{item.price}}</span>
+                          <span class="cart-price">${{item.price.toFixed(2)}}</span>
                         </div>
                       </a>
                     </div>
                   </div>
                   <div class="btns-container">
                     <div class="nav-btns">
-                      <span class="subtotal">Subtotal: ${{subtotal}}</span>
+                      <span class="subtotal">Subtotal: ${{subtotal.toFixed(2)}}</span>
                       <button class="btn btn-cart"><a routerLink="/cart">Cart</a></button>
                       <button class="btn btn-checkout"><a routerLink="/checkout">Checkout</a></button>
                     </div>

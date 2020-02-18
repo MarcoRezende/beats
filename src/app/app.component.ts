@@ -19,7 +19,7 @@ export class AppComponent {
     router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd ) {
         this.home = event.url === '/' ? true : false;
-      setTimeout(() => this.getCartItems(), 100);
+        setTimeout(() => this.getCartItems(), 100);
       }
     });
   }

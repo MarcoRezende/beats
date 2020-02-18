@@ -19,10 +19,10 @@ export class ProductsComponent implements OnInit {
   data: any = sampleData;
   catalog: string = "";
   query: any = [
-  {name:'vst-expansion',prod:'vst'}, 
-  {name:'drum-kit',prod:'drum'}, 
-  {name:'loops',prod:'loops'}, 
-  {name:'midi-kit',prod:'midi'}
+    {name:'vst-expansion',prod:'vst'}, 
+    {name:'drum-kit',prod:'drum'}, 
+    {name:'loops',prod:'loops'}, 
+    {name:'midi-kit',prod:'midi'}
   ];
   product: any;
   category: string;

@@ -25,7 +25,7 @@
 				</a>
 				<div class="product-store-infos-container">
 					<h4>{{item.name}}</h4>
-					<span>${{item.price}}</span>
+					<span>${{item.price.toFixed(2)}}</span>
 					<button class="btn" (click)='handleCartItem(item, "add")' [ngClass]="item.added === undefined || item.added === false ? 'btn-add' : 'btn-added'">{{ item.added === undefined || item.added === false ? 'ADD TO CART' : 'ADDED' }}</button>
 				</div>
 			</div>

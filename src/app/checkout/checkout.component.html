@@ -67,7 +67,7 @@
 							<div class="paypal-container">
 								<div class="paypal-wrapper">
 									<i class="fas fa-shopping-basket"></i>
-									<span>$75,00</span>
+									<span>${{subtotal.toFixed(2)}}</span>
 									<p>Continue your purchase with paypal.</p>
 									<button type="button" class="btn"><a href="http://www.paypal.com" target="_blank"> <img src="https://cdn.pixabay.com/photo/2015/05/26/09/37/paypal-784404_960_720.png" alt=""> </a></button>
 								</div>
@@ -101,11 +101,11 @@
 						<div class="order-item-info">
 							<div class="order-info-middle"><span class="summary-item-qtt">1 x </span></div>
 							<div class="order-info-middle"><h4 class="summary-item-name">{{product.name}}</h4></div>
-							<div class="order-info-middle"><span class="summary-item-price">${{product.price}}</span></div>
+							<div class="order-info-middle"><span class="summary-item-price">${{product.price.toFixed(2)}}</span></div>
 						</div>
 					</li>
 				</ul>
-				<div class="summary-total"><span>Total ${{subtotal}},00</span></div>
+				<div class="summary-total"><span>Total ${{subtotal.toFixed(2)}}</span></div>
 			</aside>
 		</div>
 	</div>

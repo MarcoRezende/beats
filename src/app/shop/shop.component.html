@@ -14,7 +14,7 @@
 		</div>
 		<div class="shop-item-infos">
 			<h2 class="product-name"> {{product[0].name}} </h2>
-			<span class="price">${{product[0].price}}</span>
+			<span class="price">${{product[0].price.toFixed(2)}}</span>
 
 			<div class="extra-info">
 				<span id="category">Category: <span id="category-highlight"><a routerLink="/products" [queryParams]="{catalog:catalog}"> {{product[0].category}}</a></span></span>

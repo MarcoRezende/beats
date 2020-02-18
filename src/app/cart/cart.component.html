@@ -20,7 +20,7 @@
 								<h2> {{product.name}} </h2>
 							</div>
 							<div class="align-info">
-								<span class="price">${{product.price}},00</span>
+								<span class="price">${{product.price.toFixed(2)}}</span>
 							</div>
 							<div class="align-info">
 								<span class="price">By {{product.by}} </span>
@@ -32,7 +32,7 @@
 		</ul>
 		<div class="my-cart-bottom-info">
 			<button class="my-cart-checkout-btn"><a routerLink="/checkout">CHECKOUT</a></button>
-			<span class="my-cart-total">TOTAL: ${{subtotal}},00</span>
+			<span class="my-cart-total">TOTAL: ${{subtotal.toFixed(2)}}</span>
 		</div>
 	</section>
 </div>
