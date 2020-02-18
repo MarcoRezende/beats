@@ -1603,6 +1603,7 @@ input {
 	text-align: center;
 	display: table;
 	height: 100%;
+	min-height: 70px;
 	cursor: pointer;
 	font-size: 18pt;
 	transition: all .5s ease;
@@ -1637,12 +1638,13 @@ input {
 	grid-template-rows: 100%;
 	grid-template-columns: repeat(2, auto);
 	grid-column-gap: 10px;
+}
 
-	&, .bitcoin-container {
-		display: table;
-		width: 100%;
-		height: 100%;
-	}
+.paypal-container, .bitcoin-container {
+	display: table;
+	margin: 0 auto;
+	width: 100%;
+	height: 100%;
 }
 
 .paypal-wrapper, .bitcoin-wrapper {
@@ -1672,11 +1674,15 @@ input {
 
 	& > button {
 		background-color: #f7c556;
-		width: 80%;
+		width: 50%;
 		display: block;
 		padding: 0;
 		margin: 0 auto;
 		box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.25);
+
+		@include medium {
+			width: 80%;
+		}
 
 		& > a {
 			display: block;
@@ -1731,6 +1737,11 @@ input {
 	&  > img {
 		display: block;
 		margin: 0 auto;
+		max-height: inherit;
+
+		@include medium {
+			max-height: 170px;
+		}
 	}
 }
 
@@ -1740,7 +1751,7 @@ input {
 
 .btn-confirm {
 	display: block;
-	margin: 0 auto;
+	margin: 10px auto;
 	transition: background-color .5s ease;
 	padding: 10px 15px;
 	color: #fff;
