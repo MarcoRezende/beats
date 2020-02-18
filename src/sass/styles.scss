@@ -318,15 +318,6 @@ header .not-home-nav {
 	margin: 10px 0;
 }
 
-@keyframes smooth {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
-}
-
 .cart-wrapper {
 	display: grid;
 	grid-template-rows: auto;
@@ -1631,6 +1622,7 @@ input {
 
 .payment-details {
 	margin: 0;
+	animation: smooth .9s;
 }
 
 .payment-container {
@@ -1885,4 +1877,16 @@ input {
 	max-width: 620px;
 	width: 100%;
 	margin: 0 auto;
+}
+
+// animações
+
+
+@keyframes smooth {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
