@@ -132,7 +132,7 @@ header .home-nav {
 
 	@include rpsn-nav {
 		background-color: #101422 !important;
-    	box-shadow: 0 4px 20px #00000087;
+		box-shadow: 0 4px 20px #00000087;
 	}
 }
 
@@ -259,10 +259,10 @@ header .not-home-nav {
 
 	@include rpsn-nav {
 		position: inherit;
-	    border: 0;
-	    display: none;
-	    margin: 5px 0 0;
-	    box-shadow: none;
+		border: 0;
+		display: none;
+		margin: 5px 0 0;
+		box-shadow: none;
 	}
 }
 
@@ -1520,8 +1520,8 @@ input {
 	& ~ .fa-check-circle, & ~ .fa-times-circle {
 		animation: smooth .3s;
 		display: none;
-	    width: 50px;
-	    text-align: center;
+		width: 50px;
+		text-align: center;
 	}
 
 	& ~ .fa-check-circle  {
@@ -1672,64 +1672,66 @@ input {
 
 	& > button {
 		background-color: #f7c556;
-	    width: 80%;
-	    display: block;
-	    padding: 0;
-	    margin: 0 auto;
-	    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.25);
+		width: 80%;
+		display: block;
+		padding: 0;
+		margin: 0 auto;
+		box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.25);
 
-	    & > a {
+		& > a {
 			display: block;
-		    width: 100%;
+			width: 100%;
 
-		    & > img {
+			& > img {
 				width: 110px;
 			}
 		}
 	}
 }
 
-.bitcoin-wrapper > .purchase-bitcoin-value {
-	text-align: center;
-}
+.bitcoin-wrapper {
+	& > .purchase-bitcoin-value {
+		text-align: center;
 
-.bitcoin-wrapper > .purchase-bitcoin-value > * {
-	display: inline-block;
-}
+		& > * {
+			display: inline-block;
+		}
 
-.bitcoin-wrapper > .purchase-bitcoin-value > img {
-	width: 50px;
-    position: relative;
-    bottom: 4px;
-    margin: 0 10px 0 0;
-}
+		& > img {
+			width: 50px;
+			position: relative;
+			bottom: 4px;
+			margin: 0 10px 0 0;
+		}
 
-.bitcoin-wrapper > .purchase-bitcoin-value > .fa-sync-alt {
-	cursor: pointer;
-}
+		&  > .fa-sync-alt {
+			cursor: pointer;
+		}
 
-.bitcoin-wrapper > .purchase-bitcoin-value > .fa-sync-alt:active {
-	animation: spin .6s;
-}
+		& > .fa-sync-alt:active {
+			animation: spin .6s;
+		}
 
-.bitcoin-wrapper > .purchase-bitcoin-value > .fa-bitcoin {
-	font-size: 14pt;
-	color: #e79e1f;
-}
+		& > .fa-bitcoin {
+			font-size: 14pt;
+			color: #e79e1f;
+		}
 
-.bitcoin-wrapper > .purchase-bitcoin-value > .fa-info-circle {
-	font-size: 13pt;
-    margin: 0 0 0 15px;
-    cursor: pointer;
-}
+		& > .fa-info-circle {
+			font-size: 13pt;
+			margin: 0 0 0 15px;
+			cursor: pointer;
+		}
+		
+		& >  p {
+			margin: 0 5px 1rem;
+		}
+	}
 
-.bitcoin-wrapper > .purchase-bitcoin-value > p {
-	margin: 0 5px 1rem;
-}
-
-.bitcoin-wrapper > img {
-	display: block;
-	margin: 0 auto;
+	&  > img {
+		display: block;
+		margin: 0 auto;
+	}
 }
 
 .confirm-payment {

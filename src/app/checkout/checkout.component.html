@@ -35,7 +35,7 @@
 							<ul class="payment-methods">
 								<li class="payment-method" (click)="setPaymentMethod('visa')"><img class="payment-method-icon" src="{{'../../assets/imgs/visa.svg'}}"></li>
 								<li class="payment-method" (click)="setPaymentMethod('paypal')"><img class="payment-method-icon" src="{{'../../assets/imgs/paypal.svg'}}"></li>
-								<li class="payment-method" (click)="setPaymentMethod('bitcoin')"><img class="payment-method-icon" src="{{'../../assets/imgs/bitcoin.svg'}}"></li>
+								<li class="payment-method" (click)="setPaymentMethod('bitcoin')"><img class="payment-method-icon" src="{{'../../assets/imgs/bitcoin.svg'}}" (click)="getRandomNumber()"></li>
 							</ul>
 						</div>
 
@@ -80,13 +80,13 @@
 									<!-- <span>$75,00</span> -->
 									<!-- <p> Process your payment with <img src="imgs/bitpay.svg" alt="" class=""> </p> --> 
 									<div class="purchase-bitcoin-value">
-										<img src="imgs/bitpay.svg" alt="" class="">
+										<img src="imgs/bitpay.svg" src="{{'../../assets/imgs/bitpay.svg'}}" alt="" class="">
 										<i class="fab fa-bitcoin"></i>
 										<p>0,0072 BTC</p>
 										<i class="fas fa-sync-alt"></i>
 										<i class="fas fa-info-circle"></i>
 									</div>
-									<img src="imgs/qr_1.png" alt="" class="">
+									<img src="{{'../../assets/imgs/qr_' + currentQR + '.png'}}" alt="" class="">
 								</div>
 							</div>
 						</div>

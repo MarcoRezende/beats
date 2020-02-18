@@ -21,6 +21,8 @@ export class CheckoutComponent implements OnInit {
 
   isValidCC: any = null;
 
+  currentQR: number = 1;
+
   constructor(private _shareService: ShareService) { }
 
   getCartItems(t = null) {
@@ -79,6 +81,12 @@ export class CheckoutComponent implements OnInit {
       this.isValidCC = cardNumber.match(cardno) ? true : false;
     } else {
       this.isValidCC = null;
+    }
+  }
+
+  getRandomNumber() {
+    if (this.payMethod !== 'bitcoin') {
+      this.currentQR = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
     }
   }
 
