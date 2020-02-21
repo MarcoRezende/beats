@@ -1,7 +1,8 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
-import { Subject, BehaviorSubject } from 'rxjs';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import sampleData from '../../assets/data.json';
 import { ShareService } from '../share.service';
+import { SharedService } from '../shared.service';
 
 @Component({
   selector: 'app-checkout',
@@ -10,20 +11,24 @@ import { ShareService } from '../share.service';
 })
 
 export class CheckoutComponent implements OnInit {
-  @Input() notifier: Subject<boolean> = new Subject<boolean>();
+
+  registerForm: FormGroup;
+  
+  submitted = false;
 
   value: boolean;
 
   myCart: any = [];
+
   subtotal: number = 0;
 
   payMethod: string = 'visa';
 
-  isValidCC: any = null;
-
   currentQR: number = 1;
 
-  constructor(private _shareService: ShareService) { }
+  BTC: any;
+
+  constructor(private _shareService: ShareService, private _sharedService: SharedService, private formBuilder: FormBuilder) { }
 
   getCartItems(t = null) {
     if (t === "init") {
@@ -35,63 +40,102 @@ export class CheckoutComponent implements OnInit {
 
       // obtendo itens adicionados ao carrinho
       for (let i = 0; i < itemCategory.length; i++) {
-          let cat = itemCategory[i];
-          sampleData.products[cat].map((product) => {
-              if (product.hasOwnProperty('added')) {
-                  if (product.added) {
-                      this.myCart.push(product)
-                      this.subtotal += product.price;
-                  }
-              }
-          })
+        let cat = itemCategory[i];
+        sampleData.products[cat].map((product) => {
+          if (product.hasOwnProperty('added')) {
+            if (product.added) {
+              this.myCart.push(product)
+              this.subtotal += product.price;
+            }
+          }
+        })
       } 
     } else {
       this._shareService.cart
-        .subscribe(
-          (obj) => {
-            if (obj.task === "add") {
-              if (!this.myCart.includes(obj.item)) {
-                obj.item.added = true;
-                this.myCart.push(obj.item)
-                this.subtotal += obj.item.price;
-              }
-            } else if (obj.task === "remove") {
-              if (this.myCart.includes(obj.item)) {
-                obj.item.added = false;
-                this.myCart = this.myCart.filter(item => item != obj.item);
-                this.subtotal -= obj.item.price;
-              }
+      .subscribe(
+        (obj) => {
+          if (obj.task === "add") {
+            if (!this.myCart.includes(obj.item)) {
+              obj.item.added = true;
+              this.myCart.push(obj.item)
+              this.subtotal += obj.item.price;
+            }
+          } else if (obj.task === "remove") {
+            if (this.myCart.includes(obj.item)) {
+              obj.item.added = false;
+              this.myCart = this.myCart.filter(item => item != obj.item);
+              this.subtotal -= obj.item.price;
             }
           }
+        }
         )     
     }
   }
 
   setPaymentMethod(method) {
   	if (method !== this.payMethod) {
-  		this.payMethod = method;
-  	}
-  }
+      if (method === 'bitcoin') {
+        this.updateBTCPrice();
+        this.getRandomQR();
+      }
 
-  validateCard(cardNumber) {
-    console.log(cardNumber)
-    var cardno = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
-
-    if (cardNumber.length) {
-      this.isValidCC = cardNumber.match(cardno) ? true : false;
-    } else {
-      this.isValidCC = null;
+      this.payMethod = method;
     }
   }
 
-  getRandomNumber() {
+  getRandomQR() {
     if (this.payMethod !== 'bitcoin') {
       this.currentQR = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
     }
   }
 
+  updateBTCPrice() {
+    this._sharedService.getTicker(this.subtotal).subscribe((data)=>{
+      this.BTC = data;
+    });
+  }
+
+  // facil acesso aos dados do form group por parte dos form fields
+  get f() { return this.registerForm.controls; }
+
+  onSubmit() {
+    this.submitted = true;
+    let toDisable = ['Num', 'Exp', 'CVV'];
+
+    // desabilitando certas propriedades se o metodo de pagamento atual for diferente de "visa"
+    if (this.payMethod !== 'visa') {
+      for (let i = 0; i < toDisable.length; i++) {
+        this.registerForm.controls[`card${toDisable[i]}`].disable();
+      }
+    } else {
+      // habilitando propriedades caso estejam desativadas
+      if (this.registerForm.controls.cardNum.status === "DISABLED") {
+        for (let i = 0; i < toDisable.length; i++) {
+          this.registerForm.controls[`card${toDisable[i]}`].enable();
+        }
+      }
+    }
+
+    // parando aqui se o form for invalido
+    if (this.registerForm.invalid) {
+      return;
+    }
+    
+    console.log(this.registerForm)
+  }
+
   ngOnInit() {
   	this.getCartItems("init");
+    this.updateBTCPrice();
+
+    // adicionando propriedades ao form group
+    this.registerForm = this.formBuilder.group({
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email, Validators.minLength(1)]],
+      cardNum: ['', [Validators.required, Validators.pattern(/^(?:4[0-9]{12}(?:[0-9]{3})?)$/)]],
+      cardExp: ['', [Validators.required, Validators.pattern(/^(0[1-9]|1[0-2])\/?([0-9]{2})$/)]],
+      cardCVV: ['', [Validators.required, Validators.pattern(/^[0-9]{3}$/)]]
+    });
   }
 
 }

@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { ProductsComponent } from './products/products.component';
 import { ShopComponent } from './shop/shop.component';
 import { PagerService } from './pager.service';
@@ -33,6 +34,7 @@ import { EmptyCartComponent } from './empty-cart/empty-cart.component';
     BrowserAnimationsModule,
     NgbModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [

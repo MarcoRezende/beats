@@ -5,28 +5,28 @@
 		<app-empty-cart *ngIf="!myCart.length"></app-empty-cart>
 
 		<div *ngIf="myCart.length" class="checkout-wrapper">
-			<section class="form-section">
-				<form class="checkout-form">
+			<form class="form-section" [formGroup]="registerForm">
+				<div class="checkout-form">
 					<h2>Contact Information</h2>
 
 					<div class="inner-form-content">
 						<label class="label" for="name">Email Address</label>
 						<div class="input-wrapper">
-							<i class="fas fa-envelope"></i><input autocomplete="off" class="input" id="name" type="text" name="email" placeholder="name@example.com">
+							<i class="fas fa-envelope"></i><input formControlName="email" autocomplete="off" class="input form-control" id="name" type="text" name="email" placeholder="name@example.com" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
 						</div>
 
 						
-						<label class="label" for="email">Name</label>
+						<label class="label" for="name">Name</label>
 						<div class="input-wrapper">
-							<i class="fas fa-signature"></i><input autocomplete="off" class="input" id="email" type="text" name="name" placeholder="John Rick">
+							<i class="fas fa-signature"></i><input formControlName="name" autocomplete="off" class="input form-control" id="email" type="text" name="name" placeholder="John Rick" [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
 						</div>
 
 					</div>
 					<input type="checkbox" name="checkbox" id="checkbox"> 
 					<label class="label-checkbox" for="checkbox">Receive promotional emails</label>
-				</form>
+				</div>
 
-				<form class="checkout-form">
+				<div class="checkout-form">
 					<h2>Payment Information</h2>
 					<span><i class="fas fa-shield-alt"></i>This is a secure SSL encrypetd system payment</span>
 
@@ -35,14 +35,14 @@
 							<ul class="payment-methods">
 								<li class="payment-method" (click)="setPaymentMethod('visa')"><img class="payment-method-icon" src="{{'../../assets/imgs/visa.svg'}}"></li>
 								<li class="payment-method" (click)="setPaymentMethod('paypal')"><img class="payment-method-icon" src="{{'../../assets/imgs/paypal.svg'}}"></li>
-								<li class="payment-method" (click)="setPaymentMethod('bitcoin')"><img class="payment-method-icon" src="{{'../../assets/imgs/bitcoin.svg'}}" (click)="getRandomNumber()"></li>
+								<li class="payment-method" (click)="setPaymentMethod('bitcoin')"><img class="payment-method-icon" src="{{'../../assets/imgs/bitcoin.svg'}}"></li>
 							</ul>
 						</div>
 
 						<div class="inner-form-content payment-details" *ngIf="payMethod === 'visa'">
 							<label class="label" for="card-number">Card Number</label>
 							<div class="input-wrapper">
-								<i class="fas fa-credit-card"></i><input autocomplete="off" class="input" id="card-number" type="tel" name="card number" placeholder="1234 1234 1234 1234" (change)="validateCard($event.target.value)" [ngClass]="isValidCC ? 'valid' : (isValidCC === false ? 'invalid' : 'initial')">
+								<i class="fas fa-credit-card"></i><input formControlName="cardNum" autocomplete="off" class="input form-control" id="card-number" type="tel" name="card number" placeholder="1234 1234 1234 1234" [ngClass]="{ 'is-invalid': submitted && f.cardNum.errors }">
 							</div>
 
 
@@ -50,14 +50,14 @@
 								<div class="payment-info">
 									<label class="label" for="exp-date">Expiration Date</label>
 									<div class="input-wrapper">
-										<i class="far fa-credit-card"></i><input autocomplete="off" class="input" id="exp-date" type="tel" name="expiration date" placeholder="MM / YY">
+										<i class="far fa-credit-card"></i><input formControlName="cardExp"  autocomplete="off" class="input form-control" id="exp-date" type="tel" name="expiration date" placeholder="MM / YY" [ngClass]="{ 'is-invalid': submitted && f.cardExp.errors }">
 									</div>
 								</div>
 
 								<div class="payment-info">
 									<label class="label" for="cvv-code">CVV Code</label>
 									<div class="input-wrapper">
-										<i class="fas fa-unlock-alt"></i><input autocomplete="off" class="input" id="cvv-code" type="tel" name="cvv" placeholder="CVV" >
+										<i class="fas fa-unlock-alt"></i><input formControlName="cardCVV"  autocomplete="off" class="input form-control" id="cvv-code" type="tel" name="cvv" placeholder="CVV" [ngClass]="{ 'is-invalid': submitted && f.cardCVV.errors }">
 									</div>
 								</div>
 							</div>
@@ -82,8 +82,8 @@
 									<div class="purchase-bitcoin-value">
 										<img src="imgs/bitpay.svg" src="{{'../../assets/imgs/bitpay.svg'}}" alt="" class="">
 										<i class="fab fa-bitcoin"></i>
-										<p>0,0072 BTC</p>
-										<i class="fas fa-sync-alt"></i>
+										<p>{{BTC}} BTC</p>
+										<i class="fas fa-sync-alt" (click)="updateBTCPrice()"></i>
 										<i class="fas fa-info-circle"></i>
 									</div>
 									<img src="{{'../../assets/imgs/qr_' + currentQR + '.png'}}" alt="" class="">
@@ -91,9 +91,9 @@
 							</div>
 						</div>
 					</div>
-				</form>
-				<div class="confirm-payment"><button class="btn btn-confirm">Confirm payment</button></div>
-			</section>
+				</div>
+				<div class="confirm-payment"><button class="btn btn-confirm" (click)="onSubmit()">Confirm payment</button></div>
+			</form>
 			<aside class="order-summary">
 				<h2>Order Summary</h2>
 				<ul class="order-summary-list">

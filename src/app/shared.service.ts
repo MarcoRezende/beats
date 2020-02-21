@@ -1,20 +1,14 @@
-import {Component, Injectable,Input,Output,EventEmitter} from '@angular/core';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class SharedService {
-  @Output() fire: EventEmitter<any> = new EventEmitter();
 
-   constructor() {
-     console.log('shared service started');
-   }
+  constructor(private httpClient: HttpClient) { }
 
-   change() {
-    console.log('change started'); 
-     this.fire.emit(true);
-   }
-
-   getEmittedValue() {
-     return this.fire;
-   }
-
-} 
+  public getTicker(value){
+    return this.httpClient.get(`https://blockchain.info/tobtc?currency=USD&value=${value}`);
+  }
+}

@@ -1496,7 +1496,7 @@ li.review::after {
 	padding: 10px;
 	border: 0;
 	display: inline-block;
-	width: calc(100% - 100px);
+	width: calc(100% - 50px);
 	text-align: left;
 	background-color: transparent;
 	margin: 0;
@@ -1755,6 +1755,12 @@ input {
 	transition: all .3s ease;
 }
 
+.btn-confirm.invalid {
+	cursor: not-allowed;
+    border-color: rgba(41, 22, 130, 0.8);
+    background-color: rgba(41, 22, 130, 0.8);
+}
+
 .order-summary {
 	background: rgb(47,23,157);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2287c3",endColorstr="#17589d",GradientType=1);
@@ -1889,4 +1895,9 @@ input {
 	to {
 		opacity: 1;
 	}
+}
+
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
 }
