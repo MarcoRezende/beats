@@ -16,6 +16,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { CartComponent } from './cart/cart.component';
 import { OnCreateDirective } from './on-create.directive';
 import { EmptyCartComponent } from './empty-cart/empty-cart.component';
+import { MainLoaderComponent } from './main-loader/main-loader.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { EmptyCartComponent } from './empty-cart/empty-cart.component';
     CheckoutComponent,
     CartComponent,
     OnCreateDirective,
-    EmptyCartComponent
+    EmptyCartComponent,
+    MainLoaderComponent
   ],
   imports: [
     BrowserModule,
