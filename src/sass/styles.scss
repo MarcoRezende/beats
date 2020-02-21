@@ -702,12 +702,17 @@ header .not-home-nav {
 	font-weight: bolder;
 }
 
-
 .main-header {
 	text-align: center;
 	color: rgb(218, 215, 210);
 	margin: 30px auto 10px;
 	text-transform: uppercase;
+}
+
+// container
+
+.container {
+	width: 100%;
 }
 
 /* products page */
@@ -727,10 +732,12 @@ header .not-home-nav {
 
 .page-loading {
 	height: 0;
+	overflow-y: hidden;
 }
 
 .page-loaded {
 	height: 100%;
+	overflow-y: inherit;
 	animation: smooth .9s forwards;
 }
 .load-spinner-container {

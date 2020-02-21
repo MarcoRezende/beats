@@ -24,6 +24,9 @@ export class ShopComponent implements OnInit {
   isValid: boolean = false;
   ID: boolean = false;
   cart: any = [];
+  allInnerImgs: any = [];
+  innerImgsLoaded: boolean = false;
+  mainImgLoaded: boolean = false;
 
   constructor(private route: ActivatedRoute, private router: Router, private _shareService: ShareService) {
   	this.productID = this.route.snapshot.params.id
@@ -85,6 +88,19 @@ export class ShopComponent implements OnInit {
       
     img.style.transform = "scale(1)";
     img.style.transition = "transform .3s ease";
+  }
+
+  updateImgState(item, task) {
+
+    if (task === 'main') {
+      this.mainImgLoaded = true;
+    } else {
+      this.allInnerImgs.push(item);
+
+      if (this.allInnerImgs.length === 2) {
+        this.innerImgsLoaded = true;
+      }
+    }
   }
 
   ngOnInit() {

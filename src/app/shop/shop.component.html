@@ -1,4 +1,6 @@
-<div class="shop-container">
+<app-main-loader *ngIf="!mainImgLoaded"></app-main-loader>
+
+<div class="shop-container" [ngClass]="mainImgLoaded ? 'page-loaded' : 'page-loading'">
 	<h2 class="main-header">SHOP</h2>
 	<div class="breadcrumbs">
 		<span class="breadcrumb-item"> <a routerLink="/">Home</a> </span>
@@ -10,7 +12,7 @@
 			<p class="warning-message">This product is already in your cart.</p>
 		</div>
 		<div class="shop-item-image">
-			<img id="product-image" (mousemove)="zoomIn($event)" (mouseout)="zoomOut()" src="{{'../../assets/imgs/products/' + product[0].id + '-art-900x800.png'}}" alt="" class="item-image">
+			<img id="product-image" (mousemove)="zoomIn($event)" (mouseout)="zoomOut()" src="{{'../../assets/imgs/products/' + product[0].id + '-art-900x800.png'}}" alt="" class="item-image" (load)="updateImgState(item, 'main')">
 		</div>
 		<div class="shop-item-infos">
 			<h2 class="product-name"> {{product[0].name}} </h2>
@@ -23,7 +25,7 @@
 		</div>
 	</div>
 </div>
-<div class="item-about">
+<div class="item-about" [ngClass]="mainImgLoaded ? 'page-loaded' : 'page-loading'">
 	<ngb-tabset type="pills">
 		<ngb-tab title="Description">
 			<ng-template ngbTabContent>

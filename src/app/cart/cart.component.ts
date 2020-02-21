@@ -10,6 +10,8 @@ import sampleData from '../../assets/data.json';
 export class CartComponent implements OnInit {
   myCart: any = [];
   subtotal: number = 0;
+  allImgs: any = [];
+  imgsLoaded: boolean = false;
 
   constructor(private _shareService: ShareService) { }
 
@@ -53,7 +55,6 @@ export class CartComponent implements OnInit {
           }
         )     
     }
-    console.log(this.myCart)
   }
 
   removeItemFromCart(product) {
@@ -62,6 +63,14 @@ export class CartComponent implements OnInit {
     this._shareService.getProduct(obj);
     this.getCartItems();
     this._shareService.getProduct(obj);
+  }
+
+  updateImgState(item) {
+    this.allImgs.push(item)
+
+    if (this.allImgs.length === this.myCart.length) {
+      this.imgsLoaded = true;
+    }
   }
 
   ngOnInit() {

@@ -1,4 +1,6 @@
-<div class="my-cart-container">
+<app-main-loader *ngIf="!imgsLoaded"></app-main-loader>
+
+<div class="my-cart-container" [ngClass]="imgsLoaded ? 'page-loaded' : 'page-loading'">
 	<h2 class="main-header">CART</h2>
 
 	<app-empty-cart *ngIf="!myCart.length"></app-empty-cart>
@@ -11,7 +13,7 @@
 					<button (click)="removeItemFromCart(product)" class="btn">x</button>
 				</div>
 				<div class="my-cart-item-image">
-					<img class="my-cart-product-image" src="{{'../../assets/imgs/products/' + product.id + '-art-600x600.png'}}" alt="">
+					<img class="my-cart-product-image" src="{{'../../assets/imgs/products/' + product.id + '-art-600x600.png'}}" alt="" (load)="updateImgState(item)">
 				</div>
 				<div class="my-cart-wrapper">
 					<div class="middle-content">
