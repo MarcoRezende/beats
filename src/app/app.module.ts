@@ -17,6 +17,7 @@ import { CartComponent } from './cart/cart.component';
 import { OnCreateDirective } from './on-create.directive';
 import { EmptyCartComponent } from './empty-cart/empty-cart.component';
 import { MainLoaderComponent } from './main-loader/main-loader.component';
+import { SecondaryLoaderComponent } from './secondary-loader/secondary-loader.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MainLoaderComponent } from './main-loader/main-loader.component';
     CartComponent,
     OnCreateDirective,
     EmptyCartComponent,
-    MainLoaderComponent
+    MainLoaderComponent,
+    SecondaryLoaderComponent
   ],
   imports: [
     BrowserModule,

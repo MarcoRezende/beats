@@ -37,11 +37,12 @@
 		</ngb-tab>
 		<ngb-tab title="Reviews ({{product[0].reviews.length}}) ">
 			<ng-template ngbTabContent>
-				<ul *ngIf="product[0].reviews" class="reviews-container">
+			<app-secondary-loader *ngIf="!innerImgsLoaded"></app-secondary-loader>
+				<ul *ngIf="product[0].reviews" class="reviews-container" [ngClass]="innerImgsLoaded ? 'page-loaded' : 'page-loading'">
 					<li *ngFor="let review of product[0].reviews" class="review">
 						<div class="user-data">
 							<div class="user-profile-pic">
-								<img src={{review.profile_pic}} alt="" class="profile-pic">
+								<img src={{review.profile_pic}} alt="" class="profile-pic" (load)="updateImgState(item, 'inner')">
 							</div>
 							<div class="user-review">
 								<div class="review-data">

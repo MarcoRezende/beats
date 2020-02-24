@@ -95,9 +95,11 @@ export class ShopComponent implements OnInit {
     if (task === 'main') {
       this.mainImgLoaded = true;
     } else {
+      let innerImgs = document.getElementsByClassName('profile-pic');
+
       this.allInnerImgs.push(item);
 
-      if (this.allInnerImgs.length === 2) {
+      if (this.allInnerImgs.length === innerImgs.length) {
         this.innerImgsLoaded = true;
       }
     }
