@@ -75,6 +75,10 @@ export class CartComponent implements OnInit {
 
   ngOnInit() {
   	this.getCartItems("init");
+
+    if (this.myCart.length === 0) {
+      this.imgsLoaded = true;
+    }
   }
 
 }
