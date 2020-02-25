@@ -28,6 +28,10 @@ export class CheckoutComponent implements OnInit {
 
   BTC: any;
 
+  allInnerImgs: any = [];
+
+  innerImgsLoaded: boolean = false;
+
   constructor(private _shareService: ShareService, private _sharedService: SharedService, private formBuilder: FormBuilder) { }
 
   getCartItems(t = null) {
@@ -79,6 +83,11 @@ export class CheckoutComponent implements OnInit {
         this.getRandomQR();
       }
 
+      // esvaziando array de referencia de imagens
+      this.allInnerImgs = [];
+
+      // atribuindo 'false' ao trocar de metodo de pagamento
+      this.innerImgsLoaded = false;
       this.payMethod = method;
     }
   }
@@ -124,14 +133,25 @@ export class CheckoutComponent implements OnInit {
     console.log(this.registerForm)
   }
 
+  updateImgState(item) {
+    let innerImgs = document.getElementsByClassName('inner-imgs');
+
+    this.allInnerImgs.push(item);
+
+    if (this.allInnerImgs.length === innerImgs.length) {
+      this.innerImgsLoaded = true;
+    }
+    
+  }
+
   ngOnInit() {
   	this.getCartItems("init");
     this.updateBTCPrice();
 
     // adicionando propriedades ao form group
     this.registerForm = this.formBuilder.group({
-      name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email, Validators.minLength(1)]],
+      name: ['', [Validators.required, Validators.minLength(1), Validators.pattern(/^\D.*\S.*$/)]],
+      email: ['', [Validators.required, Validators.email]],
       cardNum: ['', [Validators.required, Validators.pattern(/^(?:4[0-9]{12}(?:[0-9]{3})?)$/)]],
       cardExp: ['', [Validators.required, Validators.pattern(/^(0[1-9]|1[0-2])\/?([0-9]{2})$/)]],
       cardCVV: ['', [Validators.required, Validators.pattern(/^[0-9]{3}$/)]]
