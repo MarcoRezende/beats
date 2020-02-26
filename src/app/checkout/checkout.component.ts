@@ -83,7 +83,7 @@ export class CheckoutComponent implements OnInit {
         this.getRandomQR();
       }
 
-      // esvaziando array de referencia de imagens
+      // esvaziando array de referencias de imagens
       this.allInnerImgs = [];
 
       // atribuindo 'false' ao trocar de metodo de pagamento
@@ -109,6 +109,7 @@ export class CheckoutComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
+    
     let toDisable = ['Num', 'Exp', 'CVV'];
 
     // desabilitando certas propriedades se o metodo de pagamento atual for diferente de "visa"
