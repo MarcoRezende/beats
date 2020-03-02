@@ -1758,10 +1758,6 @@ input {
 }
 
 .btn-confirm {
-	display: block;
-	margin: 10px auto;
-	transition: background-color .5s ease;
-	padding: 10px 15px;
 	color: #fff;
 	border: 2px solid #361cad;
 }
@@ -1770,6 +1766,13 @@ input {
 	color: #d0d0d0;
     background-color: #271579;
     border: 2px solid #271579;
+}
+
+.btn-confirm, .btn-confirm-disabled {
+	display: block;
+	margin: 10px auto;
+	transition: background-color .5s ease;
+	padding: 10px 15px;
 }
 
 .btn-confirm:hover {

@@ -104,40 +104,40 @@ export class CheckoutComponent implements OnInit {
   get f() { return this.registerForm.controls; }
 
   onSubmit() {
-    this.submitted = true;
+    if (this.payMethod === 'visa') {
+      this.submitted = true;
 
-    let toDisable = ['Num', 'Exp', 'CVV'];
+      let toDisable = ['Num', 'Exp', 'CVV'];
 
-    // desabilitando certas propriedades se o metodo de pagamento atual for diferente de "visa"
-    if (this.payMethod !== 'visa') {
-      for (let i = 0; i < toDisable.length; i++) {
-        this.registerForm.controls[`card${toDisable[i]}`].disable();
-      }
-    } else {
-      // habilitando propriedades caso estejam desativadas
-      if (this.registerForm.controls.cardNum.status === "DISABLED") {
+      // desabilitando certas propriedades se o metodo de pagamento atual for diferente de "visa"
+      if (this.payMethod !== 'visa') {
         for (let i = 0; i < toDisable.length; i++) {
-          this.registerForm.controls[`card${toDisable[i]}`].enable();
+          this.registerForm.controls[`card${toDisable[i]}`].disable();
+        }
+      } else {
+        // habilitando propriedades caso estejam desativadas
+        if (this.registerForm.controls.cardNum.status === "DISABLED") {
+          for (let i = 0; i < toDisable.length; i++) {
+            this.registerForm.controls[`card${toDisable[i]}`].enable();
+          }
         }
       }
+
+      // parando aqui se o form for invalido
+      if (this.registerForm.invalid) {
+        return;
+      }
+
+      this.mainImgLoaded = false;
+
+      setTimeout((function() {
+        this.showModal = true;
+
+        this.getCartItems();
+        this.myCart.forEach(item => item.added = false)
+
+      }.bind(this)), 5000)
     }
-
-    // parando aqui se o form for invalido
-    if (this.registerForm.invalid) {
-      return;
-    }
-
-    this.mainImgLoaded = false;
-
-    setTimeout((function() {
-      this.showModal = true;
-
-      this.getCartItems();
-      this.myCart.forEach(item => item.added = false)
-
-    }.bind(this)), 5000)
-    
-    console.log(this.registerForm)
   }
 
   updateImgState(item, task) {
