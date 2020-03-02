@@ -7,6 +7,7 @@ import { PagerService } from '../pager.service';
 import { HttpClient , HttpHeaders, HttpResponse  } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Title } from '@angular/platform-browser';
 export default sampleData;
 
 @Component({
@@ -40,7 +41,7 @@ export class ProductsComponent implements OnInit {
   // paged items
   pagedItems: any[];
 
-  constructor(private route: ActivatedRoute, private router: Router, private _shareService: ShareService, private http: HttpClient, private pagerService: PagerService) {
+  constructor(private route: ActivatedRoute, private router: Router, private _shareService: ShareService, private http: HttpClient, private pagerService: PagerService, private titleService: Title) {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
     this.route.queryParams.subscribe(values => {
       this.catalog = values.catalog;
@@ -99,12 +100,6 @@ export class ProductsComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
-    this.setPage(1)
-
-    this.sortItems();
-  }
-
   setPage(page: number) {
     // get data
     this.allItems = this.product;
@@ -112,6 +107,19 @@ export class ProductsComponent implements OnInit {
     this.pager = this.pagerService.getPager(this.allItems.length, page);
     // get current page of items
     this.pagedItems = this.allItems.slice(this.pager.startIndex, this.pager.endIndex + 1);
+  }
+
+  setDocTitle(title: string) {
+    let prefix = 'Beatz | ';
+    this.titleService.setTitle(`${prefix}${title}`);
+  }
+
+  ngOnInit() {
+    this.setDocTitle(`${this.category}`);
+
+    this.setPage(1);
+
+    this.sortItems();
   }
 
 }

@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import sampleData from '../../assets/data.json';
 import { ShareService } from '../share.service';
 import { SharedService } from '../shared.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-checkout',
@@ -27,7 +28,7 @@ export class CheckoutComponent implements OnInit {
   fakeDelay: boolean = false;
   showModal: boolean = false;
 
-  constructor(private _shareService: ShareService, private _sharedService: SharedService, private formBuilder: FormBuilder) { }
+  constructor(private _shareService: ShareService, private _sharedService: SharedService, private formBuilder: FormBuilder, private titleService: Title) { }
 
   getCartItems(t = null) {
     if (t === "init") {
@@ -159,7 +160,12 @@ export class CheckoutComponent implements OnInit {
     
   }
 
+  setDocTitle(title: string) {
+    this.titleService.setTitle(title);
+  }
+
   ngOnInit() {
+    this.setDocTitle('Beatz | Checkout');
   	this.getCartItems("init");
     this.updateBTCPrice();
 

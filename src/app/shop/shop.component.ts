@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { ShareService } from '../share.service';
 import sampleData from '../../assets/data.json';
 export default sampleData;
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-shop',
@@ -28,7 +29,7 @@ export class ShopComponent implements OnInit {
   innerImgsLoaded: boolean = false;
   mainImgLoaded: boolean = false;
 
-  constructor(private route: ActivatedRoute, private router: Router, private _shareService: ShareService) {
+  constructor(private route: ActivatedRoute, private router: Router, private _shareService: ShareService, private titleService: Title) {
   	this.productID = this.route.snapshot.params.id
       this.route.queryParams.subscribe(values => {
         this.catalog = values.tag;
@@ -105,8 +106,13 @@ export class ShopComponent implements OnInit {
     }
   }
 
+  setDocTitle(title: string) {
+    let prefix = 'Beatz | ';
+    this.titleService.setTitle(`${prefix}${title}`);
+  }
+
   ngOnInit() {
-   
+    this.setDocTitle(`${this.product[0].name}`);
   }
 
 }

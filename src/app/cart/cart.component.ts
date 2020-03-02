@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ShareService } from '../share.service';
 import sampleData from '../../assets/data.json';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-cart',
@@ -13,7 +14,7 @@ export class CartComponent implements OnInit {
   allImgs: any = [];
   imgsLoaded: boolean = false;
 
-  constructor(private _shareService: ShareService) { }
+  constructor(private _shareService: ShareService, private titleService: Title) { }
 
   getCartItems(t = "none") {
     if (t === "init") {
@@ -73,7 +74,12 @@ export class CartComponent implements OnInit {
     }
   }
 
+  setDocTitle(title: string) {
+    this.titleService.setTitle(title);
+  }
+
   ngOnInit() {
+    this.setDocTitle('Beatz | Cart');
   	this.getCartItems("init");
 
     if (this.myCart.length === 0) {
