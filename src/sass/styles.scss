@@ -1766,9 +1766,19 @@ input {
 	border: 2px solid #361cad;
 }
 
+.btn-confirm-disabled, .btn-confirm-disabled:hover {
+	color: #d0d0d0;
+    background-color: #271579;
+    border: 2px solid #271579;
+}
+
 .btn-confirm:hover {
 	background-color: #361cad;
 	transition: all .3s ease;
+}
+
+.btn-confirm-disabled:hover {
+	cursor: not-allowed;
 }
 
 .btn-confirm.invalid {
