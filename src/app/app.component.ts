@@ -25,6 +25,8 @@ export class AppComponent {
   }
 
   getCartItems() {
+    this.myCart = this.myCart.filter(item => item.added === true);
+
   	this._shareService.cart
   	  .subscribe(
   	    (obj) => {

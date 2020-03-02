@@ -1331,7 +1331,7 @@ li.review::after {
 
 	// media queries
 	@include small {
-		width: 80%;
+		width: 90%;
 		padding: 0 20px;
 	}
 }
@@ -1683,8 +1683,8 @@ input {
 .checkout-success-modal {
 	position: absolute;
 	display: block;
-	width: 500px;
-	height: 360px;
+	width: 80%;
+	max-width: 500px;
 	background-color: rgb(24, 26, 27);
 	left: 50%;
 	top: 50%;
@@ -1724,11 +1724,25 @@ input {
 			display: table-cell;
 			vertical-align: middle;
 
+			& > .checkout-success-modal-title {
+				font-size: 14pt;
+				margin: 0 0 15px;
+			}
+
+			& > .checkout-success-modal-text {
+				font-size: 10pt;
+
+				& > span {
+					color: skyblue;
+					border-bottom: 1px solid;
+				}
+			}
+
 			& > button.continue {
 				background-color: #278065;
 				color: #fff;
 				border-radius: 0;
-				margin: 10px;
+				margin: 25px 0 10px;
 				transition: background-color .3s;
 
 				&:hover {
@@ -1784,13 +1798,13 @@ input {
 }
 
 .order-summary-item {
-	padding: 20px 50px;
+	padding: 20px 30px;
 	border-left: 0;
 	border-right: 0;
 }
 
 .order-summary-item:last-child {
-	
+
 }
 
 .order-item-container-img {
@@ -1860,6 +1874,7 @@ input {
 	width: 100%;
 	text-align: center;
 }
+
 
 // empty cart template
 
@@ -3175,4 +3190,8 @@ input {
 	height: 100%;
 	overflow-y: inherit;
 	animation: smooth .9s forwards;
+}
+
+.showModal {
+	display: none;
 }

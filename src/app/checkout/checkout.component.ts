@@ -12,25 +12,20 @@ import { SharedService } from '../shared.service';
 
 export class CheckoutComponent implements OnInit {
 
-  registerForm: FormGroup;
-  
+  registerForm: FormGroup;  
   submitted = false;
-
   value: boolean;
-
   myCart: any = [];
-
   subtotal: number = 0;
-
   payMethod: string = 'visa';
-
   currentQR: number = 1;
-
   BTC: any;
-
   allInnerImgs: any = [];
-
   innerImgsLoaded: boolean = false;
+  allImgs: any = [];
+  mainImgLoaded: boolean = false;
+  fakeDelay: boolean = false;
+  showModal: boolean = false;
 
   constructor(private _shareService: ShareService, private _sharedService: SharedService, private formBuilder: FormBuilder) { }
 
@@ -109,7 +104,7 @@ export class CheckoutComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-    
+
     let toDisable = ['Num', 'Exp', 'CVV'];
 
     // desabilitando certas propriedades se o metodo de pagamento atual for diferente de "visa"
@@ -130,17 +125,36 @@ export class CheckoutComponent implements OnInit {
     if (this.registerForm.invalid) {
       return;
     }
+
+    this.mainImgLoaded = false;
+
+    setTimeout((function() {
+      this.showModal = true;
+
+      this.getCartItems();
+      this.myCart.forEach(item => item.added = false)
+
+    }.bind(this)), 5000)
     
     console.log(this.registerForm)
   }
 
-  updateImgState(item) {
-    let innerImgs = document.getElementsByClassName('inner-imgs');
+  updateImgState(item, task) {
+    if (task === 'main') {
+      this.allImgs.push(item)
 
-    this.allInnerImgs.push(item);
+      if (this.allImgs.length === 3) {
+        this.mainImgLoaded = true;
+      }
+    } else {
+      let innerImgs = document.getElementsByClassName('inner-imgs');
 
-    if (this.allInnerImgs.length === innerImgs.length) {
-      this.innerImgsLoaded = true;
+      this.allInnerImgs.push(item);
+
+      if (this.allInnerImgs.length === innerImgs.length) {
+        this.innerImgsLoaded = true;
+      }
+      
     }
     
   }
@@ -148,6 +162,10 @@ export class CheckoutComponent implements OnInit {
   ngOnInit() {
   	this.getCartItems("init");
     this.updateBTCPrice();
+
+    if (this.myCart.length === 0) {
+      this.mainImgLoaded = true;
+    }
 
     // adicionando propriedades ao form group
     this.registerForm = this.formBuilder.group({

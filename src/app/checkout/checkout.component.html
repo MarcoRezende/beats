@@ -1,4 +1,6 @@
-<div class="checkout-container" *ngIf="!registerForm.valid">
+<app-main-loader *ngIf="!mainImgLoaded" [ngClass]="{'hide-loader': showModal}"></app-main-loader>
+
+<div class="checkout-container" [ngClass]="mainImgLoaded ? 'page-loaded' : 'page-loading'">
 
 	<h2 class="main-header">CHECKOUT</h2>
 
@@ -33,9 +35,9 @@
 				<div class="checkout-payment">
 					<div class="payment-methods-container">
 						<ul class="payment-methods">
-							<li class="payment-method" (click)="setPaymentMethod('visa')"><img class="payment-method-icon" src="{{'../../assets/imgs/visa.svg'}}"></li>
-							<li class="payment-method" (click)="setPaymentMethod('paypal')"><img class="payment-method-icon" src="{{'../../assets/imgs/paypal.svg'}}"></li>
-							<li class="payment-method" (click)="setPaymentMethod('bitcoin')"><img class="payment-method-icon" src="{{'../../assets/imgs/bitcoin.svg'}}"></li>
+							<li class="payment-method" (click)="setPaymentMethod('visa')"><img class="payment-method-icon" src="{{'../../assets/imgs/visa.svg'}}" (load)="updateImgState(item, 'main')"></li>
+							<li class="payment-method" (click)="setPaymentMethod('paypal')"><img class="payment-method-icon" src="{{'../../assets/imgs/paypal.svg'}}" (load)="updateImgState(item, 'main')"></li>
+							<li class="payment-method" (click)="setPaymentMethod('bitcoin')"><img class="payment-method-icon" src="{{'../../assets/imgs/bitcoin.svg'}}" (load)="updateImgState(item, 'main')"></li>
 						</ul>
 					</div>
 
@@ -70,7 +72,7 @@
 								<i class="fas fa-shopping-basket"></i>
 								<span>${{subtotal.toFixed(2)}}</span>
 								<p>Continue your purchase with paypal.</p>
-								<button type="button" class="btn"><a href="http://www.paypal.com" target="_blank"> <img src="https://cdn.pixabay.com/photo/2015/05/26/09/37/paypal-784404_960_720.png" class="inner-imgs" alt="" (load)="updateImgState(item)"> </a></button>
+								<button type="button" class="btn"><a href="http://www.paypal.com" target="_blank"> <img src="https://cdn.pixabay.com/photo/2015/05/26/09/37/paypal-784404_960_720.png" class="inner-imgs" alt="" (load)="updateImgState(item, 'inner')"> </a></button>
 							</div>
 						</div>
 					</div>
@@ -82,13 +84,13 @@
 								<!-- <span>$75,00</span> -->
 								<!-- <p> Process your payment with <img src="imgs/bitpay.svg" alt="" class=""> </p> --> 
 								<div class="purchase-bitcoin-value">
-									<img src="imgs/bitpay.svg" src="{{'../../assets/imgs/bitpay.svg'}}" alt="" class="inner-imgs" (load)="updateImgState(item)">
+									<img src="imgs/bitpay.svg" src="{{'../../assets/imgs/bitpay.svg'}}" alt="" class="inner-imgs" (load)="updateImgState(item, 'inner')">
 									<i class="fab fa-bitcoin"></i>
 									<p>{{BTC}} BTC</p>
 									<i class="fas fa-sync-alt" (click)="updateBTCPrice()"></i>
 									<i class="fas fa-info-circle" placement="left" ngbPopover="Bitcoin and other cryptocurrencies that BitPay accepts are secure currencies for the internet. You can pay without handing out sensitive financial information, and you don't need an account. Access the official site for more details" popoverTitle="BITPAY"></i>
 								</div>
-								<img src="{{'../../assets/imgs/qr_' + currentQR + '.png'}}" alt="" class="inner-imgs" (load)="updateImgState(item)">
+								<img src="{{'../../assets/imgs/qr_' + currentQR + '.png'}}" alt="" class="inner-imgs" (load)="updateImgState(item, 'inner')">
 							</div>
 						</div>
 					</div>
@@ -113,7 +115,7 @@
 </div>
 
 
-<div class="chechout-process-purchase-modal" *ngIf="registerForm.valid">
+<div class="chechout-process-purchase-modal" *ngIf="showModal">
 	<div class="checkout-success-modal">
 		<div class="anim">
 			<div class="checkout-success-modal-icon">
@@ -129,8 +131,8 @@
 		</div>
 		<div class="checkout-success-modal-info">
 			<div class="checkout-success-info">
-				<div class="checkout-success-modal-title">Awesome job!</div>
-				<div class="checkout-success-modal-text">You did a great job and now you should celebrate!</div>
+				<div class="checkout-success-modal-title">Purchase completed</div>
+				<div class="checkout-success-modal-text">Hey, {{registerForm.value.name.charAt(0).toUpperCase() + registerForm.value.name.slice(1)}}, we send the products to your email (<span>{{registerForm.value.email}}</span>), check everything to make sure you receive them.</div>
 				<button class="btn continue">Continue</button>
 			</div>
 		</div>
