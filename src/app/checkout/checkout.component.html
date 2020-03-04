@@ -44,7 +44,7 @@
 					<div class="inner-form-content payment-details" *ngIf="payMethod === 'visa'">
 						<label class="label" for="card-number">Card Number</label>
 						<div class="input-wrapper">
-							<i class="fas fa-credit-card"></i><input formControlName="cardNum" autocomplete="off" class="input form-control" id="card-number" type="tel" name="card number" placeholder="1234 1234 1234 1234" [ngClass]="{ 'is-invalid': submitted && f.cardNum.errors }" maxlength="19">
+							<i class="fas fa-credit-card"></i><input formControlName="cardNum" autocomplete="off" class="input form-control" id="card-number" type="tel" name="card number" placeholder="1234 1234 1234 1234" [ngClass]="{ 'is-invalid': submitted && f.cardNum.errors }" maxlength="19" (ngModelChange)="modelChanged($event, 'card-number', 'CardNum')">
 						</div>
 
 
@@ -52,7 +52,7 @@
 							<div class="payment-info">
 								<label class="label" for="exp-date">Expiration Date</label>
 								<div class="input-wrapper">
-									<i class="far fa-credit-card"></i><input formControlName="cardExp"  autocomplete="off" class="input form-control" id="exp-date" type="tel" name="expiration date" placeholder="MM / YY" [ngClass]="{ 'is-invalid': submitted && f.cardExp.errors }" maxlength="5">
+									<i class="far fa-credit-card"></i><input formControlName="cardExp"  autocomplete="off" class="input form-control" id="exp-date" type="tel" name="expiration date" placeholder="MM / YY" [ngClass]="{ 'is-invalid': submitted && f.cardExp.errors }" maxlength="5" (ngModelChange)="modelChanged($event, 'exp-date', 'Date')">
 								</div>
 							</div>
 

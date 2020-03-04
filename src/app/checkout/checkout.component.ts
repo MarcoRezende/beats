@@ -68,7 +68,7 @@ export class CheckoutComponent implements OnInit {
             }
           }
         }
-        )     
+      )     
     }
   }
 
@@ -164,6 +164,18 @@ export class CheckoutComponent implements OnInit {
     this.titleService.setTitle(title);
   }
 
+  modelChanged(e:string, id:string, t:string) {
+    if (e.length > 0) {
+      if (t === 'Date') {
+        let el = <HTMLInputElement>document.getElementById(id);
+        el.value = e.replace(/[^\dA-Z]/g, '').replace(/(.{2})/g, '$1/').trim().slice(0, 5);
+      } else if (t === 'CardNum') {
+        let el = <HTMLInputElement>document.getElementById(id);
+        el.value = e.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
+      }
+    } 
+  }
+
   ngOnInit() {
     this.setDocTitle('Beatz | Checkout');
   	this.getCartItems("init");
@@ -173,12 +185,17 @@ export class CheckoutComponent implements OnInit {
       this.mainImgLoaded = true;
     }
 
+    let today = new Date()
+    let mm = String(today.getMonth() + 1).padStart(1, '0');
+    let cardExp = `^((0[3-9]|1[0-2])\/?([2-9][0-9])|(0[1-9]|1[0-2])\/?([2-9][1-9]))$`;
+    let regCardExp = new RegExp(cardExp)
+
     // adicionando propriedades ao form group
     this.registerForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(1), Validators.pattern(/^\D.*\S.*$/)]],
       email: ['', [Validators.required, Validators.email]],
-      cardNum: ['', [Validators.required, Validators.pattern(/^(?:4[0-9]{12}(?:[0-9]{3})?)$/)]],
-      cardExp: ['', [Validators.required, Validators.pattern(/^(0[1-9]|1[0-2])\/?([0-9]{2})$/)]],
+      cardNum: ['', [Validators.required, Validators.pattern(/^(?:4[0-9]{3}\s(?:[0-9]{4}\s[0-9]{4}\s[0-9]{4})?)$/)]],
+      cardExp: ['', [Validators.required, Validators.pattern(regCardExp)]],
       cardCVV: ['', [Validators.required, Validators.pattern(/^[0-9]{3}$/)]]
     });
   }
