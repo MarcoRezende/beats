@@ -2,16 +2,16 @@
 	"products": {
 		"vst": [
 				{
-					"id": "ronnyj-robbery",
-					"category": "Drum Kit",
+					"id": "pmm-devolve-minha-meia",
+					"category": "VST Expansion",
 					"plugin": "nexus",
 					"release_date": "2019-09-05T13:15:30Z",
 					"rating": 5,
-					"name": "RonnyJ - Robbery (Nexus Bank)",
-					"by": "RonnyJ",
+					"name": "PMM - Devolve Minha Meia (Nexus Bank)",
+					"by": "PMM",
 					"price": 25,
 					"content": [
-						"2 pads",
+						"2 Pads",
 						"2 Flutes",
 						"5 Bells",
 						"4 Plucks"
@@ -29,7 +29,42 @@
 							"id":"arnold_01",
 							"username": "Arnold",
 							"profile_pic": "https://loremflickr.com/320/240/cat",
-							"message": "Lit man! I'm a fan of RonnyJ",
+							"message": "Lit man! I'm a fan of PMM",
+							"date": "2019-12-05T13:15:30Z",
+							"rating": 5
+						}
+					]
+				},
+				{
+					"id": "nick-mira-modernism",
+					"category": "VST Expansion",
+					"plugin": "omnisphere",
+					"release_date": "2019-09-05T13:15:30Z",
+					"rating": 5,
+					"name": "Nick Mira - Mordernism (Omnisphere Bank)",
+					"by": "Nick Mira",
+					"price": 25,
+					"content": [
+						"4 Pads",
+						"4 Flutes",
+						"5 Bells",
+						"6 Plucks",
+						"3 Guitars"
+					],
+					"reviews": [
+						{
+							"id":"louis_01",
+							"username": "Louis",
+							"profile_pic": "https://loremflickr.com/320/240/dog",
+							"message": "Awesome",
+							"date": "2020-11-05T13:15:30Z",
+							"rating": 5
+						},
+						{
+							"id":"arnold_01",
+							"username": "Arnold",
+							"profile_pic": "https://loremflickr.com/320/240/cat",
+							"message": "Lit man! I'm a fan of Nick Mira",
 							"date": "2019-12-05T13:15:30Z",
 							"rating": 5
 						}
@@ -632,12 +667,12 @@
 		],
 		"loops": [
 			{
-				"id": "ronnyj-flames",
+				"id": "rakin-fusion",
 				"category": "Loops & Samples",
 				"release_date": "2019-11-05T13:15:30Z",
 				"rating": 5,
-				"name": "RonnyJ - Flames (Loop Kit)",
-				"by": "RonnyJ",
+				"name": "Rakin - Fusion (Loop Kit)",
+				"by": "Rakin",
 				"price": 25,
 				"content": [
 					"12 loops"
@@ -655,7 +690,67 @@
 						"id":"arnold_01",
 						"username": "Arnold",
 						"profile_pic": "https://loremflickr.com/320/240/cat",
-						"message": "Lit man! I'm a fan of RonnyJ",
+						"message": "Lit man! I'm a fan of Rakin",
+						"date": "2019-11-05T13:15:30Z",
+						"rating": 5
+					}
+				]
+			},
+			{
+				"id": "harykun-sword-of-the-morning",
+				"category": "Loops & Samples",
+				"release_date": "2019-11-05T13:15:30Z",
+				"rating": 5,
+				"name": "Harykun - Sword Of The Morning (Loop Kit)",
+				"by": "Harykun",
+				"price": 25,
+				"content": [
+					"15 loops"
+				],
+				"reviews": [
+					{
+						"id":"louis_01",
+						"username": "Louis",
+						"profile_pic": "https://loremflickr.com/320/240/dog",
+						"message": "Awesome",
+						"date": "2019-11-03T13:15:30Z",
+						"rating": 5
+					},
+					{
+						"id":"arnold_01",
+						"username": "Arnold",
+						"profile_pic": "https://loremflickr.com/320/240/cat",
+						"message": "Lit man! I'm a fan of Harykun",
+						"date": "2019-11-05T13:15:30Z",
+						"rating": 5
+					}
+				]
+			},
+			{
+				"id": "daph-sekiro",
+				"category": "Loops & Samples",
+				"release_date": "2019-11-05T13:15:30Z",
+				"rating": 5,
+				"name": "Daph - Sekiro (Loop Kit)",
+				"by": "Daph",
+				"price": 25,
+				"content": [
+					"22 loops"
+				],
+				"reviews": [
+					{
+						"id":"louis_01",
+						"username": "Louis",
+						"profile_pic": "https://loremflickr.com/320/240/dog",
+						"message": "Awesome",
+						"date": "2019-11-03T13:15:30Z",
+						"rating": 5
+					},
+					{
+						"id":"arnold_01",
+						"username": "Arnold",
+						"profile_pic": "https://loremflickr.com/320/240/cat",
+						"message": "Lit man! I'm a fan of Daph",
 						"date": "2019-11-05T13:15:30Z",
 						"rating": 5
 					}
@@ -664,11 +759,11 @@
 		],
 		"midi": [
 			{
-				"id": "metro-boomin-swag",
+				"id": "metro-boomin-among-of-us",
 				"category": "Midi",
 				"release_date": "2019-11-05T13:15:30Z",
 				"rating": 5,
-				"name": "RonnyJ - Swag (Midi Pack)",
+				"name": "Metro Boomin - Among Of Us (Midi Pack)",
 				"by": "Metro Boomin",
 				"price": 25,
 				"content": [
@@ -687,7 +782,7 @@
 						"id":"arnold_01",
 						"username": "Arnold",
 						"profile_pic": "https://loremflickr.com/320/240/cat",
-						"message": "Lit man! I'm a fan of RonnyJ",
+						"message": "Lit man! I'm a fan of Metro Boomin",
 						"date": "2019-11-05T13:15:30Z",
 						"rating": 5
 					}

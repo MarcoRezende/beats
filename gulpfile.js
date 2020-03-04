@@ -35,16 +35,16 @@ gulp.task("minifyProductImg", function () {
 });
 
 gulp.task("resizeProductImg", function () {
-  gulp.src("./src/assets/imgs/products/*.{jpg,png}")
+  gulp.src("./src/assets/imgs/products/uploads/*.{jpg,png}")
   	// .pipe(changed("./src/assets/imgs/products"))
     .pipe(imageResize({ width: 900, height : 800, crop : false }))
-    .pipe(imagemin())
     .pipe(rename(function (path) { path.basename += "-900x800";}))
-    .pipe(gulp.dest("./src/assets/imgs/products"))
+    .pipe(imagemin())
+    .pipe(gulp.dest("./src/assets/imgs/products/uploads"))
     .pipe(imageResize({ width: 600, height : 600, crop : true }))
     .pipe(rename(function (path) { path.basename = path.basename.replace(/-900x800/g, "-600x600")}))
     .pipe(imagemin())
-    .pipe(gulp.dest("./src/assets/imgs/products"))
+    .pipe(gulp.dest("./src/assets/imgs/products/uploads"))
 });
 
 gulp.task('watch', function () {
