@@ -132,7 +132,7 @@
 		<div class="checkout-success-modal-info">
 			<div class="checkout-success-info">
 				<div class="checkout-success-modal-title">Purchase completed</div>
-				<div class="checkout-success-modal-text">Hey, {{registerForm.value.name.charAt(0).toUpperCase() + registerForm.value.name.slice(1)}}, we sent the products to your email (<span>{{registerForm.value.email}}</span>), check everything to make sure you received them.</div>
+				<div class="checkout-success-modal-text">Hey, {{formatUserInfo(registerForm.value.name)}}, we sent the products to your email (<span>{{registerForm.value.email}}</span>), check everything to make sure you received them.</div>
 				<button class="btn continue">Continue</button>
 			</div>
 		</div>

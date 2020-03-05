@@ -176,6 +176,10 @@ export class CheckoutComponent implements OnInit {
     } 
   }
 
+  formatUserInfo(str:string) {
+    return `${str.charAt(0).toUpperCase()}${str.slice(1)}`;
+  }
+
   ngOnInit() {
     this.setDocTitle('Beatz | Checkout');
   	this.getCartItems("init");
@@ -185,14 +189,14 @@ export class CheckoutComponent implements OnInit {
       this.mainImgLoaded = true;
     }
 
-    let today = new Date()
+    let today = new Date();
     let mm = String(today.getMonth() + 1).padStart(1, '0');
-    let cardExp = `^((0[3-9]|1[0-2])\/?([2-9][0-9])|(0[1-9]|1[0-2])\/?([2-9][1-9]))$`;
-    let regCardExp = new RegExp(cardExp)
+    let cardExp = `^((0[${mm}-9]|1[0-2])\/?([2-9][0-9])|(0[1-9]|1[0-2])\/?([2-9][1-9]))$`;
+    let regCardExp = new RegExp(cardExp);
 
     // adicionando propriedades ao form group
     this.registerForm = this.formBuilder.group({
-      name: ['', [Validators.required, Validators.minLength(1), Validators.pattern(/^\D.*\S.*$/)]],
+      name: ['', [Validators.required, Validators.minLength(1), Validators.pattern(/^[A-zÀ-ú\x{00C0}\x{00FF}][A-zÀ-ú\x{00C0}\x{00FF}\'\-]+([\ A-zÀ-ú\x{00C0}\x{00FF}][A-zÀ-ú\x{00C0}\x{00FF}\'\-]+)*$/)]],
       email: ['', [Validators.required, Validators.email]],
       cardNum: ['', [Validators.required, Validators.pattern(/^(?:4[0-9]{3}\s(?:[0-9]{4}\s[0-9]{4}\s[0-9]{4})?)$/)]],
       cardExp: ['', [Validators.required, Validators.pattern(regCardExp)]],
