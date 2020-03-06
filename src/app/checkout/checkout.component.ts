@@ -165,19 +165,19 @@ export class CheckoutComponent implements OnInit {
   }
 
   modelChanged(e:string, id:string, t:string) {
+    let el = <HTMLInputElement>document.getElementById(id);
     if (e.length > 0) {
       if (t === 'Date') {
-        let el = <HTMLInputElement>document.getElementById(id);
         el.value = e.replace(/[^\dA-Z]/g, '').replace(/(.{2})/g, '$1/').trim().slice(0, 5);
       } else if (t === 'CardNum') {
-        let el = <HTMLInputElement>document.getElementById(id);
         el.value = e.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
       }
     } 
   }
 
-  formatUserInfo(str:string) {
-    return `${str.charAt(0).toUpperCase()}${str.slice(1)}`;
+  formatUserInfo(str:string, t:string) {
+    let fStr = t === 'name' ? `${str.charAt(0).toUpperCase()}${str.slice(1).replace(/^(.{20}).*/, "$1...")}` : `${str.replace(/^(.{20}).*/, "$1...")}`;
+    return fStr;
   }
 
   ngOnInit() {
@@ -196,7 +196,8 @@ export class CheckoutComponent implements OnInit {
 
     // adicionando propriedades ao form group
     this.registerForm = this.formBuilder.group({
-      name: ['', [Validators.required, Validators.minLength(1), Validators.pattern(/^[A-zÀ-ú\x{00C0}\x{00FF}][A-zÀ-ú\x{00C0}\x{00FF}\'\-]+([\ A-zÀ-ú\x{00C0}\x{00FF}][A-zÀ-ú\x{00C0}\x{00FF}\'\-]+)*$/)]],
+      fName: ['', [Validators.required, Validators.minLength(1), Validators.pattern(/^[A-zÀ-ú\x{00C0}\x{00FF}][A-zÀ-ú\x{00C0}\x{00FF}\'\-]+([\ A-zÀ-ú\x{00C0}\x{00FF}][A-zÀ-ú\x{00C0}\x{00FF}\'\-]+)*$/)]],
+      lName: ['', [Validators.required, Validators.minLength(1), Validators.pattern(/^[A-zÀ-ú\x{00C0}\x{00FF}][A-zÀ-ú\x{00C0}\x{00FF}\'\-]*$/)]],
       email: ['', [Validators.required, Validators.email]],
       cardNum: ['', [Validators.required, Validators.pattern(/^(?:4[0-9]{3}\s(?:[0-9]{4}\s[0-9]{4}\s[0-9]{4})?)$/)]],
       cardExp: ['', [Validators.required, Validators.pattern(regCardExp)]],

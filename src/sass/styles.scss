@@ -1546,7 +1546,7 @@ input {
 	animation: smooth .9s;
 }
 
-.payment-container {
+.payment-container, .name-form-container {
 	display: grid;
 	grid-template-rows: 100%;
 	grid-template-columns: repeat(2, auto);

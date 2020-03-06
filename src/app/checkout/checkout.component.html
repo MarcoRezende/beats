@@ -18,9 +18,21 @@
 					</div>
 
 
-					<label class="label" for="name">Name</label>
-					<div class="input-wrapper">
-						<i class="fas fa-signature"></i><input formControlName="name" autocomplete="off" class="input form-control" id="email" type="text" name="name" placeholder="John Rick" [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+					
+					<div class="name-form-container">
+						<div class="name-form">
+							<label class="label" for="name">First Name</label>
+							<div class="input-wrapper">
+								<i class="fas fa-user"></i><input formControlName="fName" autocomplete="off" class="input form-control" id="email" type="text" name="name" placeholder="John" [ngClass]="{ 'is-invalid': submitted && f.fName.errors }">
+							</div>
+						</div>
+
+						<div class="name-form">
+							<label class="label" for="name">Last Name</label>
+							<div class="input-wrapper">
+								<i class="fas fa-signature"></i><input formControlName="lName" autocomplete="off" class="input form-control" id="email" type="text" name="name" placeholder="Rick Grimmes" [ngClass]="{ 'is-invalid': submitted && f.lName.errors }">
+							</div>
+						</div>
 					</div>
 
 				</div>
@@ -132,7 +144,7 @@
 		<div class="checkout-success-modal-info">
 			<div class="checkout-success-info">
 				<div class="checkout-success-modal-title">Purchase completed</div>
-				<div class="checkout-success-modal-text">Hey, {{formatUserInfo(registerForm.value.name)}}, we sent the products to your email (<span>{{registerForm.value.email}}</span>), check everything to make sure you received them.</div>
+				<div class="checkout-success-modal-text">Hey, {{formatUserInfo(registerForm.value.fName, 'name')}}, we sent the products to your email (<span>{{formatUserInfo(registerForm.value.email, 'email')}}</span>), check everything to make sure you received them.</div>
 				<button class="btn continue">Continue</button>
 			</div>
 		</div>
