@@ -27,6 +27,10 @@ export class AppComponent {
   getCartItems() {
     this.myCart = this.myCart.filter(item => item.added === true);
 
+    if (this.myCart.length === 0 && this.subtotal > 0) {
+      this.subtotal = 0;
+    }
+
   	this._shareService.cart
   	  .subscribe(
   	    (obj) => {
