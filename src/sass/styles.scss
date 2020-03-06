@@ -3192,7 +3192,6 @@ input {
 	}
 }
 
-
 .page-loading {
 	display: block;
 	height: 0;
@@ -3206,5 +3205,9 @@ input {
 }
 
 .showModal {
+	display: none;
+}
+
+.hide-loader {
 	display: none;
 }
