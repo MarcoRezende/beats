@@ -1751,6 +1751,13 @@ input {
 
 				&.completed {
 					background-color: rgb(39, 128, 101);
+					padding: 0;
+
+					& > a {
+						display: block;
+						width: 100%;
+						padding: .375rem .75rem;
+					}
 				}
 
 				&.failed {

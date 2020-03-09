@@ -154,7 +154,7 @@
 			<div class="checkout-purchase-process-info" *ngIf="purchaseStatus[0] === 'COMPLETED'">
 				<div class="checkout-purchase-process-modal-title">Purchase Completed</div>
 				<div class="checkout-purchase-process-modal-text">Hey, {{formatUserInfo(registerForm.value.fName, 'name')}}, we sent the products to your email (<span>{{formatUserInfo(registerForm.value.email, 'email')}}</span>), check everything to make sure you received them.</div>
-				<button class="btn continue completed">Continue</button>
+				<button class="btn continue completed"><a routerLink="/">Continue</a></button>
 			</div>
 
 			<div class="checkout-purchase-process-info" *ngIf="purchaseStatus[0] === 'FAILED'">
