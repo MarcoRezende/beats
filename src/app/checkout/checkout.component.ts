@@ -27,6 +27,7 @@ export class CheckoutComponent implements OnInit {
   mainImgLoaded: boolean = false;
   fakeDelay: boolean = false;
   showModal: boolean = false;
+  purchaseStatus: any = ['COMPLETED', 'FAILED'];
 
   constructor(private _shareService: ShareService, private _sharedService: SharedService, private formBuilder: FormBuilder, private titleService: Title) { }
 
@@ -130,11 +131,16 @@ export class CheckoutComponent implements OnInit {
 
       this.mainImgLoaded = false;
 
+      this.shuffle(this.purchaseStatus);
+
       setTimeout((function() {
         this.showModal = true;
 
         this.getCartItems();
-        this.myCart.forEach(item => item.added = false)
+
+        if (this.purchaseStatus[0] === 'COMPLETED') {
+          this.myCart.forEach(item => item.added = false)
+        }
 
       }.bind(this)), 5000)
     }
@@ -178,6 +184,22 @@ export class CheckoutComponent implements OnInit {
   formatUserInfo(str:string, t:string) {
     let fStr = t === 'name' ? `${str.charAt(0).toUpperCase()}${str.slice(1).replace(/^(.{20}).*/, "$1...")}` : `${str.replace(/^(.{30}).*/, "$1...")}`;
     return fStr;
+  }
+
+  shuffle(array) {
+    let currentIndex = array.length, temporaryValue, randomIndex;
+
+    while (0 !== currentIndex) {
+
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+
+    return array;
   }
 
   ngOnInit() {

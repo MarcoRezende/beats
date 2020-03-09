@@ -8,7 +8,7 @@
 
 	<section *ngIf="myCart.length">
 		<ul class="my-cart-list">
-			<li class="my-cart-item" *ngFor="let product of myCart">
+			<li class="my-cart-item" *ngFor="let product of myCart" [ngClass]="{'hide-loader': !product.added}">
 				<div class="btn-remove-wrapper">
 					<button (click)="removeItemFromCart(product)" class="btn">x</button>
 				</div>

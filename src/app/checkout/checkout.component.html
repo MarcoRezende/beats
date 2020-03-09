@@ -113,7 +113,7 @@
 		<aside class="order-summary">
 			<h2>Order Summary</h2>
 			<ul class="order-summary-list">
-				<li *ngFor="let product of myCart" class="order-summary-item">
+				<li *ngFor="let product of myCart" class="order-summary-item" [ngClass]="{'hide-loader': !product.added}">
 					<div class="order-item-info">
 						<div class="order-info-middle"><span class="summary-item-qtt">1 x </span></div>
 						<div class="order-info-middle"><h4 class="summary-item-name">{{product.name}}</h4></div>
@@ -128,9 +128,9 @@
 
 
 <div class="chechout-process-purchase-modal" *ngIf="showModal">
-	<div class="checkout-success-modal">
-		<div class="anim">
-			<div class="checkout-success-modal-icon">
+	<div class="checkout-process-modal">
+		<div [ngClass]="purchaseStatus[0] === 'COMPLETED' ? 'completed' : 'failed'">
+			<div class="checkout-purchase-modal-icon" *ngIf="purchaseStatus[0] === 'COMPLETED'">
 				<div class="swal2-icon swal2-success swal2-animate-success-icon" style="display: flex;">
 					<div class="swal2-success-circular-line-left" style="background-color: #278065;"></div>
 					<span class="swal2-success-line-tip"></span>
@@ -140,12 +140,27 @@
 					<div class="swal2-success-circular-line-right" style="background-color: #278065;"></div>
 				</div>
 			</div>
+			<div class="checkout-purchase-modal-icon" *ngIf="purchaseStatus[0] === 'FAILED'">
+				<div class="swal2-icon swal2-error swal2-animate-error-icon" style="display: flex;">
+					<span class="swal2-x-mark">
+						<span class="swal2-x-mark-line-left"></span>
+						<span class="swal2-x-mark-line-right"></span>
+					</span>
+				</div>	
+			</div>
 		</div>
-		<div class="checkout-success-modal-info">
-			<div class="checkout-success-info">
-				<div class="checkout-success-modal-title">Purchase completed</div>
-				<div class="checkout-success-modal-text">Hey, {{formatUserInfo(registerForm.value.fName, 'name')}}, we sent the products to your email (<span>{{formatUserInfo(registerForm.value.email, 'email')}}</span>), check everything to make sure you received them.</div>
-				<button class="btn continue">Continue</button>
+		
+		<div class="checkout-purchase-process-modal-info">
+			<div class="checkout-purchase-process-info" *ngIf="purchaseStatus[0] === 'COMPLETED'">
+				<div class="checkout-purchase-process-modal-title">Purchase Completed</div>
+				<div class="checkout-purchase-process-modal-text">Hey, {{formatUserInfo(registerForm.value.fName, 'name')}}, we sent the products to your email (<span>{{formatUserInfo(registerForm.value.email, 'email')}}</span>), check everything to make sure you received them.</div>
+				<button class="btn continue completed">Continue</button>
+			</div>
+
+			<div class="checkout-purchase-process-info" *ngIf="purchaseStatus[0] === 'FAILED'">
+				<div class="checkout-purchase-process-modal-title">Purchase Failed</div>
+				<div class="checkout-purchase-process-modal-text">Sorry, {{formatUserInfo(registerForm.value.fName, 'name')}}, but your Visa was declined. Please add another credit card to complete your purchase.</div>
+				<button class="btn continue failed">Continue</button>
 			</div>
 		</div>
 	</div>

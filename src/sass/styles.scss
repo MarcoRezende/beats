@@ -1680,7 +1680,7 @@ input {
 	min-height: calc(100vh - 50px);
 }
 
-.checkout-success-modal {
+.checkout-process-modal {
 	position: absolute;
 	display: block;
 	width: 80%;
@@ -1693,16 +1693,23 @@ input {
 	overflow: hidden;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
-	& > .anim, & > .checkout-success-modal-info {
+	& > .completed, & > .failed, & > .checkout-purchase-process-modal-info {
 		height: 180px;
 		text-align: center;
 		position: relative;
 	}
 
-	& > .anim {
+	& > .completed {
 		background-color: rgb(39, 128, 101);
+	}
 
-		& > .checkout-success-modal-icon {
+	& > .failed {
+		background-color: rgb(242, 116, 116);
+	}
+
+	& > .completed, & > .failed {
+
+		& > .checkout-purchase-modal-icon {
 			position: absolute;
 			top: 50%;
 			left: 50%;
@@ -1714,22 +1721,22 @@ input {
 		}
 	}	
 
-	& > .checkout-success-modal-info {
+	& > .checkout-purchase-process-modal-info {
 		padding: 30px;
 		color: #fff;
 		display: table;
 		margin: 0 auto;
 
-		& > .checkout-success-info {
+		& > .checkout-purchase-process-info {
 			display: table-cell;
 			vertical-align: middle;
 
-			& > .checkout-success-modal-title {
+			& > .checkout-purchase-process-modal-title {
 				font-size: 14pt;
 				margin: 0 0 15px;
 			}
 
-			& > .checkout-success-modal-text {
+			& > .checkout-purchase-process-modal-text {
 				font-size: 10pt;
 
 				& > span {
@@ -1739,14 +1746,17 @@ input {
 			}
 
 			& > button.continue {
-				background-color: #278065;
 				color: #fff;
 				border-radius: 0;
 				margin: 25px 0 10px;
 				transition: background-color .3s;
 
-				&:hover {
+				&.completed:hover {
 					background-color: #1d5f4b;
+				}
+
+				&.failed:hover {
+					background-color: #d06464;
 				}
 			}
 		}
@@ -2820,7 +2830,7 @@ input {
 .swal2-popup .swal2-close:hover{
 	-webkit-transform:none;
 	transform:none;
-	color:#f27474
+	color:#e44242
 }
 .swal2-popup>.swal2-checkbox,.swal2-popup>.swal2-file,.swal2-popup>.swal2-input,.swal2-popup>.swal2-radio,.swal2-popup>.swal2-select,.swal2-popup>.swal2-textarea{
 	display:none
@@ -2851,8 +2861,8 @@ input {
 	box-sizing:border-box
 }
 .swal2-popup .swal2-file.swal2-inputerror,.swal2-popup .swal2-input.swal2-inputerror,.swal2-popup .swal2-textarea.swal2-inputerror{
-	border-color:#f27474!important;
-	box-shadow:0 0 2px #f27474!important
+	border-color:#e44242!important;
+	box-shadow:0 0 2px #e44242!important
 }
 .swal2-popup .swal2-file:focus,.swal2-popup .swal2-input:focus,.swal2-popup .swal2-textarea:focus{
 	border:1px solid #b4dbed;
@@ -2936,7 +2946,7 @@ input {
 	height:1.5em;
 	margin:0 .625em;
 	border-radius:50%;
-	background-color:#f27474;
+	background-color:#e44242;
 	color:#fff;
 	font-weight:600;
 	line-height:1.5em;
@@ -2986,7 +2996,7 @@ input {
 	font-size:3.75em
 }
 .swal2-icon.swal2-error{
-	border-color:#f27474
+	border-color:#e44242
 }
 .swal2-icon.swal2-error .swal2-x-mark{
 	position:relative;
@@ -2999,7 +3009,7 @@ input {
 	width:2.9375em;
 	height:.3125em;
 	border-radius:.125em;
-	background-color:#f27474
+	background-color:#e44242
 }
 .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left]{
 	left:1.0625em;
