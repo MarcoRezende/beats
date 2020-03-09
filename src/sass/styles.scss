@@ -1751,6 +1751,14 @@ input {
 				margin: 25px 0 10px;
 				transition: background-color .3s;
 
+				&.completed {
+					background-color: rgb(39, 128, 101);
+				}
+
+				&.failed {
+					background-color: rgb(242, 116, 116);
+				}
+
 				&.completed:hover {
 					background-color: #1d5f4b;
 				}
