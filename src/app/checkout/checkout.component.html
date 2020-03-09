@@ -160,7 +160,7 @@
 			<div class="checkout-purchase-process-info" *ngIf="purchaseStatus[0] === 'FAILED'">
 				<div class="checkout-purchase-process-modal-title">Purchase Failed</div>
 				<div class="checkout-purchase-process-modal-text">Sorry, {{formatUserInfo(registerForm.value.fName, 'name')}}, but your Visa was declined. Please add another credit card to complete your purchase.</div>
-				<button class="btn continue failed">Continue</button>
+				<button class="btn continue failed" (click)="backToCheckout()">Try Again</button>
 			</div>
 		</div>
 	</div>

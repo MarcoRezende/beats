@@ -202,6 +202,11 @@ export class CheckoutComponent implements OnInit {
     return array;
   }
 
+  backToCheckout() {
+    this.showModal = false;
+    this.mainImgLoaded = true;
+  }
+
   ngOnInit() {
     this.setDocTitle('Beatz | Checkout');
   	this.getCartItems("init");
