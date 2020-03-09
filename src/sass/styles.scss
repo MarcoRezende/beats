@@ -55,6 +55,10 @@ body {
 	height: 100%;
 	overflow-y: scroll;
 	overflow-x: hidden;
+
+	@include rpsn-nav {
+		perspective: none;
+	}
 }
 
 .my-container {
@@ -165,7 +169,6 @@ header .not-home-nav {
 	@include rpsn-nav {
 		padding: 0 1rem;
 	}
-
 }
 
 .navbar-light .navbar-toggler-icon {
@@ -180,7 +183,7 @@ header .not-home-nav {
 	}
 }
 
-.nav-item:nth-child(4) {
+.nav-item:last-child {
 	@include rpsn-nav {
 		display: none;
 	}	
@@ -451,6 +454,41 @@ header .not-home-nav {
 
 .dropdown:hover .dropbtn {color: color(accent); transition: all .2s ease;}
 
+.shopping-cart {
+	display: none;
+
+	& .cart-mobile {
+		position: absolute;
+	    top: 0;
+	    left: -7px;
+	    border-radius: 50px;
+	    height: 25px;
+	    min-width: 25px;
+	    padding: 0;
+	    line-height: 25px;
+	    color: #fff;
+	    background: rgb(150, 34, 5);
+	    font-size: 12px;
+	    font-weight: 700;
+	    text-align: center;
+	}
+
+	@include rpsn-nav {
+		position: fixed;
+		bottom: 15px;
+		right: 30px;
+		display: block;
+		width: 60px;
+		height: 60px;
+		line-height: 60px;
+		text-align: center;
+		border-radius: 100px;
+		z-index: 9999;
+		background: #e8e4e4;
+		box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.61);
+	}
+}
+
 .pagination {
 	display: block;
 	width: 100%;
@@ -510,6 +548,10 @@ header .not-home-nav {
 	overflow: hidden;
 	position: relative;
 	text-transform: uppercase;
+
+	@include rpsn-nav {
+		perspective: 1px;
+	}
 }
 
 .hero-image, .hero-image:before{
@@ -1787,8 +1829,8 @@ input {
 
 .btn-confirm-disabled, .btn-confirm-disabled:hover {
 	color: #d0d0d0;
-    background-color: #271579;
-    border: 2px solid #271579;
+	background-color: #271579;
+	border: 2px solid #271579;
 }
 
 .btn-confirm, .btn-confirm-disabled {

@@ -139,7 +139,7 @@ export class CheckoutComponent implements OnInit {
         this.getCartItems();
 
         if (this.purchaseStatus[0] === 'COMPLETED') {
-          this.myCart.forEach(item => item.added = false)
+          this.myCart.forEach(item => item.added = false);
         }
 
       }.bind(this)), 5000)

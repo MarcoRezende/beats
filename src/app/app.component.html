@@ -1,90 +1,93 @@
-<header [ngClass]="home ? 'header-home' : 'header-not-home'">
-  <nav class="navbar navbar-expand-md navbar-light bg-light" [ngClass]="home ? 'home-nav' : 'not-home-nav'">
-    <span class="logo"><a routerLink="">BEATZ</a></span>
-    <button class="navbar-toggler" type="button" aria-controls="navbarContent" [attr.aria-expanded]="!collapsed" aria-label="Toggle navigation" (click)="collapsed = !collapsed">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<div class="header-conatiner">
+  <header [ngClass]="home ? 'header-home' : 'header-not-home'">
+    <nav class="navbar navbar-expand-md navbar-light bg-light" [ngClass]="home ? 'home-nav' : 'not-home-nav'">
+      <span class="logo"><a routerLink="">BEATZ</a></span>
+      <button class="navbar-toggler" type="button" aria-controls="navbarContent" [attr.aria-expanded]="!collapsed" aria-label="Toggle navigation" (click)="collapsed = !collapsed">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div class="navbar-collapse" [class.collapse]="!collapsed" id="navbarContent">
-      <ul class="navbar-nav ml-auto full-height">
-        <li class="nav-item" ngbDropdown display="dynamic">
-          <div class="nav-link-wrapper">
-            <div class="nav-link full-height">
-              <div class="dropdown">
-                <button class="dropbtn">
-                  PRODUCTS
-                </button>
-                <div class="dropdown-content">
-                  <a class="dropdown-item" (click)="$event.preventDefault()" routerLink="/products" [queryParams]="{catalog:'vst-expansion'}">VST Expansion</a>
-                  <a class="dropdown-item" (click)="$event.preventDefault()" routerLink="/products" [queryParams]="{catalog:'drum-kit'}">Drum Kit</a>
-                  <a class="dropdown-item" (click)="$event.preventDefault()" routerLink="/products" [queryParams]="{catalog:'midi-kit'}">MIDI Kit</a>
-                  <a class="dropdown-item" (click)="$event.preventDefault()" routerLink="/products" [queryParams]="{catalog:'loops'}">Loops & Samples</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </li>
-
-        <!-- <li class="nav-item" ngbDropdown display="dynamic" placement="bottom-right">
-          <div class="nav-link-wrapper">
-            <a class="nav-link full-height" routerLink="/about" role="button">
-              ABOUT
-            </a>
-          </div>
-        </li> -->
-
-        <!-- <li class="nav-item" ngbDropdown display="dynamic" placement="bottom-right">
-          <div class="nav-link-wrapper">
-            <a class="nav-link full-height" routerLink="/contacts" role="button">
-              CONTACTS
-            </a>
-          </div>
-        </li> -->
-        <li class="nav-item" ngbDropdown display="dynamic" placement="bottom-right" (mousemove)="getCartItems()">
-          <div class="nav-link-wrapper">
-            <div class="nav-link full-height">
-              <div class="dropdown">
-                <a routerLink="/checkout" role="button">
+      <div class="navbar-collapse" [class.collapse]="!collapsed" id="navbarContent">
+        <ul class="navbar-nav ml-auto full-height">
+          <li class="nav-item" ngbDropdown display="dynamic">
+            <div class="nav-link-wrapper">
+              <div class="nav-link full-height">
+                <div class="dropdown">
                   <button class="dropbtn">
-                    <i class="material-icons">
-                      shopping_cart
-                    </i>
+                    PRODUCTS
                   </button>
-                </a>  
-                <div *ngIf="myCart.length > 0" class="dropdown-content to-left">
-                  <div class="dropdown-cart-wrapper">
-                    <div *ngFor="let item of myCart" href="#" class="cart-container">
-                      <button class="remove-btn" (click)='handleCartItem(item, "remove")'><div><i class="material-icons remove-icon">remove_circle</i></div></button>
-                      <a class="cart-wrapper" [routerLink]="['/shop', item.id]" [queryParams]="{tag:catalog}">
-                        <div class="cart-image-preview-container">
-                          <img src="{{'../assets/imgs/products/' + item.id + '-art-600x600.png'}}" alt="" class="cart-image-preview">
-                        </div>
-                        <div class="cart-data">
-                          <h4 class="cart-name">{{item.name}}</h4>
-                          <span class="cart-price">${{item.price.toFixed(2)}}</span>
-                        </div>
-                      </a>
-                    </div>
+                  <div class="dropdown-content">
+                    <a class="dropdown-item" (click)="$event.preventDefault()" routerLink="/products" [queryParams]="{catalog:'vst-expansion'}">VST Expansion</a>
+                    <a class="dropdown-item" (click)="$event.preventDefault()" routerLink="/products" [queryParams]="{catalog:'drum-kit'}">Drum Kit</a>
+                    <a class="dropdown-item" (click)="$event.preventDefault()" routerLink="/products" [queryParams]="{catalog:'midi-kit'}">MIDI Kit</a>
+                    <a class="dropdown-item" (click)="$event.preventDefault()" routerLink="/products" [queryParams]="{catalog:'loops'}">Loops & Samples</a>
                   </div>
-                  <div class="btns-container">
-                    <div class="nav-btns">
-                      <span class="subtotal">Subtotal: ${{subtotal.toFixed(2)}}</span>
-                      <button class="btn btn-cart"><a routerLink="/cart">Cart</a></button>
-                      <button class="btn btn-checkout"><a routerLink="/checkout">Checkout</a></button>
-                    </div>
-                  </div>  
-                </div>
-                <div *ngIf="myCart.length === 0" class="dropdown-content to-left">
-                  <span class="cart-item">Your cart is empty</span>
                 </div>
               </div>
             </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </nav>
-</header>
+          </li>
+
+          <!-- <li class="nav-item" ngbDropdown display="dynamic" placement="bottom-right">
+            <div class="nav-link-wrapper">
+              <a class="nav-link full-height" routerLink="/about" role="button">
+                ABOUT
+              </a>
+            </div>
+          </li> -->
+
+          <!-- <li class="nav-item" ngbDropdown display="dynamic" placement="bottom-right">
+            <div class="nav-link-wrapper">
+              <a class="nav-link full-height" routerLink="/contacts" role="button">
+                CONTACTS
+              </a>
+            </div>
+          </li> -->
+          <li class="nav-item" ngbDropdown display="dynamic" placement="bottom-right" (mousemove)="getCartItems()">
+            <div class="nav-link-wrapper">
+              <div class="nav-link full-height">
+                <div class="dropdown">
+                  <a routerLink="/checkout" role="button">
+                    <button class="dropbtn">
+                      <i class="material-icons">
+                        shopping_cart
+                      </i>
+                    </button>
+                  </a>  
+                  <div *ngIf="myCart.length > 0" class="dropdown-content to-left">
+                    <div class="dropdown-cart-wrapper">
+                      <div *ngFor="let item of myCart" href="#" class="cart-container">
+                        <button class="remove-btn" (click)='handleCartItem(item, "remove")'><div><i class="material-icons remove-icon">remove_circle</i></div></button>
+                        <a class="cart-wrapper" [routerLink]="['/shop', item.id]" [queryParams]="{tag:catalog}">
+                          <div class="cart-image-preview-container">
+                            <img src="{{'../assets/imgs/products/' + item.id + '-art-600x600.png'}}" alt="" class="cart-image-preview">
+                          </div>
+                          <div class="cart-data">
+                            <h4 class="cart-name">{{item.name}}</h4>
+                            <span class="cart-price">${{item.price.toFixed(2)}}</span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="btns-container">
+                      <div class="nav-btns">
+                        <span class="subtotal">Subtotal: ${{subtotal.toFixed(2)}}</span>
+                        <button class="btn btn-cart"><a routerLink="/cart">Cart</a></button>
+                        <button class="btn btn-checkout"><a routerLink="/checkout">Checkout</a></button>
+                      </div>
+                    </div>  
+                  </div>
+                  <div *ngIf="myCart.length === 0" class="dropdown-content to-left">
+                    <span class="cart-item">Your cart is empty</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+</div>
 <div class="my-container">
   <router-outlet></router-outlet>
+  <div class="shopping-cart"><a routerLink="/cart"><i class="material-icons">shopping_cart</i></a><span class="cart-mobile">{{myCart.length}}</span></div>
 </div>
