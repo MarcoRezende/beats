@@ -31,6 +31,12 @@
 	}
 }
 
+@mixin high {
+	@media (min-width: #{rpsn(high)}) {
+		@content;
+	}
+}
+
 @mixin rpsn-nav {
 	@media (max-width: #{rpsn(rpsn-nav)}) {
 		@content;
@@ -2037,6 +2043,10 @@ input {
 	height: 35vh;
 	display: table;
 	margin: 0 auto;
+
+	@include high {
+		height: 20vh;
+	}
 }
 
 .secondary-loader {
