@@ -19,10 +19,9 @@ gulp.task('sass', function () {
 });
 
 gulp.task("minifyImgs", function () {
-  gulp.src("./src/assets/imgs/*.{jpg,png}")
-  	.pipe(changed("./src/assets/minified"))
+  gulp.src("./src/assets/imgs/t/*.{jpg,png}")
+  	// .pipe(changed("./src/assets/minified"))
   	.pipe(imagemin())
-    .pipe(rename(function (path) { path.basename += "-compressed"; }))
     .pipe(gulp.dest("./src/assets/imgs/"));
 });
 

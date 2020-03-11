@@ -1,4 +1,4 @@
-<app-main-loader *ngIf="!mainImgLoaded" [ngClass]="{'hide-loader': showModal}"></app-main-loader>
+<app-main-loader *ngIf="!mainImgLoaded" [ngClass]="{'hide': showModal}"></app-main-loader>
 
 <div class="checkout-container" [ngClass]="mainImgLoaded ? 'page-loaded' : 'page-loading'">
 
@@ -113,7 +113,7 @@
 		<aside class="order-summary">
 			<h2>Order Summary</h2>
 			<ul class="order-summary-list">
-				<li *ngFor="let product of myCart" class="order-summary-item" [ngClass]="{'hide-loader': !product.added}">
+				<li *ngFor="let product of myCart" class="order-summary-item" [ngClass]="{'hide': !product.added}">
 					<div class="order-item-info">
 						<div class="order-info-middle"><span class="summary-item-qtt">1 x </span></div>
 						<div class="order-info-middle"><h4 class="summary-item-name">{{product.name}}</h4></div>

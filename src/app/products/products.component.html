@@ -32,7 +32,7 @@
 		</li>
 	</ul>
 
-	<ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+	<ul *ngIf="pager.pages && pager.pages.length" class="pagination" [ngClass]="{'hide': !imgsLoaded}">
 		<li [ngClass]="{disabled:pager.currentPage === 1}" class="page-item">
 			<a (click)="goToTop($event.target.classList)" (click)="setPage(pager.currentPage - 1)" [ngClass]="{activeLink:pager.currentPage === 1}"><</a>
 		</li>
