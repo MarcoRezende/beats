@@ -457,8 +457,6 @@ header .not-home-nav {
 
 .dropdown-content .cart-wrapper:hover, .remove-btn:hover .cart-item:hover, .dropdown-item:hover {background-color: color(accent);}
 
-// .dropdown:hover .dropdown-content {display: block; animation: smooth .5s forwards;}
-
 .dropdown:hover .dropbtn {color: color(accent); transition: all .2s ease;}
 
 .shopping-cart {
@@ -1143,10 +1141,8 @@ ul.nav.nav-pills.justify-content-start::after {
 }
 
 .review {
-	// box-shadow: 0 4px 8px -4px rgba(0,0,0,.5);
 	padding: 10px 0;
 	position: relative;
-    // margin: 10px 0;
 }
 
 li.review::after {

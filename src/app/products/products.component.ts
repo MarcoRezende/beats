@@ -92,7 +92,7 @@ export class ProductsComponent implements OnInit {
     } 
   }
 
-  updateImgState(item:any,e:string='OK',el:any) {
+  updateImgState(item:any={},e:string='OK',el:any='') {
     if (e !== 'OK') {
       el.src = '../../assets/imgs/products/not-found-art-600x600.png'
     }

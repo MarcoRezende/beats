@@ -91,7 +91,7 @@ export class ShopComponent implements OnInit {
     img.style.transition = "transform .3s ease";
   }
 
-  updateImgState(item:any,task:string,e:string='OK',el:any) {
+  updateImgState(item:any={},task:string,e:string='OK',el:any='') {
     
 
     if (task === 'main') {
