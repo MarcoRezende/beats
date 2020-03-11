@@ -42,7 +42,7 @@
 					<li *ngFor="let review of product[0].reviews" class="review">
 						<div class="user-data">
 							<div class="user-profile-pic">
-								<img src={{review.profile_pic}} alt="" class="profile-pic" (load)="updateImgState(item, 'inner')">
+								<img src={{review.profile_pic}} alt="" class="profile-pic" (load)="updateImgState(item, 'inner')" (error)="updateImgState(item, 'inner', 'ERROR', $event.target)">
 							</div>
 							<div class="user-review">
 								<div class="review-data">

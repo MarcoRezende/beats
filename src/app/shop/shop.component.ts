@@ -92,13 +92,20 @@ export class ShopComponent implements OnInit {
   }
 
   updateImgState(item:any,task:string,e:string='OK',el:any) {
-    if (e !== 'OK') {
-      el.src = '../../assets/imgs/products/not-found-art-900x800.png'
-    }
+    
 
     if (task === 'main') {
+      if (e !== 'OK') {
+        el.src = '../../assets/imgs/products/not-found-art-900x800.png'
+      }
+
       this.mainImgLoaded = true;
+
     } else {
+      if (e !== 'OK') {
+        el.src = '../../assets/imgs/profile-not-found.png'
+      }
+
       let innerImgs = document.getElementsByClassName('profile-pic');
 
       this.allInnerImgs.push(item);
