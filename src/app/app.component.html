@@ -40,7 +40,7 @@
                     <div class="dropdown-cart-wrapper">
                       <div *ngFor="let item of myCart" href="#" class="cart-container">
                         <button class="remove-btn" (click)='handleCartItem(item, "remove")'><div><i class="material-icons remove-icon">remove_circle</i></div></button>
-                        <a class="cart-wrapper" [routerLink]="['/shop', item.id]" [queryParams]="{tag:catalog}">
+                        <a class="cart-wrapper" [routerLink]="['/shop', item.id]">
                           <div class="cart-image-preview-container">
                             <img src="{{'../assets/imgs/products/' + item.id + '-art-600x600.png'}}" alt="" class="cart-image-preview">
                           </div>
