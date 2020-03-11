@@ -91,7 +91,10 @@ export class ShopComponent implements OnInit {
     img.style.transition = "transform .3s ease";
   }
 
-  updateImgState(item, task) {
+  updateImgState(item:any,task:string,e:string='OK',el:any) {
+    if (e !== 'OK') {
+      el.src = '../../assets/imgs/products/not-found-art-900x800.png'
+    }
 
     if (task === 'main') {
       this.mainImgLoaded = true;
