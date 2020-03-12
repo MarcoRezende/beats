@@ -12,7 +12,7 @@
 			<p class="warning-message">This product is already in your cart.</p>
 		</div>
 		<div class="shop-item-image">
-			<img id="product-image" (mousemove)="zoomIn($event)" (mouseout)="zoomOut()" src="{{'../../assets/imgs/products/' + product[0].id + '-art-900x800.png'}}" alt="" class="item-image" (load)="updateImgState(item, 'main')" (error)="updateImgState(item, 'main', 'ERROR', $event.target)">
+			<img id="product-image" (mousemove)="zoomIn($event)" (mouseout)="zoomOut()" src="{{'../../assets/imgs/products/' + product[0].id + '-art-900x800.png'}}" alt="" class="item-image" (load)="updateImgState(product[0], 'main')" (error)="updateImgState(product[0], 'main', 'ERROR', $event.target)">
 		</div>
 		<div class="shop-item-infos">
 			<h2 class="product-name"> {{product[0].name}} </h2>
