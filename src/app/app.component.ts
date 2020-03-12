@@ -14,6 +14,7 @@ export class AppComponent {
   myCart: any = [];
   subtotal: number = 0;
   home: boolean = true;
+  collapsed: boolean;
 
   constructor(private route: ActivatedRoute, private _shareService: ShareService, private router: Router) {
     router.events.subscribe((event: Event) => {
