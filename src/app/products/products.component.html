@@ -19,7 +19,7 @@
 			<div class="product-item-wrapper">
 				<a [routerLink]="['/shop', item.id]" [queryParams]="{tag:catalog}">
 					<div class="product-store-image-container">
-						<img src="{{'../../assets/imgs/products/' + item.id + '-art-600x600.png'}}" alt="" class="this-product-store-image" (load)="updateImgState(item)" (error)="updateImgState(item, 'ERROR', $event.target)">
+						<img src="{{'../../assets/imgs/products/' + item.id + '-art-600x600.png'}}" alt="{{item.name}}" class="this-product-store-image" (load)="updateImgState(item)" (error)="updateImgState(item, 'ERROR', $event.target)">
 					</div>
 				</a>
 				<div class="product-store-infos-container">

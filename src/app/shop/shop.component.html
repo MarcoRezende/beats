@@ -12,7 +12,7 @@
 			<p class="warning-message">This product is already in your cart.</p>
 		</div>
 		<div class="shop-item-image">
-			<img id="product-image" (mousemove)="zoomIn($event)" (mouseout)="zoomOut()" src="{{'../../assets/imgs/products/' + product[0].id + '-art-900x800.png'}}" alt="" class="item-image" (load)="updateImgState(product[0], 'main')" (error)="updateImgState(product[0], 'main', 'ERROR', $event.target)">
+			<img id="product-image" (mousemove)="zoomIn($event)" (mouseout)="zoomOut()" src="{{'../../assets/imgs/products/' + product[0].id + '-art-900x800.png'}}" alt="{{product[0].name}}" class="item-image" (load)="updateImgState(product[0], 'main')" (error)="updateImgState(product[0], 'main', 'ERROR', $event.target)">
 		</div>
 		<div class="shop-item-infos">
 			<h2 class="product-name"> {{product[0].name}} </h2>
@@ -42,7 +42,7 @@
 					<li *ngFor="let review of product[0].reviews" class="review">
 						<div class="user-data">
 							<div class="user-profile-pic">
-								<img src={{review.profile_pic}} alt="" class="profile-pic" (load)="updateImgState({}, 'inner')" (error)="updateImgState({}, 'inner', 'ERROR', $event.target)">
+								<img src={{review.profile_pic}} alt="User Profile Picture" class="profile-pic" (load)="updateImgState({}, 'inner')" (error)="updateImgState({}, 'inner', 'ERROR', $event.target)">
 							</div>
 							<div class="user-review">
 								<div class="review-data">
