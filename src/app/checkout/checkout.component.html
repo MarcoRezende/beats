@@ -47,9 +47,9 @@
 				<div class="checkout-payment">
 					<div class="payment-methods-container">
 						<ul class="payment-methods">
-							<li class="payment-method" (click)="setPaymentMethod('visa')"><img class="payment-method-icon" src="{{'../../assets/imgs/visa.svg'}}" (load)="updateImgState($event.target, 'main')" alt="Visa"></li>
-							<li class="payment-method" (click)="setPaymentMethod('paypal')"><img class="payment-method-icon" src="{{'../../assets/imgs/paypal.svg'}}" (load)="updateImgState($event.target, 'main')" alt="Paypal"></li>
-							<li class="payment-method" (click)="setPaymentMethod('bitcoin')"><img class="payment-method-icon" src="{{'../../assets/imgs/bitcoin.svg'}}" (load)="updateImgState($event.target, 'main')" alt="Bitcoin"></li>
+							<li class="payment-method" (click)="setPaymentMethod('visa')"><img class="payment-method-icon" src="../../beats/assets/imgs/visa.svg" (load)="updateImgState($event.target, 'main')" alt="Visa"></li>
+							<li class="payment-method" (click)="setPaymentMethod('paypal')"><img class="payment-method-icon" src="../../beats/assets/imgs/paypal.svg" (load)="updateImgState($event.target, 'main')" alt="Paypal"></li>
+							<li class="payment-method" (click)="setPaymentMethod('bitcoin')"><img class="payment-method-icon" src="../../beats/assets/imgs/bitcoin.svg" (load)="updateImgState($event.target, 'main')" alt="Bitcoin"></li>
 						</ul>
 					</div>
 
@@ -94,13 +94,13 @@
 						<div class="bitcoin-container" [ngClass]="innerImgsLoaded ? 'page-loaded' : 'page-loading'">
 							<div class="bitcoin-wrapper">
 								<div class="purchase-bitcoin-value">
-									<img src="imgs/bitpay.svg" src="{{'../../assets/imgs/bitpay.svg'}}" alt="Bitpay Logo" class="inner-imgs" (load)="updateImgState($event.target, 'inner')">
+									<img src="../../beats/assets/imgs/bitpay.svg" alt="Bitpay Logo" class="inner-imgs" (load)="updateImgState($event.target, 'inner')">
 									<i class="fab fa-bitcoin"></i>
 									<p>{{BTC}} BTC</p>
 									<i class="fas fa-sync-alt" (click)="updateBTCPrice()"></i>
 									<i class="fas fa-info-circle" placement="left" ngbPopover="Bitcoin and other cryptocurrencies that BitPay accepts are secure currencies for the internet. You can pay without handing out sensitive financial information, and you don't need an account. Access the official site for more details" popoverTitle="BITPAY"></i>
 								</div>
-								<img src="{{'../../assets/imgs/qr_' + currentQR + '.png'}}" alt="QR Code" class="inner-imgs" (load)="updateImgState($event.target, 'inner')">
+								<img src="../../beats/assets/imgs/qr_' + currentQR + '.png" alt="QR Code" class="inner-imgs" (load)="updateImgState($event.target, 'inner')">
 							</div>
 						</div>
 					</div>
