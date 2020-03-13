@@ -84,7 +84,7 @@
 								<i class="fas fa-shopping-basket"></i>
 								<span>${{subtotal.toFixed(2)}}</span>
 								<p>Continue your purchase with paypal.</p>
-								<button type="button" class="btn"><a href="http://www.paypal.com" target="_blank"> <img src="https://cdn.pixabay.com/photo/2015/05/26/09/37/paypal-784404_960_720.png" class="inner-imgs" alt="" (load)="updateImgState($event.target, 'inner')" alt="Paypal Logo"> </a></button>
+								<button type="button" class="btn"><a href="http://www.paypal.com" target="_blank"> <img src="../../beats/assets/imgs/paypal-wide.png" class="inner-imgs" alt="" (load)="updateImgState($event.target, 'inner')" alt="Paypal Logo"> </a></button>
 							</div>
 						</div>
 					</div>
@@ -100,7 +100,7 @@
 									<i class="fas fa-sync-alt" (click)="updateBTCPrice()"></i>
 									<i class="fas fa-info-circle" placement="left" ngbPopover="Bitcoin and other cryptocurrencies that BitPay accepts are secure currencies for the internet. You can pay without handing out sensitive financial information, and you don't need an account. Access the official site for more details" popoverTitle="BITPAY"></i>
 								</div>
-								<img src="../../beats/assets/imgs/qr_' + currentQR + '.png" alt="QR Code" class="inner-imgs" (load)="updateImgState($event.target, 'inner')">
+								<img src="{{'../../beats/assets/imgs/qr_' + currentQR + '.png}}" alt="QR Code" class="inner-imgs" (load)="updateImgState($event.target, 'inner')">
 							</div>
 						</div>
 					</div>
