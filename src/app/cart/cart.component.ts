@@ -66,8 +66,12 @@ export class CartComponent implements OnInit {
     this._shareService.getProduct(obj);
   }
 
-  updateImgState(item) {
-    this.allImgs.push(item)
+  updateImgState(item:any={},e:string='OK',el:any='') {
+    if (e !== 'OK') {
+      el.src = '../../beats/assets/imgs/products/not-found-art-600x600.png';
+    }
+
+    this.allImgs.push(item);
 
     if (this.allImgs.length === this.myCart.length) {
       this.imgsLoaded = true;
